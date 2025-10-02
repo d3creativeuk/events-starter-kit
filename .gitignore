@@ -29,10 +29,15 @@ Thumbs.db
 /public/assets/
 /public/bones/
 #Glide
-/public/img/**
+/public/img/
 
 #Failed Jobs
-/storage/failed-jobs/**
+/storage/failed-jobs/
 
 public/assets/**/*.meta
 /CLAUDE.md
+
+
+*.mp4
+*.mp3
+*.zip
