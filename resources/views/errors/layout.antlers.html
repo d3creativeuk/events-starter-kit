@@ -1,0 +1,8 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    {{ partial:layouts/partials/head }}
+    {{ partial:layouts/partials/environment }} 
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}">
+        {{ template_content }}        
+    </body>
+</html>

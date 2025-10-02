@@ -1,0 +1,42 @@
+<div class="wrapper not-prose border border-neutral-200">
+    <section class="splide splide-main  bg-neutral-100 px-14 pt-14 {{  asset_credit_toggle || asset_caption_toggle ? "pb-10" : "pb-14"}} " aria-label="Carousel Images">
+      <div class="splide__track ">
+        <ul class="splide__list">
+
+			{{ entry_images }}
+			<li class="splide__slide">
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_2" 
+					img_css="w-full sm:object-cover sm:h-auto"
+					sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+				}}
+			
+			{{ partial:partials/bard/blocks/partials/credit-caption }}
+		</li>
+			{{ /entry_images }}
+			
+          
+        </ul>
+      </div>
+      <ul class="splide__pagination mb-4"></ul>
+    </section>
+    <section class="splide splide-thumbs  px-4 py-4 bg-neutral-200 " aria-label="The carousel with thumbnails. Selecting a thumbnail will change the Beautiful Gallery carousel.">
+      <div class="splide__track">
+        <ul class="splide__list">
+			{{ entry_images }}
+			<li class="splide__slide">
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_2" 
+					img_css="w-full sm:object-cover sm:h-auto"
+					sizes="(min-width: 320px) 100px, 100px" 
+				}}
+			</li>
+			{{ /entry_images }}
+        </ul>
+      </div>
+    </section>
+  </div>
+
+

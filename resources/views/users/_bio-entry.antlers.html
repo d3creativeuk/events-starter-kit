@@ -1,0 +1,26 @@
+{{ if authors }}
+{{ authors }}
+    <aside aria-label=”Author Bio”>                                  
+
+        {{ partial:partials/glide/glide        
+            {{# DATA ----------------- #}}
+            :assets_tag="avatar"       
+            img_ratio="square" {{# comment out if using art_direction, options: wide, classic, square,leave blank or orginal #}}
+            sizes="(min-width: 320px) 75px, 75px"    {{# Use with img_ratio only, comment out if using art_direction #}}
+            link_img=""  {{# true #}}
+            img_notab="" {{# true #}}
+            lazy_load="true"
+            picture_css="block shrink-0"
+            img_css="w-20"
+        
+        }} 
+
+
+        <span class="font-semibold  mb-2 block text-xl">{{ name }}</span>
+        {{ if bio }}<p>{{ bio }}</p>{{ /if }}
+        <a class="underline hover:no-underline" href="/authors/{{ slug }}">{{ name | explode(' ') | first }}'s profile page</a>  
+		
+		{{ partial:users/partials/bio-social-links }}
+    </aside>
+{{ /authors }}
+{{ /if }}

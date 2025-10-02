@@ -1,0 +1,5 @@
+title: Bones
+disk: bones
+allow_uploads: true
+create_folders: true
+source_preset: max_upload_size

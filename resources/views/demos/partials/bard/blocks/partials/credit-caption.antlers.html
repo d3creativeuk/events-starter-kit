@@ -1,0 +1,3 @@
+{{# https://tailwindcss.com/blog/tailwindcss-v3-1#arbitrary-values-but-for-variants #}}
+<figcaption class="{{ align_text ?? 'text-left' }} pt-2 text-sm {{ caption_theme ? '{caption_theme}' : 'text-neutral-600' }} [&>a]:underline  [&>a:hover]:no-underline">
+	{{ asset_caption_toggle && asset_caption ?= asset_caption | remove_right('.', '') | ensure_right('.') }} {{ asset_credit_toggle && asset_credit ?= asset_credit | remove_right('.', '') | ensure_right('.')}}</figcaption>

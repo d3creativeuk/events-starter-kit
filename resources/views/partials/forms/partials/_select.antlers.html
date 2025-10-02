@@ -1,0 +1,37 @@
+{{ fields where="handle:{field_value}" }}
+	<div class="space-y-3">
+		<div>
+			<span class="{{ view:label }}">{{ display }}</span>
+			<span class="{{ view:hint }}" >{{ instructions }}</span>
+		</div>
+
+		{{ partial:partials/forms/partials/_custom-error }}
+	
+	<select class="w-full"
+	    name="{{ handle }}{{ multiple ?= "[]" }}"
+	    {{ if js_driver }}{{ js_attributes }}{{ /if }}
+	    {{ if multiple }}multiple{{ /if }}
+	    
+	>
+	    {{ unless multiple }}
+	        <option value>
+	            {{ if placeholder }}
+	                {{ placeholder }}
+	            {{ else }}
+	                {{ trans key="Please select..." }}
+	            {{ /if }}
+	        </option>
+	    {{ /unless }}
+	
+		
+			{{ foreach:options as="option|label" }}
+				<option value="{{ option }}"{{ if multiple }}{{ if value|in_array:option }} selected{{ /if }}{{ else }}{{ if option == value }} selected{{ /if }}{{ /if }}>
+					{{ label !== null ? label : option }}
+				</option>
+			{{ /foreach:options }}
+		
+	
+	</select>
+	</div>
+	
+{{ /fields  }}

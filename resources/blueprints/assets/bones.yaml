@@ -1,0 +1,47 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: alt
+            field:
+              display: 'Alt Text'
+              type: text
+              instructions: "A short written description of an image, which makes sense of that image when it can't be viewed for some reason. Well written alt text is important to your website's accessibility."
+          -
+            handle: optional_extras
+            field:
+              display: 'Optional Extras'
+              type: section
+          -
+            handle: asset_credit
+            field: common.text
+            config:
+              display: Credit
+              instructions: 'Credit the photographer and or link to the source. Accepts HTML.'
+          -
+            handle: asset_caption
+            field:
+              buttons:
+                - bold
+                - anchor
+              inline: true
+              fullscreen: false
+              allow_source: false
+              remove_empty_nodes: false
+              type: bard
+              display: Caption
+          -
+            handle: updated_filename
+            field: common.text
+            config:
+              display: 'Custom filename'
+              instructions: 'Add a user friendly filename, useful if you need to list download links.'
+          -
+            handle: toggle_zoom_icon
+            field:
+              type: toggle
+              display: 'Toggle Zoom Icon'
+              instructions: "When using the image set template, you'll have the option to enable a lightbox toggle. By default, the zoom icon appears in white, which may not suit all images. To switch the icon colour to black, simply activate the toggle."

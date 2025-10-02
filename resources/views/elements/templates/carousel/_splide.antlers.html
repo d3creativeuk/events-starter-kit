@@ -1,0 +1,30 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+
+<div class="bg-orange-100 lg:flex">
+
+	{{ collection:blog limit="6" as="posts" url:not="{ url }"}}
+		<section class="splide blog-posts relative bg-neutral-400 pl-4 pb-4 pt-24 lg:ml-auto lg:w-[1000px]  lg:pl-14 lg:pb-14  " aria-label="Splide Basic HTML Example">
+			<div class="splide__arrows absolute top-14 right-2 lg:right-10 w-[110px]  bg-red-300">
+				<button class="splide__arrow splide__arrow--prev rounded-none! opacity-100! bg-black! hover:bg-red-500! hover:opacity-100!">
+					{{ svg src="assets/icons/chevron-24-white.svg"  }}
+				</button>
+				<button class="splide__arrow splide__arrow--next rounded-none! opacity-100! bg-black! hover:bg-red-500! hover:opacity-100!">
+					{{ svg src="assets/icons/chevron-24-white.svg" class="rotate-270"   }}
+				</button>
+		  </div>
+			<div class="splide__track ">
+				<ul class="splide__list ">				
+					{{ posts }}
+						<li class="splide__slide bg-white">{{ partial:elements/partials/splide/card-1 }}</li>
+					{{ /posts }}	
+				</ul>
+			</div>
+		</section>
+	{{ /collection:blog }}	
+		
+</div>
+
+

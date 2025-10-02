@@ -1,0 +1,94 @@
+title: Common
+fields:
+  -
+    handle: image
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      max_files: 1
+      type: assets
+      localizable: true
+      listable: hidden
+      display: Image
+      show_filename: true
+  -
+    handle: entry
+    field:
+      max_items: 1
+      mode: default
+      type: entries
+      localizable: true
+      listable: false
+      display: Entry
+  -
+    handle: text
+    field:
+      input_type: text
+      antlers: false
+      display: Text
+      type: text
+      icon: text
+      listable: hidden
+  -
+    handle: textarea
+    field:
+      type: textarea
+      localizable: true
+      listable: hidden
+      display: Textarea
+      antlers: false
+  -
+    handle: excerpt
+    field:
+      character_limit: '140'
+      antlers: false
+      display: Excerpt
+      type: textarea
+      icon: textarea
+      instructions: 'A short overview about this page, typically not shown on this page often used in other parts of the website. Suggested length less than 140 characters.'
+      listable: hidden
+  -
+    handle: body_bard
+    field:
+      always_show_set_button: false
+      buttons:
+        - bold
+        - italic
+        - anchor
+        - alignleft
+      save_html: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: false
+      allow_source: false
+      enable_input_rules: true
+      enable_paste_rules: true
+      display: Intro
+      type: bard
+      icon: bard
+      listable: hidden
+  -
+    handle: size
+    field:
+      options:
+        md: Normal
+        lg: LG
+        xl: XL
+      type: button_group
+      localizable: true
+      default: md
+      listable: hidden
+      display: Size
+  -
+    handle: custom_slug
+    field:
+      generate: true
+      display: 'Custom Slug'
+      type: slug
+      icon: slug
+      listable: hidden

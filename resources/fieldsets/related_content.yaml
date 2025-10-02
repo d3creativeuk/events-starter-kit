@@ -1,0 +1,11 @@
+title: 'Related Content'
+fields:
+  -
+    handle: related_content
+    field:
+      collections:
+        - pages
+        - blog
+      type: entries
+      display: 'Related Content'
+      create: false

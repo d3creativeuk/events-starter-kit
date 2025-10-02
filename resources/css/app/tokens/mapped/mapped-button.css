@@ -1,0 +1,235 @@
+/* MAPPED COLORS */
+
+/* https://tailwindcss.com/docs/theme#theme-variable-namespaces */
+/* https://ui.shadcn.com/themes */
+/* https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_80/w_2000/https://files.smashing.media/articles/naming-best-practices/naming-playbook-opt.png */
+
+/* BRAND > ALIAS > MAPPED */
+/* element-specific tokens */
+
+
+
+
+
+/* Button faq-toggle */
+/* Solid black on white background, hover black ghost */
+[data-theme="button_faq_toggle"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-neutral-950), var(--color-neutral-300));
+    --surface-color: light-dark(var(--color-neutral-50), var(--color-black));
+    --border-color: light-dark(var(--color-red-800), var(--color-black));
+    /* Hover */
+    --text-hover: light-dark(var(--color-white), var(--color-white));
+    --surface-hover: light-dark(var(--color-primary-brand), var(--color-neutral-800));
+    --border-hover: light-dark(var(--color-primary-brand), var(--color-neutral-800));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-white));
+    --surface-active: light-dark(var(--color-primary-brand), var(--color-transparent));
+    --border-active: light-dark(var(--color-red-400), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-white), var(--color-white));
+    --surface-focus: light-dark(var(--color-primary-brand), var(--color-transparent));
+    --border-focus: light-dark(var(--color-primary-brand), var(--color-white));
+    --outline-focus: light-dark(var(--color-green-500), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-neutral-50), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-neutral-950), var(--color-transparent));
+    --border-focus-visible: light-dark(var(--color-neutral-950), var(--color-white));
+    --outline-focus-visible: light-dark(var(--color-neutral-950), var(--color-white));
+/* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+/* Button Dark */
+/* Solid black on white background, hover black ghost */
+[data-theme="button_dark"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-neutral-50), var(--color-neutral-950));
+    --surface-color: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --border-color: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-hover: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+    --border-hover: light-dark(var(--color-primary-brand), var(color-secondary-brand));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-white));
+    --surface-active: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-active: light-dark(var(--color-white), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-focus: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus-visible: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+/* Button #1 */
+/* Solid secondary on primary background, hover white ghost */
+[data-theme="button_1"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --surface-color: light-dark(var(--color-secondary-brand), var(--color-secondary-brand));
+    --border-color: light-dark(var(--color-secondary-brand), var(--color-secondary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-white), var(--color-white));
+    --surface-hover: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-hover: light-dark(var(--color-white), var(--color-white));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-white));
+    --surface-active: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-active: light-dark(var(--color-white), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-white), var(--color-white));
+    --surface-focus: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus: light-dark(var(--color-white), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus-visible: light-dark(var(--color-white), var(--color-white));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+
+/* Button #2 */
+/* Solid secondary on white background, hover white ghost */
+[data-theme="button_2"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --surface-color: light-dark(var(--color-secondary-brand), var(--color-secondary-brand));
+    --border-color: light-dark(var(--color-secondary-brand), var(--color-secondary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-hover: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Active */
+    --text-active: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-active: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-active: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-focus: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus-visible: light-dark(var(--color-white), var(--color-white));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+/* Button #3 */
+/* Featured work */
+[data-theme="button_3"] {  
+    /* Base */
+    --btn-text: light-dark(var(--color-neutral-950), var(--color-neutral-100));
+    /* Hover */
+    --btn-text-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Active */
+    --btn-text-active: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --btn-text-focus: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --btn-text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --btn-border-focus-visible: light-dark(var(--color-white), var(--color-white));
+    /* Disabled */
+    --btn-text-disabled: light-dark(var(--color-black), var(--color-black));
+
+}
+/* Dark on secondary background */
+  [data-theme="button_4"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-secondary-brand), var(--color-neutral-950));
+    --surface-color: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --border-color: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    --surface-hover: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-white));
+    --surface-active: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-active: light-dark(var(--color-white), var(--color-white));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-white), var(--color-white));
+    --surface-focus: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus: light-dark(var(--color-white), var(--color-white));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-focus-visible: light-dark(var(--color-white), var(--color-white));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+
+
+/* Primary on white background */
+  [data-theme="button_5"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-white), var(--color-white));
+    --surface-color: light-dark(var(--color-primary-brand), var(--color-primary-brand));
+    --border-color: light-dark(var(--color-primary-brand), var(--color-primary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-white), var(--color-white));
+    --surface-hover: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --border-hover: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-white));
+    --surface-active: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --border-active: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-white), var(--color-white));
+    --surface-focus: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --border-focus: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+     --outline-focus: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --surface-focus-visible: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --border-focus-visible: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --outline-focus-visible: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}
+
+/* Primary on white background */
+/* Secondary on dark background */
+  [data-theme="button_6"] {  
+    /* Base */
+    --text-color: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-color: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+    --border-color: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+    /* Hover */
+    --text-hover: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    --border-hover: light-dark(var(--color-neutral-950), var(--color-white));
+    /* Active */
+    --text-active: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-active: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --border-active: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --text-focus: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-focus: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --border-focus: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+     --outline-focus: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    /* Focus visible - triggers only on keyboard focus */
+    --text-focus-visible: light-dark(var(--color-white), var(--color-neutral-950));
+    --surface-focus-visible: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --border-focus-visible: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    --outline-focus-visible: light-dark(var(--color-neutral-950), var(--color-secondary-brand));
+    /* Disabled */
+    --text-disabled: light-dark(var(--color-black), var(--color-black));
+    --surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --border-disabled: light-dark(var(--color-black), var(--color-black));
+}

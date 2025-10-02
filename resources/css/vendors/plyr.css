@@ -1,0 +1,9 @@
+@layer base {
+    :root {
+  
+        /* PLYR */
+        /* https://github.com/sampotts/plyr#customizing-the-css */
+        --plyr-color-main: var(--color-primary); /* lbfoster red #C12832 new Friday, September 29, 2023 */
+        --plyr-video-background: rgb(255, 255, 255);
+    }
+}

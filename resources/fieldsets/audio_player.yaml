@@ -1,0 +1,44 @@
+title: 'Audio Player'
+fields:
+  -
+    handle: audio_assets
+    field:
+      type: grid
+      display: Audio
+      mode: stacked
+      fields:
+        -
+          handle: audio_asset
+          field:
+            max_files: 1
+            container: assets
+            type: assets
+            display: 'Audio File'
+            instructions: "To change the title (add a file then), click the filename below and enter a new name in the 'Custom filename' field."
+            width: 75
+        -
+          handle: audio_options
+          field:
+            type: toggle
+            display: Options
+            width: 25
+            instructions: 'Description & Transcript PDF'
+        -
+          handle: audio_description
+          field:
+            type: textarea
+            display: Description
+            character_limit: 200
+            if:
+              audio_options: 'equals true'
+            always_save: true
+        -
+          handle: transcription_pdf
+          field:
+            container: assets
+            type: assets
+            display: 'Transcription PDF'
+            max_files: 1
+            if:
+              audio_options: 'equals true'
+            always_save: true

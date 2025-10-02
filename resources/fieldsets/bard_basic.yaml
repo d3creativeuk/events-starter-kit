@@ -1,0 +1,16 @@
+title: 'Bard - Basic'
+fields:
+  -
+    handle: bard_basic
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      display: Intro
+      type: bard
+      container: assets
+      inline: true

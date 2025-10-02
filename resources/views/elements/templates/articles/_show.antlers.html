@@ -1,0 +1,41 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+{{ section:aside_one }} 
+    {{ partial:partials/entries/terms css_wrap="blog_sidebar_wrap" }}  
+{{ /section:aside_one }} 
+
+{{# TEMPLATE CONTENT #}}
+
+<div>  
+
+
+    <div class="space-y-6 mb-10">
+     <h1 class="text-6xl font-semibold">{{ title }}</h1>
+     {{ partial:partials/meta/meta show_user="true" show_taxonomy="true"}}
+    
+     {{ partial:partials/bard/bard-single  css="entry" :bard_handle="elements_bard_basic"}}
+
+    </div>
+    <div>
+         
+        {{ partial:partials/toc/toc bard_toc_handle="elements_bard_sets"}}  
+
+        {{ partial:partials/bard/bard-set css="entry" :bard_handle="elements_bard_sets"}}
+    </div>
+    <footer class="mt-24">
+        {{ partial:partials/meta/meta show_user="true" show_taxonomy="true"}}
+
+        <aside class="py-10 block" aria-label=”Related Entries”>
+            {{ partial:partials/entries/realted }}               
+        </aside>
+        {{ partial:users/bio-entry }}
+        
+    </footer>
+</div>
+
+{{# /TEMPLATE CONTENT #}}
+{{ section:aside_two }} 
+{{ partial:partials/entries/latest list_title="Latest" css_wrap="blog_sidebar_wrap"}}
+{{ /section:aside_two }} 

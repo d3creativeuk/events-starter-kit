@@ -1,0 +1,111 @@
+title: Video
+fields:
+  -
+    handle: video_type
+    field:
+      options:
+        -
+          key: local
+          value: Local
+        -
+          key: vimeo
+          value: Vimeo
+        -
+          key: you_tube
+          value: 'You Tube'
+      display: Type
+      type: button_group
+      always_save: true
+      default: local
+      width: 50
+  -
+    handle: remote_video_you_tube
+    field:
+      display: 'Remote Video'
+      type: video
+      instructions: 'Externally hosted video, e.g. You Tube or Vimeo'
+      always_save: true
+      if:
+        video_type: 'equals you_tube'
+  -
+    handle: remote_video_vimeo
+    field:
+      display: 'Remote Video'
+      type: video
+      instructions: 'Externally hosted video, e.g. You Tube or Vimeo'
+      always_save: true
+      if:
+        video_type: 'equals vimeo'
+  -
+    handle: local_video
+    field:
+      container: assets
+      folder: video
+      max_files: 1
+      display: 'Local Video'
+      type: assets
+      instructions: 'Suggested resolution 1080 x 1920 .mp4 format.'
+      always_save: true
+      validate:
+        - sometimes
+      if:
+        video_type: 'equals local'
+  -
+    handle: toggle_video_caption_local
+    field:
+      type: toggle
+      display: 'Toggle Caption'
+      width: 50
+      instructions: 'To add or edit the caption, click the filename above.'
+      if:
+        video_type: 'equals local'
+      always_save: true
+  -
+    handle: toggle_poster_image
+    field:
+      type: toggle
+      display: 'Poster Image'
+      width: 50
+      if:
+        video_type: 'equals local'
+      instructions: 'Use a custom poster image?'
+  -
+    handle: toggle_video_caption_remote
+    field:
+      type: toggle
+      display: 'Set Caption'
+      instructions: 'Optional. Add a caption to this video embed.'
+      width: 25
+      always_save: true
+      if:
+        video_type: 'not local'
+  -
+    handle: video_caption
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      link_noopener: true
+      link_noreferrer: true
+      type: bard
+      display: 'Video Caption'
+      inline: true
+      always_save: true
+      width: 75
+      if:
+        toggle_video_caption_remote: 'equals true'
+  -
+    handle: custom_poster
+    field:
+      container: assets
+      max_files: 1
+      display: 'Poster Image'
+      type: assets
+      always_save: true
+      instructions: "Specify an image to display until the user presses the play button. If no image is provided, the video's first frame will be shown by default. For best results, use a web-optimised JPG image with a recommended size of 1920x1080 pixels"
+      if:
+        toggle_poster_image: 'equals true'

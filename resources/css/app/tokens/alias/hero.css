@@ -1,0 +1,10 @@
+@theme inline  {
+    /* BRAND > ALIAS > MAPPED */
+
+    /* Hero Base */
+    --color-heading-hero: var(--heading-hero);
+    --color-intro-hero: var(--intro-hero); 
+    --color-surface-hero: var(--surface-hero);
+    
+    
+}

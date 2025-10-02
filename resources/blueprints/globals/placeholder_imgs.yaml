@@ -1,0 +1,13 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: assets
+            field:
+              container: bones
+              display: Assets
+              type: assets
+              folder: images

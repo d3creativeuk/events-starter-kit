@@ -1,0 +1,26 @@
+{{ if type == "downloads" }}
+    <div>
+        <div class="prose prose-sm max-w-none prose-headings:text-3xl prose-headings:font-semibold sm:prose-headings:text-4xl/10 lg:prose-base  lg:prose-headings:mb-2 lg:prose-headings:mt-10">
+            {{ if downloads_title && download_toggle_options}}
+                <h2>{{ downloads_title }}</h2>
+            {{ /if }}
+            {{ if downloads_intro && download_toggle_options}}
+                {{ partial:partials/bard/bard-single  :bard_handle="downloads_intro"}}
+            {{ /if }}
+        </div>    
+        <ul class="not-prose flex flex-col gap-y-4 my-8 p-6 border border-neutral ">
+            {{ downloads_list}}
+                {{ if file_upload }}
+                    <li class="flex items-start gap-x-2">
+                        <div class="flex items-center">
+                            <span>{{ partial:partials/icon/_icon icon_path="file-thin" }}</span>
+                            <span><a class="text-base leading-5 pl-2 block hover:underline" target="_blank" href="{{ file_upload.url }}">{{ if !file_upload.updated_filename }}{{ file_upload.filename replace="-| " title="true" }}{{ else }}{{ file_upload.updated_filename }}{{ /if }}</a></span>
+                        </div>
+                        <span class=" hidden pt-1 shrink-0 text-xs lg:block">({{ (file_upload.size_kb | round ) + ' KB' }})
+                        </span>
+                    </li>
+                {{ /if }}
+            {{ /downloads_list}}
+        </ul>
+    </div>	
+{{ /if }}

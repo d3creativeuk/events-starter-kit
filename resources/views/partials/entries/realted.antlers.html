@@ -1,0 +1,9 @@
+
+<span class="font-semibold mb-2 block lg:text-xl">Related </span>
+ {{# <span class="title"> More posts about {{ categories }}{{ title | lcfirst  }}{{ /categories }} </span> #}}
+
+<ul class="list-disc space-y-2 pl-4">
+    {{ collection from="{segment_1 | replace('-', '_')}" :taxonomy:categories="categories" limit="3" :url:not="url" }}
+      <li><a class=" block underline hover:no-underline" href="{{ url }}">{{ title }}</a></li>
+    {{ /collection from="{segment_1 | replace('-', '_')}" }}
+</ul>

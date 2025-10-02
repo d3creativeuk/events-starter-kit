@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Unsupported Browser</title>
+</head>
+<style>
+    body {
+        background: #f2f5f5;
+        font-family: Arial, sans-serif;
+    }
+    .box {
+        background-color: #ffffff;
+        padding: 48px;
+        width: 550px;
+        margin: 48px auto 0 auto;
+    }
+    .cta{
+        border: 1px solid #bdbfbf;
+        padding: 14px;
+    }
+
+</style>
+<body>
+
+   <div class="box">
+        <img src="{{ company:json_primary_logo }}" width="172" height="32" alt="{{company:json_company_name}} Logo">
+        <h1>Outdated Browser Detected</h1>
+        <p style="font-size:19px;">We've detected that you're using an outdated browser that may pose security risks and won't display our website properly.</p>
+        <p style="font-weight:bold;">Your browser is no longer receiving security updates, which could leave your personal information vulnerable.</p>
+        <p>For your safety and the best experience, please update to a modern browser:</p>
+        <ul>
+            <li><a style="padding:5px 0px; display:block;" href="https://www.microsoft.com/edge" target="_blank">Microsoft Edge</a></li>
+            <li><a style="padding:5px 0px; display:block;" href="https://www.google.com/chrome/" target="_blank">Google Chrome</a></li>            
+            <li><a style="padding:5px 0px; display:block;" href="https://www.apple.com/safari/" target="_blank">Apple Safari</a></li>
+            
+        </ul>   
+        <p class="cta">Your current browser is no longer supported by its manufacturer and may expose you to security vulnerabilities. Updating takes just a few minutes and will keep you safer online.</p>
+   </div>
+</body>
+</html>

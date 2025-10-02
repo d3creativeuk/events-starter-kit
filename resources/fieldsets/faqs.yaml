@@ -1,0 +1,27 @@
+title: FAQs
+fields:
+  -
+    handle: faqs_title
+    field:
+      type: text
+      display: Title
+  -
+    handle: faqs_intro
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      inline: true
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      type: bard
+      display: Intro
+  -
+    handle: company_faqs
+    field:
+      collections:
+        - faqs
+      type: entries
+      display: FAQs

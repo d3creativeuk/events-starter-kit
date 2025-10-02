@@ -1,0 +1,55 @@
+---
+body_class: ''
+---
+
+{{ section:breadcrumbs }}
+    {{partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+{{ section:aside_one }} 
+{{# <div class="pt-14"> #}}
+    {{# partial:partials/nav/sidebar/_nav-related nav_structure="pages" show_parent="" #}}
+{{# </div> #}}
+{{ /section:aside_one }} 
+
+
+
+   
+
+
+{{# TEMPLATE CONTENT #}}
+
+<div class="text-left lg:px-14">
+
+<h1 class="font-semibold text-5xl mb-4">{{ title }}</h1>
+
+{{ partial:partials/bard/bard-single  :bard_handle="pages_intro_bard_basic" css="entry"}}
+
+ {{ partial:partials/bard/bard-set 
+   
+     :bard_handle="pages_body_bard_sets"
+     css_bard="pages"  
+}}
+</div>
+{{# /TEMPLATE CONTENT #}}
+
+
+{{ section:aside_two }} 
+    <div class="lg:px-14">
+
+        {{ nav handle="collection::elements" select="title|url"}}
+		
+        <li class="">
+          <a href="{{url}}">{{title}} {{ url }}</span></a>
+          {{ if is_current || is_parent }}
+            {{ if children }}
+              <ul class="pl-4">{{ *recursive children* }}</ul>
+            {{ /if }}
+           {{ /if }}
+        </li>	
+      {{ /nav }}  
+
+
+        {{ partial:partials/nav/sidebar/related-pages }}
+    </div>   
+{{ /section:aside_two }} 

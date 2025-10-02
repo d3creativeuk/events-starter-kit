@@ -1,0 +1,24 @@
+@theme {
+    /* COLORS */
+
+    /* BRAND > ALIAS > MAPPED */
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    /* https://www.tints.dev/ */
+
+    /* primary, secondary, tertiary, quaternary quinary, senary, septenary, octonary, nonary, denary */
+
+    /* BLUE */
+    --color-primary-brand: oklch(55.42% 0.246 261.44); /* 600 */
+
+    /* LIME */
+    --color-secondary-brand: oklch(92.89% 0.223 124.36); /* 500 */
+
+    /* DARK BLUE */
+     --color-tertiary-brand: oklch(32.11% 0.068 253.92); /* 500 */
+
+    
+
+   
+}

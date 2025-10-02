@@ -1,0 +1,39 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: guide_category_desc
+            field:
+              remove_empty_nodes: false
+              type: bard
+              display: Description
+              buttons:
+                - bold
+                - italic
+                - anchor
+              fullscreen: false
+              allow_source: false
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              required: true
+              validate:
+                - required
+                - 'max:200'
+title: Guides

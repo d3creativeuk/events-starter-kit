@@ -1,0 +1,75 @@
+<!-- START MOBILE  -->
+<div x-cloak class="absolute z-40 top-0 inset-x-0 p-2 transition transform origin-top-right" x-show="openm">
+      <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 bg-white divide-y-2 divide-neutral-50">
+        <div class="pt-5 pb-6 px-5">
+          <div class="flex items-center justify-between">
+            <div class="">
+              {{ partial:partials/company/logo logo_a_class="w-44 block overflow-hidden" logo_css_img="" }}
+            </div>
+           <!-- MOBILE TOGGLE -->
+            <div class="-mr-2">
+              <button type="button" @click="openm = false;" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                <span class="sr-only">Close menu</span>
+                <!-- Heroicon name: outline/x -->
+                <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="mt-6" >
+            <nav class="grid gap-y-8" aria-label="Mast mobile" >
+              {{ nav select="title|url" handle="{handle}" }}
+              {{if !children }}
+                  <a class="text-base font-avenirRegular text-neutral-700 hover:text-neutral-900" href="{{ url }}">{{ title }}</a>
+              {{ else }}
+              <div class="relative" x-data="{ openm2: false }" @click.outside="openm2 = false">
+                
+                <button type="button" @click="openm2 = ! openm2" class="text-neutral-700 group bg-white rounded-md inline-flex items-center text-base font-avenirRegular hover:text-neutral-900 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" aria-expanded="false"><span>{{ title }}</span><svg class="text-neutral-400 ml-2 h-5 w-5 group-hover:text-neutral-700" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg></button>
+                  <div class=" mt-3  max-w-full" :class="{ 'hidden': ! openm2 }">
+                    <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
+                      <div class="relative grid gap-3 px-3 bg-white py-3 text-sm">
+                          {{ if children }}
+                          {{ children }} 
+                          {{if !children }}
+                              <div>
+                                  <a href="{{ url }}"  class=" transition-all block p-2 rounded-sm hover:bg-lbf-gray text-neutral-800">{{ title  | remove_left:L.B. Foster }}</a> 
+                              </div>
+                          {{else}}
+                              <div x-data="{ openm3: false}" @click.outside="openm3 = false">
+                                  <button type="button" @click="openm3 = ! openm3"  class=" text-left transition-all p-2 rounded-sm w-full hover:bg-lbf-gray text-neutral-800 group inline-flex items-center  focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-lbf-gray" aria-expanded="false"><span>{{ title }}</span><span class="ml-auto">{{heroicons:solid:chevron-down class="w-5 h-5"}}</span></button>
+                  
+                                  {{ if children }} 
+                                      <div :class="{ 'hidden': ! openm3 }" class="hidden rounded-sm p-4 my-4 bg-lbf-gray relative">
+                                  {{ /if }}
+                                  {{ children }} 
+                                      <a class="block transition-all  p-2 rounded-sm hover:bg-white text-neutral-800" href="{{ url }}">{{ title }}</a>
+                                  {{ /children }}
+                                  {{ if children }}
+                                      </div>
+                                  {{ /if }}
+                              </div>
+                          {{/if}}                      
+                      {{ /children }}  
+                          {{ /if }}  
+                      </div>
+                      
+                    </div>
+                  </div>
+              </div>
+              {{ /if }}
+              
+              {{ /nav }}
+              
+            </nav>
+          </div>
+        </div>
+            <div class="py-6 px-5 bg-neutral-100 rounded-b">
+                {{ partial:partials/nav/partials/_contact-btns display_mode="inline-flex"}}
+            <div> 
+          </div>
+        </div> 
+      </div>
+    </div>

@@ -1,0 +1,10 @@
+{{# Add this options to the partial #}}
+{{# show_error="true" #}}
+{{#  custom_error="email please!" #}}
+{{ if show_error && error }}
+	{{ if custom_error }}
+		<p class="{{ view:input_text_error }}">{{ custom_error }}</p>
+	{{ else }}
+		<p class="{{ view:input_text_error }}">The <span class="font-semibold">{{ display | lower }}</span> field is required</p>
+	{{ /if }}
+{{ /if }}

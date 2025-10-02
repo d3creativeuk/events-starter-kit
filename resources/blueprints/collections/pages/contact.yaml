@@ -1,0 +1,61 @@
+hide: true
+title: Contact
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: intro
+            field: common.textarea
+            config:
+              display: Introduction
+          -
+            handle: mailing_list_section
+            field:
+              display: 'Mailing List'
+              type: section
+          -
+            handle: mailing_list_toggle
+            field:
+              default: true
+              display: Toggle
+              type: toggle
+              instructions: 'Toggle visibility of mailing list signup'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required

@@ -1,0 +1,12 @@
+{{# used in partials/nav/_nav-related #}}
+{{ if last_segment == segment_1 }}   
+<a class="p-2 block {{ segment_1 ? "bg-red-400 hover:bg-red-100" : "bg-pink-300 hover:bg-neutral-100" }}" href="{{ url }}">X {{ title }}</a>
+
+{{ else }}
+{{ parent }}
+<a class="p-2 block {{ is_current ? "bg-red-100 hover:bg-red-100" : "bg-white hover:bg-neutral-100" }}" href="{{ url }}">Y {{ title }}</a>
+	{{ /parent }}
+{{ /if }}  
+
+
+

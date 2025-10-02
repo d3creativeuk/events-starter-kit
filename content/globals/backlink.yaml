@@ -1,0 +1,18 @@
+title: Backlink
+data:
+  backlink_toggle: true
+  backlink_text:
+    -
+      type: text
+      marks:
+        -
+          type: link
+          attrs:
+            href: 'https://d3creative.uk'
+            rel: null
+            target: null
+            title: null
+      text: 'Web design'
+    -
+      type: text
+      text: ' & development by D3 Creative.'

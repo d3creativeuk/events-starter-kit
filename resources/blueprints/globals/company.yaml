@@ -1,0 +1,283 @@
+tabs:
+  json:
+    display: Main
+    sections:
+      -
+        display: 'Logo & Address'
+        fields:
+          -
+            handle: json_primary_logo
+            field:
+              container: assets
+              folder: global
+              restrict: true
+              max_files: 1
+              display: Logo
+              type: assets
+          -
+            handle: json_secondary_logo
+            field:
+              container: assets
+              folder: global
+              restrict: true
+              max_files: 1
+              display: 'Logo Alt'
+              type: assets
+          -
+            handle: json_company_name
+            field:
+              type: text
+              display: 'Company Name'
+          -
+            handle: json_alt_company_name
+            field:
+              type: text
+              display: 'Alternative Name'
+              instructions: 'Is the company known locally by a different name?'
+          -
+            handle: json_description
+            field:
+              type: textarea
+              display: Description
+              instructions: 'E.g. ABC Widgets is a leading manufacturer and supplier of innovative, high-quality widgets designed for diverse industries. Combining cutting-edge technology with exceptional customer service, they deliver tailored solutions to meet the unique needs of businesses.'
+          -
+            handle: json_building_name
+            field:
+              type: text
+              display: 'Building Name'
+          -
+            handle: json_street_address
+            field:
+              type: text
+              display: 'Street Address'
+              instructions: 'E.g. 123 Avenue'
+          -
+            handle: json_address_locality
+            field:
+              type: text
+              display: 'Address Locality'
+              instructions: 'Represents the city or town, such as "Manchester" or "Wigan".'
+          -
+            handle: json_address_region
+            field:
+              type: text
+              display: 'Address Region'
+              instructions: 'United Kingdom: Represents the broader administrative region, such as "England", "Scotland" or "Wales"'
+          -
+            handle: json_postal_code
+            field:
+              type: text
+              display: 'Postal Code'
+              instructions: 'E.g. SW1A 1AA'
+          -
+            handle: json_address_country
+            field:
+              default: 'United Kingdom'
+              type: text
+              display: Country
+          -
+            handle: company_registration_number
+            field: common.text
+            config:
+              display: 'Company Registration number'
+              width: 50
+              instructions: 'E.g. Company Number: 07662407'
+          -
+            handle: registered_location
+            field: common.text
+            config:
+              display: 'Registered Location'
+              width: 50
+              instructions: 'E.g. Registered in England and Wales'
+      -
+        display: 'Phone & Email'
+        fields:
+          -
+            handle: section_phone
+            field:
+              type: section
+              display: Phone
+              instructions: "Make sure there's a space between the numbers in Phone Number. E.g 483 2038 not 4832038"
+          -
+            handle: json_country_code
+            field:
+              type: text
+              display: 'Country Code'
+              instructions: 'E.g. +44'
+              width: 33
+          -
+            handle: json_area_code
+            field:
+              type: text
+              display: 'Area Code'
+              instructions: 'E.g. 0161'
+              width: 33
+          -
+            handle: json_phone_number
+            field:
+              type: text
+              display: 'Phone Number'
+              instructions: 'E.g. 483 2038'
+              width: 33
+          -
+            handle: json_inter_phone
+            field:
+              type: toggle
+              display: International
+              instructions: 'Turn this toggle on to format the phone number as international. E.g +1 (412) 928-3400'
+          -
+            handle: json_email
+            field:
+              type: text
+              display: Email
+      -
+        display: 'Areas Served'
+        fields:
+          -
+            handle: json_countries_served
+            field:
+              options:
+                -
+                  key: US
+                  value: 'United States'
+                -
+                  key: GB
+                  value: 'United Kingdom'
+                -
+                  key: DE
+                  value: Germany
+                -
+                  key: FR
+                  value: France
+                -
+                  key: ES
+                  value: Spain
+                -
+                  key: CA
+                  value: Canada
+                -
+                  key: BR
+                  value: Brazil
+                -
+                  key: CN
+                  value: China
+                -
+                  key: MX
+                  value: Mexico
+              clearable: true
+              default: GB
+              type: select
+              display: Country
+              instructions: 'Specify the country (or countries) this office provides support for.'
+              multiple: true
+          -
+            handle: json_lang_select
+            field:
+              options:
+                -
+                  key: english
+                  value: English
+                -
+                  key: spanish
+                  value: Spanish
+                -
+                  key: german
+                  value: German
+                -
+                  key: french
+                  value: French
+                -
+                  key: portuguese
+                  value: Portuguese
+                -
+                  key: chinese
+                  value: Chinese
+              multiple: true
+              clearable: true
+              default: english
+              type: select
+              display: 'Available Languages'
+              instructions: 'Specifies the languages in which this office can communicate or provide support.'
+      -
+        display: 'Google Map'
+        fields:
+          -
+            handle: json_maps_title
+            field:
+              default: 'Google Maps'
+              type: text
+              display: Title
+          -
+            handle: json_google_map
+            field:
+              type: text
+              display: 'Google Map Link'
+              instructions: 'Google Map link should look like this: https://maps.app.goo.gl/UHfYPNLUdteFzAAr6'
+      -
+        display: GeoCoordinates
+        instructions: 'Visit Google Maps, right click a pin to reveal the longitude and latitude values, copy and paste them below.'
+        fields:
+          -
+            handle: json_latitude
+            field:
+              type: text
+              display: Latitude
+          -
+            handle: json_longitude
+            field:
+              type: text
+              display: Longitude
+      -
+        display: 'Opening Times'
+        fields:
+          -
+            import: opening_times
+            prefix: json_
+      -
+        display: Images
+        fields:
+          -
+            handle: json_company_images
+            field:
+              container: assets
+              type: assets
+              display: 'Company Images'
+              instructions: |-
+                Recommended dimensions: 2400x1260 pixels or larger. File format: JPEG, PNG, or WebP. File size: Should be as small as possible without compromising quality for better performance. 
+
+                Use images that accurately represent your business, such as: Office or storefront pictures, a professionally designed logo or a product or service image.
+              folder: global/json
+  json_external_sites:
+    display: 'External Sites'
+    sections:
+      -
+        fields:
+          -
+            handle: json_external_sites
+            field:
+              display: 'External Sites'
+              type: grid
+              instructions: 'Facebook, Twitter, YouTube etc...'
+              fullscreen: false
+              fields:
+                -
+                  handle: json_external_site_name
+                  field: common.text
+                  config:
+                    display: 'Site Name'
+                    instructions: 'E.g Facebook'
+                    width: 33
+                -
+                  handle: json_external_site_url
+                  field: common.text
+                  config:
+                    display: 'Site URL'
+                    instructions: 'E.g. https://facebook.com/company-name'
+                    width: 33
+                -
+                  handle: json_external_site_icon
+                  field:
+                    type: icon
+                    display: 'Icon Field'
+                    width: 33
+                    directory: public/assets/icons/social

@@ -1,0 +1,14 @@
+
+
+{{ if swatch | contains('text-skin') }} 
+<div class="flex items-center space-x-2">
+	<span class="border rounded-full h-8 w-8 {{swatch | replace('text', 'bg')}}"></span>
+	<span class="{{swatch }}">{{swatch }}</span>
+</div>
+{{ else }}
+
+<div class="flex items-center space-x-2">
+	<span class="border rounded-full h-8 w-8 {{swatch}}"></span>
+	<span class="">{{swatch }}</span>
+</div>
+{{ /if }}

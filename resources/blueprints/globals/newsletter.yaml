@@ -1,0 +1,8 @@
+sections:
+  main:
+    display: Main
+    fields:
+      - handle: newsletter_text
+        field: common.textarea
+        config:
+          default: "Don't worry, no spam here! Your information will only be used for Widgets ABC related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime."

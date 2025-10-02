@@ -1,0 +1,34 @@
+<div class="{{ hero_wrap ?? 'bg-white' }}">
+  <div class="{{ hero_inner_wrap ?? 'max-w-8xl mx-auto bg-black lg:flex lg:items-center' }}">
+	<div class="{{ hero_text_wrap ?? 'px-4 flex flex-col gap-y-6 lg:p-14 lg:basis-1/2' }}">
+		
+
+
+		<h1 class="{{ h1_css ? '{h1_css}' :'text-neutral-100 lg:text-6xl font-semibold'}}">
+			{{ partial_hero_title ? {partial_hero_title} : '{hero_title}' }}
+		</h1>
+		<p class="{{ intro_css ? '{intro_css}' :'text-neutral-300 lg:text-lg'}}">
+			{{ partial_hero_textarea ? {partial_hero_textarea} : '{hero_bard_basic}' }}
+		</p>
+
+		<div class="flex gap-x-4">
+			{{ partial:partials/button/button 
+				link_type="entry"  
+				is_anchor="true"
+				button_label="{{ button_label_1 ? {button_label_1} : '{button_label}' }}"
+				show_icon="true"
+				:button_theme="button_theme_1"
+			}}
+			{{ partial:partials/button/button 
+				link_type="entry"  
+				button_label="{{ button_label_2 ? {button_label_2} : 'Get in Touch' }}"
+				show_icon="true"
+				:button_theme="button_theme_2"
+			}}
+		</div>
+	</div>
+	<div class="{{ hero_media_wrap ?? 'lg:basis-1/2' }}">   
+		{{ partial:partials/glide/glide }} 
+	</div>
+  </div>
+</div>

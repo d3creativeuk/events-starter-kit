@@ -1,0 +1,122 @@
+
+<div class="bg-neutral-100">
+    <div class="max-w-5xl mx-auto px-4 lg:px-14 lg:pt-14">
+		{{ partial:partials/common/_title
+			{{# DATA ----------------- #}}
+			title="Blog listings"
+            tag="h2"
+			{{# OPTIONS -------------- #}}
+			title_css="text-center text-2xl uppercase font-semibold py-6"
+			
+		}}
+    </div>
+    {{ collection:blog limit="3" as="posts" url:not="{ url }"}}
+        <div class="space-y-6 mx-6 lg:max-w-3xl lg:mx-auto lg:pb-14">
+            {{ posts }}
+            {{ partial:partials/card/_card
+                handle_prefix=""{{# Optional #}}
+
+                card_img_right="true"
+                show_card_head="true"
+                show_card_body="true"
+                show_card_title="true"
+                show_card_desc="true"
+                show_card_footer="false"
+                
+                css_card_outer="flex"
+                css_card_head="flex-none w-[100px] md:w-[200px]"
+                css_card_body="px-6 py-6 grow self-center"
+                css_card_body_inner="md:space-y-0.5"
+                css_card_footer="pt-6"
+
+                {{# ••••••••••••••••••••••• #}}
+                {{# TITLE  #}}
+                {{# ••••••••••••••••••••••• #}}
+
+                {{# DATA ----------------- #}}
+                :title="title"
+                {{# OPTIONS -------------- #}}
+                tag="h3"
+                is_link="true"  {{# true #}}
+                    link_type="url"
+                    title_notab="" {{# true #}}
+                {{# ICON ----------------- #}}
+                title_show_icon="true"
+                    {{# NOTE icon won't show unless 'is_link' is true #}}
+                    title_flex="true" {{# true=flex false=inline-flex #}}
+                    justify-between="true"
+                    title_icon_baseline="items-start" {{# items-center #}}
+                    title_icon_flip="" {{# left right #}}
+                    title_icon_path="caret" {{# arrow_thin, caret etc #}}
+                    title_icon_turn="-90" {{# 90 180 45 -90 -45 #}}
+                    title_icon_css="w-4 h-4"
+                    icon_span_css="pt-1"
+                {{# CSS ----------------- #}}
+                title_css="font-semibold text-sm md:text-lg block"
+                {{# NOTE use justify-between in link_css with title_flex set to true, to push icon left or right #}}
+                link_css=""
+
+                {{# ••••••••••••••••••••••• #}}
+                {{# INTRO  #}}
+                {{# ••••••••••••••••••••••• #}}
+
+                {{# DATA ----------------- #}}
+                :intro="blog_bard_intro"
+                {{# OPTIONS -------------- #}}
+                intro_truncate="true"
+                intro_truncate_chars="100"
+                {{# CSS ----------------- #}}
+                intro_css="hidden md:block text-sm"
+                
+                {{# ••••••••••••••••••••••• #}}
+                {{# BUTTON  #}}
+                {{# ••••••••••••••••••••••• #}}
+                
+                {{# DATA ----------------- #}}
+                button_text="Read More"
+
+                {{# OPTIONS -------------- #}}
+                button_type="" {{# submit #}}
+                button_notab="true"
+
+                {{# ICON ----------------- #}}
+                button_show_icon="true"
+                    button_icon_flip="" {{# default right #}}
+                    button_icon_path="" {{# arrow_thin, caret etc #}}
+                    button_icon_turn="" {{# 90 180 45 -90 -45 #}}
+                    button_icon_css=""
+
+                {{# CSS ----------------- #}}
+                button_size=""
+                :button_theme="button_theme"
+
+                {{# ••••••••••••••••••••••• #}}
+                {{# IMAGE  #}}
+                {{# ••••••••••••••••••••••• #}}
+
+                {{# DATA ----------------- #}}
+                :assets_tag="thumbnail"
+                {{# OPTIONS -------------- #}}
+                art_direction="true" {{# comment out img_ratio if this is set to true #}}
+                art_direction_type="list-posts" {{# use this it insert a new partial, the value must match the filename located at partials/glide/partials/picture/#}}
+                {{# img_ratio="wide"    wide, classic, square,leave blank or orginal #}}
+                {{# placeholder_img="1"   #}}
+                {{# sizes="(min-width: 640px) 250px, (min-width: 320px) 95vw, 95vw" #}}
+                link_img="true"  {{# true #}}
+                img_notab="true" {{# true #}}
+                lazy_load=""
+                {{# CSS ----------------- #}}
+                figure_css=""
+                picture_css=""
+
+                img_css="w-full object-cover h-full"
+
+
+            }}
+            {{ /posts }}
+        </div>
+    {{ /collection:blog }}
+</div>
+
+
+

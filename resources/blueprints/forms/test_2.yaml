@@ -1,0 +1,70 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: name_field
+            field:
+              input_type: text
+              antlers: false
+              type: text
+              display: Name
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+          -
+            handle: email_form
+            field:
+              input_type: email
+              antlers: false
+              type: text
+              display: Email
+              icon: text
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+              if:
+                shape_options: 'equals circle'
+          -
+            handle: options_checkbox
+            field:
+              options:
+                option_a: 'Option A'
+                option_b: 'Option B'
+                option_c: 'Option C'
+              inline: false
+              type: checkboxes
+              display: Options
+              icon: checkboxes
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required
+          -
+            handle: privacy_policy
+            field:
+              options:
+                accept: 'I have read the privacy policy'
+              inline: false
+              type: checkboxes
+              display: 'Privacy Policy'
+              icon: checkboxes
+              listable: hidden
+              instructions_position: above
+              visibility: visible
+              replicator_preview: true
+              hide_display: false
+              validate:
+                - required

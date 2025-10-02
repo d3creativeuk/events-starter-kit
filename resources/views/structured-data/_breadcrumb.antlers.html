@@ -1,0 +1,12 @@
+<script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",           
+        "itemListElement": [{{ nav:breadcrumbs }}{
+        "@type": "ListItem",
+        "position": {{ index | add:1 }},
+        "name": "{{ title }}",
+        "item": "{{ permalink }}"
+    }{{ unless last }},{{ /unless }}{{ /nav:breadcrumbs }}]            
+    }
+</script>

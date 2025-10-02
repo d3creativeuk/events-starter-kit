@@ -1,0 +1,28 @@
+---
+mobile_classes:
+  1: 'bg-invert'
+  2: 'bg-invert'
+  3: 'bg-invert'
+mobile_icon: 'flex items-center justify-between '
+mobile_btn_style: 'px-4 py-2 w-full text-left block'
+mobile_btn_back: ' bg-primary text-invert'
+---
+<div class="absolute z-10 inset-0 bg-invert text-invert top-[72px]" :class="openm ? 'block' : 'hidden'">
+	<nav aria-label="Mast mobile" >
+		<ul x-cloak class="py-2">
+		  {{ nav select="title|url|id" handle="{{ nav_group ?? {nav_structure | ensure_left('collection::')} }}" }} 
+			  <li {{ if children }} @click.stop="level['{{ id }}'] = true"{{ /if }}>                             
+				<{{ children ? 'button' : 'a href="{{ url }}"' }} class="{{ view:mobile_btn_style }}"><span class="{{ view:mobile_icon }}">{{ title }}{{ children ?= '{{ partial:partials/icon/_icon button_icon_flip="true" }}' }}</span><{{ children ? '/button' : '/a' }}>
+				{{ if children }}
+					<ul x-cloak :class="level['{{ id }}'] ? 'block absolute inset-0 py-2 {{ depth == 1 ? 'z-{depth}0': ' z-{depth}0' }}' : 'hidden'" class="{{ view:mobile_classes[depth] }}">   
+						<li><button @click.stop="level['{{ id }}'] = false" class="px-4 py-2 text-left block"><span class="{{ view:mobile_btn_back }} text-sm px-3 py-2 rounded-xs">Back</span></button></li>                                 
+						{{ *recursive children* }}
+					</ul>
+				{{ /if }}
+			</li>       
+		  {{ /nav }}
+		</ul>
+	  </nav>	
+</div>
+
+

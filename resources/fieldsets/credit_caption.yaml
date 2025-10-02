@@ -1,0 +1,18 @@
+title: 'Credit & Caption'
+fields:
+  -
+    handle: asset_credit_toggle
+    field:
+      display: 'Show Credit?'
+      type: toggle
+      instructions: 'Credit and/or link to the source.'
+      width: 50
+      duplicate: false
+  -
+    handle: asset_caption_toggle
+    field:
+      display: 'Show Caption?'
+      type: toggle
+      instructions: 'Click image to add a caption'
+      width: 50
+      duplicate: false

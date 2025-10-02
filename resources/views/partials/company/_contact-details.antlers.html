@@ -1,0 +1,28 @@
+<ul class="mt-4 space-y-2" >
+    
+    {{company:json_company_name ?= '{company:json_company_name | wrap('li')}'}}
+    
+    {{company:json_building_name ?= '{company:json_building_name | wrap('li')}' }}
+    {{company:json_street_address ?= '{company:json_street_address | wrap('li')}' }}
+    {{company:json_address_locality ?= '{company:json_address_locality | wrap('li')}' }}
+    {{company:json_address_region ?= '{company:json_address_region | wrap('li')}' }}
+    {{company:json_postal_code ?= '{company:json_postal_code | wrap('li')}' }}
+    {{company:json_address_country ?= '{company:json_address_country | wrap('li')}' }}
+    
+
+    {{ if company:json_inter_phone}}
+    <li class="flex items-center space-x-2"><a class="hover:no-underline" href="tel:{{ company:json_country_code }}{{ company:json_area_code | regex_replace('0', '') }}{{ company:json_phone_number | regex_replace(' ', '')  }}"><span>{{ company:json_country_code }} {{ company:json_area_code | ensure_left('(')  | ensure_right(') ')}} {{ company:json_phone_number | regex_replace(' ', '-')}}</span></a></li>
+    {{ else }}
+    <li class="flex items-center space-x-2"><a class="hover:no-underline" href="tel:{{ company:json_area_code  }}{{ company:json_phone_number | regex_replace(' ', '')  }}"><span>{{ company:json_area_code }} {{ company:json_phone_number | regex_replace(' ', '-')}}</span></a></li>
+    {{ /if }}
+
+
+    {{company:json_email ?= '<li><a class="hover:underline" href="mailto:{ company:json_email | obfuscate}">{company:json_email | obfuscate}</a></li>' }}
+
+
+   
+    
+    {{company:json_google_map ?= '<li><a class="hover:underline" href="{ company:json_google_map}">{company:json_maps_title}</a></li>' }}
+   
+</ul>
+

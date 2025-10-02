@@ -1,0 +1,6 @@
+<div class="flex items-center flex-col gap-2">
+	<div class="{{ icon_css }} {{bg_css}} flex items-center justify-center h-14 w-14">
+		{{ partial:icon/icon icon_path="magnify" icon_css="{{ icon_css ? {icon_css} : 'fill-secondary' }} w-6 h-6"}}
+	</div>
+	<span class="text-xs">{{ icon_css ? '{icon_css}' : 'fill-secondary' }}</span>
+</div>

@@ -1,0 +1,61 @@
+{{# https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html #}}
+
+{{ _breadcrumb_home = 'Getting Started' }}
+
+{{ _taxonomy_term =  {taxonomy from="guides" :slug:is="segment_3" } | pluck('title') | first /}}
+
+
+{{ _docs_show_term = '' }}
+{{ _docs_show_term_url = '' }}
+
+{{ collection:docs :slug:is="segment_2"}}{{ _docs_show_term = guides:title }} {{ _docs_show_term_url = guides:url }}{{ /collection:docs }}
+
+
+<nav class="flex max-w-8xl mx-auto 3xl:px-0" aria-label="Breadcrumb">
+{{ if  current_template == 'docs/index'}}
+  <ol role="list" class="flex items-center ">
+    <li class="text-sm font-medium ">
+      <div class="flex items-center">            
+        <span class="text-sm font-medium text-neutral-500">{{ _breadcrumb_home }}</span>
+      </div>
+    </li>
+  </ol>
+
+  {{ elseif current_template == 'docs/guides/show' }}
+    <ol role="list" class="flex items-center ">
+      <li class="text-sm font-medium ">
+        <div class="flex items-center">
+          <a href="/{{ segment_1 }}" class="text-sm font-medium hover:underline">{{ _breadcrumb_home }}</a>
+        </div>
+      </li>
+      
+        <li>
+          <div class="flex items-center">
+            <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+            <span class="text-sm font-medium text-neutral-500" > {{ taxonomy:guides :slug:is="segment_3"}}{{ title }}{{ /taxonomy:guides }}{{ guides }}</span>
+          </div>
+        </li>
+    </ol>
+
+    {{ elseif current_template == 'docs/show' }}
+    <ol role="list" class="flex items-center ">
+      <li class="text-sm font-medium ">
+        <div class="flex items-center">
+          <a href="/{{ segment_1 }}" class="text-sm font-medium  hover:underline">{{ _breadcrumb_home }}</a>
+        </div>
+      </li>
+      <li>
+          <div class="flex items-center">
+            <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+            <a href="{{ _docs_show_term_url }}" class="text-sm font-medium  hover:underline" >{{ _docs_show_term }}</a>
+          </div>
+        </li>
+        <li>
+          <div class="flex items-center">
+            <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+            <span class="text-sm font-medium text-neutral-500" > {{ title }}</span>
+          </div>
+        </li>
+    </ol>
+    {{ /if }}
+</nav>

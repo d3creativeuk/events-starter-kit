@@ -1,0 +1,22 @@
+title: 'Image Format'
+fields:
+  -
+    handle: image_format_picker
+    field:
+      options:
+        -
+          key: no_crop
+          value: Original
+        -
+          key: wide
+          value: Wide
+        -
+          key: classic
+          value: Classic
+        -
+          key: square
+          value: Square
+      display: 'Image Format'
+      type: button_group
+      default: classic
+      always_save: true

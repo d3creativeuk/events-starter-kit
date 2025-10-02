@@ -1,0 +1,14 @@
+ {{# (link_type == '404') => 'href="{{ 404:entry:url }}"', #}}
+{{ switch(
+    (link_type == '404') => 'href="{{ 404:button_link }}"',
+    (link_type == 'entry') => 'href="{{ entry:url }}"',
+    (link_type == 'submit') => 'type="submit"',
+    (link_type == 'url') => 'href="{{ url }}"',
+    (link_type == 'email') => 'href="mailto:{{ button_label obfuscate_email="true" remove_left="0" ensure_left="+44" rawurlencode="true" }}"',
+    (link_type == 'tel') => 'href="tel:{{ button_label rawurlencode="true" }}"',
+    (link_type == 'asset') => 'href="{{ url }}"',
+    () => ' type="button"'
+)}}
+{{ target_blank ?= 'rel="noopener" target="_blank"' }}
+{{ attr_title ?= 'title="{{ attr_title }}"' }}
+{{ attr_aria ?= 'aria-label="{{ attr_aria }}"' }}

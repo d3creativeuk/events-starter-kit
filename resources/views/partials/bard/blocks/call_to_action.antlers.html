@@ -1,0 +1,9 @@
+{{ if type == "call_to_action" }}
+    <div class="not-prose  border-l border-l-black p-6 mt-8">
+        {{ call_to_action_entries}}
+            <h2 class="font-semibold lg:text-xl">{{ title }}</h2>
+            <p>{{ cta_body }}</p>
+            <a class="block mt-4" href="{{ cta_link_field }}">{{ cta_link_text }}</a>
+        {{ /call_to_action_entries}}
+    </div>	
+{{ /if }}

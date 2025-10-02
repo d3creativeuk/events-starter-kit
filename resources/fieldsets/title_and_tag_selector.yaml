@@ -1,0 +1,26 @@
+title: 'Title and Tag Selector'
+fields:
+  -
+    handle: title
+    field: common.text
+    config:
+      display: Title
+      width: 66
+  -
+    handle: h_tag
+    field:
+      options:
+        h1: H1
+        h2: H2
+        h3: H3
+      inline: true
+      cast_booleans: false
+      default: h1
+      display: 'Title tag'
+      type: radio
+      icon: radio
+      listable: hidden
+      instructions_position: above
+      width: 33
+      if:
+        title: 'not null'

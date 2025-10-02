@@ -1,0 +1,94 @@
+title: 'Form - Kitchen Sink'
+fields:
+  -
+    handle: select_field_text
+    field:
+      options:
+        -
+          key: plan
+          value: Plan
+        -
+          key: ux_design
+          value: 'UX Design'
+        -
+          key: web_dev
+          value: 'Web Development'
+        -
+          key: maintain
+          value: Maintenance
+      max_items: 1
+      type: select
+      display: 'Select Field'
+      validate:
+        - required
+  -
+    handle: first_name
+    field: form_elements.first_name
+    config:
+      display: 'First Name'
+  -
+    handle: last_name
+    field: form_elements.last_name
+  -
+    handle: business_email
+    field: form_elements.business_email
+    config:
+      display: Email
+      validate:
+        - required
+  -
+    handle: default_message
+    field: form_elements.default_message
+    config:
+      validate:
+        - required
+  -
+    handle: subscribe_newsletter
+    field:
+      options:
+        -
+          key: mailing-list-signup
+          value: 'Add me to the Widgets ABC mailing list'
+      display: Newsletter
+      type: checkboxes
+      always_save: false
+      validate:
+        - array
+  -
+    handle: terms_checkbox
+    field: form_elements.terms_checkbox
+  -
+    handle: checkboxes_test
+    field:
+      options:
+        -
+          key: one
+          value: One
+        -
+          key: two
+          value: Two
+        -
+          key: three
+          value: Three
+      type: checkboxes
+      display: 'Multiple Checkboxes'
+      inline: true
+  -
+    handle: radio_field_test
+    field:
+      options:
+        -
+          key: red
+          value: Red
+        -
+          key: yellow
+          value: Yellow
+        -
+          key: blue
+          value: Blue
+      type: radio
+      display: 'Radio Field'
+      inline: true
+  -
+    handle: form_consent
+    field: form_elements.form_consent

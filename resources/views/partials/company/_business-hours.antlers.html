@@ -1,0 +1,21 @@
+{{ value }}
+<table class="border w-full table-auto">
+    <caption class="sr-only">{{ company:company_name }} Business Hours</caption>
+  <thead class="sr-only">
+        <tr>
+            <th>Day</th>
+            <th>Opening time</th>
+            <th>Closing time</th>
+        </tr>
+  </thead>
+        
+    <tbody>
+        {{ company:business_hours }}       
+            <tr class="border-b">
+                <td class="border-r  p-2 lg:w-[180px]">{{ day }}</td>
+                <td class="p-2">{{ opening_time }} - {{ closing_time }}</td>
+              
+            </tr> 
+        {{ /company:business_hours }}        
+    </tbody>
+</table>

@@ -1,0 +1,48 @@
+{{# 
+x-data="{ open: false }"
+@click="open = ! open"
+@click.outside="open = false;"
+@click.outside="open = ! open, open1 = ! open1"
+x-show="open"
+#}}
+
+{{# <div x-data="{ open: true, open1: true }">
+<button @click.outside="open = ! open, open1 = ! open1">button</button>
+<div x-show="open">hello</div>
+<div x-show="open1">hello</div>
+</div> #}}
+
+{{# https://alpinejs.dev/directives/bind#class-object-syntax #}}
+{{# https://discord.com/channels/697534128706551828/697534289419436142/968127296596738049 #}}
+
+<div>
+    {{ nav select="title|url" handle="{handle}" }}
+      <div class="bg-neutral-100" x-cloak >
+          {{if !children }}
+            <a class="hover:text-neutral-900" href="{{ url }}">{{ depth }}: {{ title }}</a>
+          {{else}}
+            <div x-data="{ open: false }" @click.outside="open = false">
+              <button  @click="open = ! open"  >{{ depth }}: {{ title }} &darr;</button>
+              <div :class="{ 'hidden': ! open }"  class="hidden ml-4 bg-neutral-200"> 
+                {{ if children }}              
+                    {{ children }}
+                      {{if !children }}
+                        <div><a href="{{ url }}">{{ depth }}: {{ title }}</a></div>
+                      {{else}}
+                        <div x-data="{ open1: false}" @click.outside="open1 = false">
+                          <button @click="open1 = ! open1">{{ depth }}: {{ title }} &darr;</button>
+                          <div :class="{ 'hidden': ! open1 }" class="hidden ml-4 bg-neutral-300"   >
+                          {{ children }}                       
+                              <div class=""><a  href="{{ url }}">{{ depth }}: {{ title }}</a></div>
+                          {{ /children }}
+                          </div>
+                      </div>
+                      {{/if}}                      
+                    {{ /children }} 
+                {{ /if }}{{# if children #}}
+              </div>{{# x-show="open" #}}
+            </div>
+          {{/if}}
+      </div>{{# x-cloak #}}
+    {{ /nav }}
+    </div>

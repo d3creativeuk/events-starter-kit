@@ -1,0 +1,20 @@
+
+{{# Checkboxes only work when this is hidden? #}}
+{{# <input type="hidden" name="{{ handle }}[]"> #}}
+{{# Is it something to do with value|in_array:option  #}}
+{{ foreach:options as="option|label" }}
+<label class="{{ view:checkbox_label }} {{ error ?= '{ view:checkbox_label_error_hover }' }}">
+        <input
+            class="{{ view:checkbox_input }}"
+            id="{{ handle }}_{{index}}"
+            type="checkbox"
+            name="{{ handle }}[]"
+            value="{{ option }}"
+            
+            {{ if value|in_array:option }}checked{{ /if }}
+             x-model="form.{{ handle }}"  
+            @change="form.validate('{{ handle }}')"
+        >
+        {{ label !== null ? label : option }}
+    </label>
+{{ /foreach:options }}

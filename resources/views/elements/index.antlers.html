@@ -1,0 +1,67 @@
+
+{{ section:seo_canonical }}
+	<link rel="canonical" href="{{ current_full_url }}">
+{{ /section:seo_canonical }}
+
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+{{ section:aside_one }} 
+    {{# partial:docs/partials/terms #}}
+{{ /section:aside_one }} 
+
+
+
+<div class="bg-white p-4 lg:p-10 xl:p-24">  
+
+    <div class="space-y-6 mb-10">
+        <h1 class="text-6xl font-semibold">{{ title }}</h1>
+        <p>{{ intro }}</p>       
+    </div>
+
+
+	<ul class="mt-14">
+		{{ nav handle="collection::elements" }}
+		   <li>
+			  <a href="{{ url }}">1 {{ title }}</a>			
+				 {{ if children }}
+					<ul class="{{ depth == 1 ?= 'pl-4' }}">{{ *recursive children* }}</ul>
+				 {{ /if }}			 
+		   </li>
+		{{ /nav }}
+	 </ul>
+
+
+
+	{{# <ul class="mt-14">
+		{{ nav handle="collection::elements" }}
+		   <li>
+			  <a href="{{ url }}">{{ title }}</a>
+			  {{ if is_current || is_parent }}
+				 {{ if children }}
+					<ul>{{ *recursive children* }}</ul>
+				 {{ /if }}
+			  {{ /if }}
+		   </li>
+		{{ /nav }}
+	 </ul> #}}
+{{# 
+	{{ collection:elements as="entries"}}
+		<ul class="mb-6 space-y-2 mt-14">
+			{{ entries }}
+			<li>
+				<a class="block" href="{{ url }}">{{ title }}</a>
+			</li>
+			{{ /entries }}
+	  	</ul>
+	{{ /collection:elements }} #}}
+
+
+</div>
+
+
+
+{{ section:aside_two }} 
+
+{{ /section:aside_two }} 

@@ -1,0 +1,27 @@
+@theme inline {
+    /* MAPPED COLORS */
+
+    
+    /* --color-primary: var(--color-primary-600);
+    --color-secondary: var(--color-secondary-500);
+    --color-darkblue: var(--color-darkblue-default); */
+
+
+    --color-brand-logo: var(--brand-logo);
+    --color-brand-logo-alt: var(--brand-logo-alt);
+    --color-svg: var(--svg);
+    --color-svg-1: var(--svg-1);
+    --color-svg-2: var(--svg-2);
+    --color-svg-3: var(--svg-3);
+
+    /* https://tailwindcss.com/docs/theme#theme-variable-namespaces */
+    /* https://ui.shadcn.com/themes */
+    /* https://res.cloudinary.com/indysigner/image/fetch/f_auto,q_80/w_2000/https://files.smashing.media/articles/naming-best-practices/naming-playbook-opt.png */
+    
+
+
+}
+
+ 
+
+  

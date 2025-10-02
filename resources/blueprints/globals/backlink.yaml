@@ -1,0 +1,25 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: backlink_toggle
+            field:
+              default: true
+              type: toggle
+              display: 'Backlink Toggle'
+          -
+            handle: backlink_text
+            field:
+              buttons:
+                - bold
+                - italic
+                - anchor
+              inline: true
+              fullscreen: false
+              allow_source: false
+              remove_empty_nodes: false
+              type: bard
+              display: Backlink

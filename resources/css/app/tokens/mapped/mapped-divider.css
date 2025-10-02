@@ -1,0 +1,4 @@
+[data-theme="section_1"] {   
+--surface-divider: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--surface-divider-svg: light-dark(var(--color-white), var(--color-black));
+}

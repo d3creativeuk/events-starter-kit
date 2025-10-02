@@ -1,0 +1,32 @@
+<ul class="w-full inline">
+     
+    {{ if show_date }}
+  <li class="inline-block">
+        {{ date format="jS F, Y"}} {{# {{ if last_modified }}Updated: {{ last_modified format="jS F, Y"}}{{ /if }} #}}
+    </li>
+    {{ /if }}
+
+    {{ if show_user }}
+        {{ if authors }}
+        <li class="inline-block">
+                {{# First name only #}}
+                {{# name | explode(' ') | first #}}
+                By {{ authors }} <a class="" href="/authors/{{ slug }}">{{ name }}</a>{{ if !last }}, {{ /if }} {{ /authors }}
+            </li>
+            
+        {{ /if }} 	
+    {{ /if }}    
+    
+    {{ if show_taxonomy }}
+    
+        {{ if categories}}
+        <li class="inline-block">
+          
+                {{ categories }}<a class="" href="{{ url }}">{{ title  }}</a>{{ if !last }}, {{ /if }}{{ /categories }}
+            </li>
+        {{ /if }}
+     
+    {{ /if }} 
+
+   
+</ul>

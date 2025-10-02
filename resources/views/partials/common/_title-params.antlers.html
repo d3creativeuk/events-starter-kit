@@ -1,0 +1,48 @@
+{{ partial:partials/common/_title
+    {{# DATA ----------------- #}}
+    :title="title"
+    {{# OPTIONS -------------- #}}
+    :handle_prefix="handle_prefix"
+    :tag="title_tag"
+    :is_link="is_link"  {{# true #}}
+        :link_type="link_type"
+        :title_notab="title_notab" {{# true #}}
+    {{# ICON ----------------- #}}
+    :title_show_icon="title_show_icon"
+        {{# NOTE icon won't show unless 'is_link' is true #}}
+        :title_flex="title_flex" {{# true=flex false=inline-flex #}}
+        :title_icon_baseline="title_icon_baseline" {{# items-center #}}
+        :icon_flip="title_icon_flip" {{# left right #}}
+        :icon_path="title_icon_path" {{# arrow_thin, caret etc #}}
+        :icon_turn="title_icon_turn" {{# 90 180 45 -90 -45 #}}
+        :icon_css="icon_css"
+    {{# CSS ----------------- #}}
+    :title_css="title_css"
+    :link_css="link_css"
+
+}}
+
+{{ partial:partials/common/_title
+    {{# DATA ----------------- #}}
+    title=""
+    {{# OPTIONS -------------- #}}
+    handle_prefix=""
+    tag=""
+    is_link=""  {{# true #}}
+        link_type=""
+        title_notab="" {{# true #}}
+    {{# ICON ----------------- #}}
+    title_show_icon=""
+        {{# NOTE icon won't show unless 'is_link' is true #}}
+        title_flex="" {{# true=flex false=inline-flex #}}
+        title_icon_baseline="" {{# items-center #}}
+        title_icon_flip="" {{# left right #}}
+        title_icon_path="" {{# arrow_thin, caret etc #}}
+        title_icon_turn="" {{# 90 180 45 -90 -45 #}}
+        title_icon_css=""
+    {{# CSS ----------------- #}}
+    title_css=""
+    {{# NOTE use justify-between in link_css with title_flex set to true, to push icon left or right #}}
+    link_css=""
+}}
+

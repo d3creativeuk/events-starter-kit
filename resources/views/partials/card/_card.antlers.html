@@ -1,0 +1,24 @@
+<div class="{{ css_card_outer }} {{ card_border ?= "border border-base'" }} {{ card_img_right ? 'flex-row-reverse' : 'flex-row' }} {{ root_theme }} bg-white">  
+	{{ if show_card_head }}
+		<div class="{{ css_card_head }}">  
+			{{ partial:partials/glide/_glide }}
+		</div>
+	{{ /if }}
+	{{ if show_card_body }}
+		<div class="{{ css_card_body }} bg-invert">
+			<div class="{{css_card_body_inner}} ">
+				{{ if show_card_title }}
+					{{ partial:partials/common/_title }}
+				{{ /if }}
+				{{ if show_card_desc }}
+					{{ partial:partials/common/_intro }}
+				{{ /if }}
+			</div>		
+		{{ if show_card_footer }}
+			<div class="{{ css_card_footer }} bg-white">
+				{{ partial:partials/button/button }}
+			</div>
+		{{ /if }}
+		</div>
+	{{ /if }}
+</div>

@@ -1,0 +1,90 @@
+{{ if type == "audio" }}  
+<div class="border border-neutral p-4 my-10" x-data="{ 
+    audioSrc: '{{ audio_assets[0]audio_asset }}', 
+    playingSrc: '',
+    playAudio(src) { 
+        if (this.playingSrc === src) {
+            // Pause if the same audio is playing
+            this.$refs.audioPlayer.pause();
+            this.playingSrc = '';
+        } else {
+            // Pause all other audio players on the page
+            document.querySelectorAll('audio').forEach(player => {
+                if (player !== this.$refs.audioPlayer) {
+                    player.pause();
+                }
+            });
+            // Set new source and play
+            this.audioSrc = src; 
+            this.playingSrc = src;
+            this.$refs.audioPlayer.load(); 
+            setTimeout(() => { 
+                this.$refs.audioPlayer.play();
+            }, 200); 
+        }
+    },
+    pauseOtherAudios() {
+        // Pause all other audio players on the page
+        document.querySelectorAll('audio').forEach(player => {
+            if (player !== this.$refs.audioPlayer) {
+                player.pause();
+            }
+        });
+    },
+    onPause() {
+        this.playingSrc = '';
+    }
+}">
+	<div class="not-prose mb-8 flex flex-col gap-y-2">
+		
+        {{ audio_assets }}	
+        {{ if audio_asset }}	
+			<div class="border border-neutral rounded-sm">
+			    <button type="button" class="py-2 px-4 bg-neutral-100 w-full text-left m-0 inline-flex justify-between items-center hover:bg-neutral-200" @click="playAudio('{{ audio_asset }}')" :class="{ 'bg-neutral-800 text-white hover:bg-neutral-800': playingSrc === '{{ audio_asset }}' }">
+                    <div class="inline-flex items-center gap-2">
+                        <div class="w-6 h-6">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <!-- Circle Background -->
+                                <circle cx="12" cy="12" r="10" fill="currentColor" opacity="0.1"/>
+                                
+                                <!-- Play Icon - show when this specific audio is not playing -->
+                                <path 
+                                  x-show="playingSrc !== '{{ audio_asset }}'"
+                                  d="M9.5 7.5v9l7-4.5z"
+                                  fill="currentColor"
+                                />
+                                
+                                <!-- Pause Icon - show only when this specific audio is playing -->
+                                <g x-show="playingSrc === '{{ audio_asset }}'">
+                                  <rect x="8.5" y="7.5" width="2.5" height="9" fill="currentColor"/>
+                                  <rect x="13" y="7.5" width="2.5" height="9" fill="currentColor"/>
+                                </g>
+                              </svg>
+                        </div>
+                        <span class="font-semibold">{{ if !audio_asset.updated_filename }}{{ audio_asset.filename replace="-| " title="true" }}{{ else }}{{ audio_asset.updated_filename }}{{ /if }}</span>
+                    </div>
+                    <span>{{ audio_asset.duration | format('i:s') }}</span>
+                </button>
+                {{ if audio_description }}<div class="py-2 px-4 text-sm">{{ audio_description }}</div>{{ /if }} 
+                {{ if transcription_pdf }}<div class="py-2 px-4">{{ partial:partials/button/button-text
+                    is_anchor="true"
+                    show_icon="true"
+                    icon_path="file_thin"
+                    icon_flip="true"
+                    button_label="Transcript"
+                    text_size="sm"
+                    link_type="asset"
+                    :url="transcription_pdf"
+                    :button_theme=""
+                    button_css="mb-2"
+                }}</div>{{ /if }} 
+
+			</div>{{ /if }} 
+		{{ /audio_assets }}
+	</div>
+	<audio class="w-full" x-ref="audioPlayer" :src="audioSrc" controls preload="none" @play="pauseOtherAudios(); playingSrc = audioSrc" @pause="onPause()">
+	  Your browser does not support the audio element.
+	</audio>
+</div>   
+{{/if}}
+

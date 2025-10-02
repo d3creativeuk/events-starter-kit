@@ -1,0 +1,57 @@
+title: Blockquote
+fields:
+  -
+    handle: bq_quote
+    field: common.textarea
+    config:
+      display: Quote
+      width: 100
+  -
+    handle: citation_type
+    field:
+      options:
+        -
+          key: no_cite
+          value: None
+        -
+          key: structured_citation
+          value: Structured
+        -
+          key: freeform_citation
+          value: Freeform
+      default: no_cite
+      type: button_group
+      display: 'Citation Type'
+  -
+    handle: structured_citation
+    field:
+      mode: keyed
+      keys:
+        -
+          key: bq_name
+          value: Name
+        -
+          key: bq_position
+          value: Position
+        -
+          key: bq_company
+          value: Company
+      display: 'Structured Citation'
+      type: array
+      always_save: true
+      if:
+        citation_type: 'equals structured_citation'
+  -
+    handle: freeform_citation
+    field:
+      buttons:
+        - anchor
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      type: bard
+      display: 'Freeform Citation'
+      always_save: true
+      if:
+        citation_type: 'equals freeform_citation'
+      inline: true

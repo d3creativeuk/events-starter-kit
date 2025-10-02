@@ -1,0 +1,39 @@
+<div class="{{ intro_title_wrap_css }}">
+    
+    {{ partial:partials/common/_title
+        {{# DATA ----------------- #}}
+        :title="title"
+        {{# OPTIONS -------------- #}}
+        :handle_prefix="handle_prefix"
+        :tag="title_tag"
+        :is_link="is_link"  {{# true #}}
+            :link_type="link_type"
+            :title_notab="title_notab" {{# true #}}
+        {{# ICON ----------------- #}}
+        :title_show_icon="title_show_icon"
+            :icon_flip="title_icon_flip" {{# left right #}}
+            :icon_path="title_icon_path" {{# arrow_thin, caret etc #}}
+            :icon_turn="title_icon_turn" {{# 90 180 45 -90 -45 #}}
+            :icon_css="icon_css"
+        {{# CSS ----------------- #}}
+        :title_css="title_css"
+    }}
+    
+    {{ if show_meta }}
+        {{ partial:author/partials/_meta }}
+    {{ /if }}
+    
+
+    {{ partial:partials/common/_intro
+        {{# DATA ----------------- #}}
+        :intro="intro"
+        {{# OPTIONS -------------- #}}
+        :handle_prefix="handle_prefix"
+        :intro_truncate="intro_truncate"
+        :intro_truncate_chars="intro_truncate_chars"
+        {{# CSS ----------------- #}}
+        :intro_css="intro_css"
+    }}
+
+   
+</div>

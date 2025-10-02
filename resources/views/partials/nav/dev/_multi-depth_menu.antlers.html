@@ -1,0 +1,52 @@
+---
+nav_item_base: 'px-4 py-2  block w-full text-left hover:bg-contrast hover:text-base'
+nav_item_1: 'text-sm'
+nav_item_2: 'text-sm border-l border-invert'
+nav_item_3: 'text-sm border-l border-highlight'
+nav_item_4: 'text-sm bg-invert border-l border-invert'
+nav_item_has_child: 'flex items-center justify-between'
+---
+
+{{# NOTE: remove click.outside="open_2 = false" to stop menu from closing  when another item is clicked. #}}
+{{# NOTE: Add click.outside="open_2 = false" to x-data="{ open_2: false }" this will close open menu when another item is clicked. #}}
+
+   <div  class="space-y-1 {{menu_theme }}" >
+	
+	{{ nav handle="{{ nav_group ?? {nav_structure | ensure_left('collection::')} }}"  select="title|url" :from="from"}}
+	
+	{{ if depth == 2 }}
+		<div class="level-2 pl-2" x-cloak x-data="{ open_2: false }">
+			<{{ children ? 'button' : 'a' }} :class="{ 'bg-contrast text-base':open_2, 'bg-invert':!open_2 }" class="{{ view:nav_item_base }} {{ view:nav_item_2 }} {{ if is_current}} bg-white! text-invert! {{/if}} {{ children ?= '{{ view:nav_item_has_child }}' }}" {{ children ? '@click="open_2 = ! open_2"' : 'href="{{ url }}"' }}>{{ title }} {{ partial:partials/nav/partials/_menu-icon icon_path_1="chevron" alpine_xshow_1="!open_2" icon_path_2="cross" alpine_xshow_2="open_2" }}    </{{ children ? 'button' : 'a' }}>
+		{{ if children }}
+			<div class="nest-3 space-y-1 mt-1" :class="{'hidden':!open_2 }" {{ if is_current || is_parent }}x-effect="open_2 = 'true'"{{ /if }}> {{ *recursive children* }}</div>
+		{{ /if }}
+		</div>
+		{{ elseif depth == 3 }}
+		<div class="level-3 pl-2"  x-cloak x-data="{ open_3: false }" >
+		<{{ children ? 'button' : 'a' }} :class="{ 'bg-contrast text-base':open_3, 'bg-invert':!open_3 }" class="{{ view:nav_item_base }} {{ view:nav_item_3 }} {{ if is_current}} bg-white! text-base! {{/if}} {{ children ?= '{{ view:nav_item_has_child }}' }}" {{ children ? '@click="open_3 = ! open_3"' : 'href="{{ url }}"' }}>{{ title }} {{ partial:partials/nav/partials/_menu-icon icon_path_1="chevron" alpine_xshow_1="!open_3" icon_path_2="cross" alpine_xshow_2="open_3" }}  </{{ children ? 'button' : 'a' }}>
+			{{ if children }}
+				<div class="nest-4 space-y-1 mt-1" :class="{'hidden': ! open_3 }" {{ if is_current || is_parent }}x-effect="open_3 = 'true'"{{ /if }}>{{ *recursive children* }}</div>
+			{{ /if }}
+		</div>
+		{{ elseif depth == 4 }}
+		<div class="level-4 pl-2">
+			<{{ children ? 'button' : 'a' }}  class="{{ view:nav_item_base }} {{ view:nav_item_4 }} {{ if is_current}} bg-white! text-base! {{/if}} {{ children ?= '{{ view:nav_item_has_child }}' }}" {{ children ? '@click="open_4 = ! open_4"' : 'href="{{ url }}"' }}>{{ title }} {{ partial:partials/nav/partials/_menu-icon icon_path_1="chevron" alpine_xshow_1="!open_4" icon_path_2="cross" alpine_xshow_2="open_4" }}  </{{ children ? 'button' : 'a' }}>
+			{{ if children }}
+			<div class="nest-5 space-y-1 mt-1">{{ *recursive children* }}</div>
+			{{ /if }}
+		</div>		
+		{{else}}
+		<div class="level-1" x-cloak x-data="{ open_1: false }">
+			<{{ children ? 'button' : 'a' }} :class="{ 'bg-contrast text-base':open_1, 'bg-invert':!open_1 }" class="{{ view:nav_item_base }} {{ view:nav_item_1 }} {{ if is_current}} bg-white! text-invert! {{/if}} {{ children ?= '{{ view:nav_item_has_child }}' }}" {{ children ? '@click="open_1 = ! open_1"' : 'href="{{ url }}"' }}>{{ title }} {{ partial:partials/nav/partials/_menu-icon icon_path_1="chevron" alpine_xshow_1="!open_1" icon_path_2="cross" alpine_xshow_2="open_1" }}</{{ children ? 'button' : 'a' }}>
+			{{ if children }}
+			<div class="nest-2 space-y-1 mt-1" :class="{'hidden': ! open_1 }" {{ if is_current || is_parent }}x-effect="open_1 = 'true'"{{ /if }}>{{ *recursive children* }}</div>
+
+
+			{{ /if }}
+			
+		</div>
+  	{{/if}} 
+	   {{ /nav }}
+ </div>
+
+

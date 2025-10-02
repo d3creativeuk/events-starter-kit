@@ -1,0 +1,36 @@
+title: 'Bard - Extras'
+fields:
+  -
+    handle: bard_extras
+    field:
+      collapse: false
+      always_show_set_button: false
+      previews: true
+      smart_typography: false
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - anchor
+      save_html: false
+      inline: false
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: false
+      display: Textarea
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible

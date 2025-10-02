@@ -1,0 +1,46 @@
+title: Banner
+fields:
+  -
+    handle: title
+    field: common.body_bard
+    config:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      display: Title
+      inline: true
+  -
+    handle: intro
+    field: common.body_bard
+    config:
+      buttons:
+        - h2
+        - h3
+        - bold
+        - italic
+        - unorderedlist
+        - orderedlist
+        - removeformat
+        - quote
+        - anchor
+        - image
+        - table
+      display: Intro
+  -
+    import: button
+  -
+    handle: assets_field
+    field:
+      mode: list
+      container: assets
+      restrict: false
+      allow_uploads: true
+      show_filename: true
+      max_files: 1
+      display: 'Assets Field'
+      type: assets
+      icon: assets
+      listable: hidden
+      instructions_position: above
+      visibility: visible

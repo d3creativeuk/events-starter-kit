@@ -1,0 +1,28 @@
+
+<div class="px-4 lg:block lg:p-6 border boreder-neutral-400 lg:mt-14 lg:py-10 lg:px-10">
+
+
+
+{{ author}} 
+
+<div class="lg:flex lg:items-center">
+	{{ partial:glide/glide 
+		:assets_tag="avatar" 
+		css_img="rounded-full w-20 mr-4" 
+		css_picture="block shrink-0" 
+		img_ratio="1x1" {{# 16x9, 4x3, 1x1, original #}}
+		lazy="true"
+		placeholder_img="0"  
+		sizes=" 
+		  (min-width: 320px) 75px, 75px"      
+	}}      
+	
+	
+	<div>
+		<span class="block text-sm mb-0 font-semibold lg:text-base">{{ name }}</span>
+	
+	<div class="text-xs">{{intro}}</div>
+	</div>
+</div>
+{{ /author}} 
+</div>

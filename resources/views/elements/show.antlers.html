@@ -1,0 +1,71 @@
+
+{{ if logged_in }} 
+
+{{# TEMPLATE CONTENT #}}
+
+<div class="lg:px-14">  
+
+   
+    
+        <div class="block mb-6">
+            <h1 class="text-6xl font-semibold">{{ title }} </h1>
+       </div>
+    
+	   
+	<ul>
+		{{ nav handle="collection::elements" :from="uri"}}  {{if depth == 1 }}
+			<li class="">
+			<a href="{{url}}" class="hover:underline">{{title}}</span></a>
+			</li>	{{/if}}
+		{{ /nav }}  
+	</ul>
+
+
+	   {{ if segment_3 == 'neutral' }}
+			{{ partial:elements/tw/colours/neutral}}
+	   {{ elseif segment_3 == 'primary' }}
+	   		{{ partial:elements/tw/colours/primary}}
+	   {{ elseif segment_3 == 'secondary' }}
+	   		{{ partial:elements/tw/colours/secondary}}
+	   {{ elseif segment_3 == 'warning' }}
+	   		{{ partial:elements/tw/colours/warning}}
+	   {{ elseif segment_3 == 'success' }}
+	   		{{ partial:elements/tw/colours/success}}
+	   {{ elseif segment_3 == 'information' }}
+	   		{{ partial:elements/tw/colours/info}}
+	   {{ elseif segment_3 == 'error' }}
+	   		{{ partial:elements/tw/colours/error}}
+	   {{ elseif segment_3 == 'normal' }}
+	   		{{ partial:elements/tw/typography/typography font_weight=""}}
+	   {{ elseif segment_3 == 'semibold' }}
+	   		{{ partial:elements/tw/typography/typography font_weight="font-semibold"}}
+	   {{ elseif segment_3 == 'notify' }}
+	   		{{ partial:elements/tw/banners/notify/notify }}
+	   {{ elseif segment_3 == 'cards-portrait' }}
+	   		{{ partial:elements/tw/cards/card-portrait }}
+	   {{ elseif segment_3 == 'contact-form' }}
+	   		{{ partial:elements/tw/forms/contact }}
+	   {{ elseif segment_3 == 'kitchen-sink' }}
+	   		{{ partial:elements/tw/forms/kitchen-sink }}
+	   {{ elseif segment_3 == 'example-1' }}
+	   		{{ partial:elements/tw/carousel/splide }}
+	   {{ elseif segment_2 == 'buttons' }}
+	   		{{ partial:elements/tw/buttons/_buttons }}
+	   {{ /if }}
+
+ 
+ 
+</div>
+
+{{# /TEMPLATE CONTENT #}}
+{{ section:aside_two }} 
+
+
+{{# partial:partials/entries/latest list_title="Latest Guides" collection_tag="docs" css_wrap="blog_sidebar_wrap" #}}
+
+
+{{ /section:aside_two }} 
+
+{{ else }}
+{{ redirect to="/login" }}
+{{ /if }}

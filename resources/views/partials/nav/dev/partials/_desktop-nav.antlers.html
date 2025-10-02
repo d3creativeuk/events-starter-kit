@@ -1,0 +1,78 @@
+---
+
+focus_css: 'focus:outline-hidden focus:ring-2 focus:ring-offset-0'
+link_1: 'no-underline text-base text-left uppercase transition-colors group inline-flex items-center p-2 font-semibold'
+link_2: 'no-underline text-base text-left transition-colors group w-full inline-flex items-center p-2'
+link_3: 'no-underline text-sm text-left transition-colors group w-full inline-flex items-center p-2'
+
+icon_svg: 'assets/icons/iconmonstr-caret-down-filled.svg'
+
+
+parent_theme:
+    light_bg: 'text-neutral-800 hover:bg-neutral-200 focus:ring-neutral-800'
+    dark_bg: 'text-white hover:bg-neutral-700 focus:ring-white'
+child_theme:
+    light_bg: 'bg-white'
+    dark_link: 'text-neutral-800 hover:bg-neutral-200 focus:ring-neutral-800'
+    dark_bg: 'bg-neutral-600'
+    light_link: 'text-white hover:bg-neutral-700 focus:ring-white'
+---
+{{# 
+x-data="{ open: false }"
+@click="open = ! open"
+@click.outside="open = false;"
+@click.outside="open = ! open, open1 = ! open1"
+x-show="open"
+:class="{ 'hidden': ! open_m }"
+#}}
+
+{{# <div x-data="{ open: true, open1: true }">
+<button @click.outside="open = ! open, open1 = ! open1">button</button>
+<div x-show="open">hello</div>
+<div x-show="open1">hello</div>
+</div> #}}
+
+
+{{# <nav class="hidden lg:flex  lg:flex-auto justify-center"> #}}
+<nav class="hidden lg:flex lg:ml-14 lg:space-x-6 x-cloak" aria-label="Mast desktop">
+    {{ nav select="title|url" :handle="handle" }}
+       
+                    {{if !children }}
+                        <a class="{{ view:link_1 }} {{ if is_current || is_parent }} bg-primary{{/if}} {{ view:focus_css }} {{ switch((parent_theme == 'light_bg') => '{{ view:parent_theme:light_bg }}',(parent_theme == 'dark_bg') => '{{ view:parent_theme:dark_bg }}',() => '') }}" href="{{ url }}">{{ title }}</a>
+                    {{else }}
+                        <div class="relative block" x-data="{ open: false }" @click.outside="open = false">
+                        <button type="button" @click="open = ! open" class="{{ view:link_1 }} {{ view:focus_css }} {{ switch((parent_theme == 'light_bg') => '{{ view:parent_theme:light_bg }}',(parent_theme == 'dark_bg') => '{{ view:parent_theme:dark_bg }}',() => '') }}" aria-expanded="false"><span>{{ title }}</span><span class="ml-1">{{ svg src="{view:icon_svg}" class="h-4 w-4" }}</span></button>
+                            {{ if children }}                     
+                                <div :class="{ 'hidden': ! open }" class="hidden absolute z-40 mt-3 transform px-2 w-screen max-w-xs sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2">
+                                    <div class="shadow-lg overflow-hidden">
+                                        <div class="relative grid p-6 {{ switch((child_theme == 'light_bg') => '{{ view:child_theme:light_bg }}',(child_theme == 'dark_bg') => '{{ view:child_theme:dark_bg }}',() => 'bg-white') }}">
+                                                {{ children }} 
+                                                    {{if !children }}
+                                                        <div>
+                                                            <a href="{{ url }}"  class="{{ view:link_2 }} {{ view:focus_css }} {{ switch((child_theme == 'light_bg') => '{{ view:child_theme:dark_link }}',(child_theme == 'dark_bg') => '{{ view:child_theme:light_link }}',() => '') }}">{{ title }}</a> 
+                                                        </div>
+                                                    {{else}}
+                                                        <div x-data="{ open1: false}" @click.outside="open1 = false">
+                                                            <button type="button" @click="open1 = ! open1"  class="{{ view:link_2 }} {{ view:focus_css }} {{ switch((child_theme == 'light_bg') => '{{ view:child_theme:dark_link }}',(child_theme == 'dark_bg') => '{{ view:child_theme:light_link }}',() => '') }}" aria-expanded="false"><span>{{ title }}</span><span class="ml-auto">{{ svg src="{view:icon_svg}" class="h-4 w-4" }}</span></button>
+                                            
+                                                            {{ if children }} 
+                                                                <div :class="{ 'hidden': ! open1 }" class="hidden my-2 relative">
+                                                            {{ /if }}
+                                                            {{ children }} 
+                                                                <a class="{{ view:link_3 }} {{ view:focus_css }} {{ switch((child_theme == 'light_bg') => '{{ view:child_theme:dark_link }}',(child_theme == 'dark_bg') => '{{ view:child_theme:light_link }}',() => '') }}" href="{{ url }}">{{ title }}</a>
+                                                            {{ /children }}
+                                                            {{ if children }}
+                                                                </div>
+                                                            {{ /if }}   
+                                                        </div>
+                                                    {{/if}}                      
+                                                {{ /children }}  
+                                        </div>
+                                    </div>
+                                </div>{{# x-show="open" #}}
+                            {{ /if }}{{# if children #}}
+                        </div>
+                    {{ /if }}
+        
+    {{ /nav }}
+  </nav>

@@ -1,0 +1,9 @@
+title: Thumbnail
+fields:
+  -
+    handle: thumbnail
+    field:
+      max_files: 1
+      display: Thumbnail
+      type: assets
+      container: assets

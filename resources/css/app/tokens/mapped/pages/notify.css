@@ -1,0 +1,8 @@
+[data-theme="notify"] {   
+--surface-color: light-dark(var(--color-primary-brand), var(--color-neutral-900)); 
+/* --surface-1: light-dark(var(--color-primary-brand), var(--color-neutral-900)); 
+--surface-main: light-dark(var(--color-white), var(--color-neutral-900)); 
+--surface-page: light-dark(var(--color-neutral-100), var(--color-neutral-950)); 
+--heading: light-dark(var(--color-white), var(--color-secondary-brand));
+--default: light-dark(var(--color-white), var(--color-neutral-200)); */
+}

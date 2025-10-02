@@ -1,0 +1,13 @@
+{{ foreach:options as="option|label" }}
+    <label class="{{ view:checkbox_label }} {{ error ?= '{ view:checkbox_label_error_hover }' }}">
+        <input
+             class="{{ view:checkbox_input }}"
+            type="radio"
+            name="{{ handle }}"
+            value="{{ option }}"
+            {{ if js_driver }}{{ js_attributes }}{{ /if }}
+            {{ if value == option }}checked{{ /if }}
+        >
+        {{ label !== null ? label : option }}
+    </label>
+{{ /foreach:options }}

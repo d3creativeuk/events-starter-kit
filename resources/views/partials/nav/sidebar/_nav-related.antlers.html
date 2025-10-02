@@ -1,0 +1,53 @@
+---
+desktop_nav:
+  1: 'bg-black'
+  2: 'bg-neutral-200'
+  3: 'bg-neutral-100'
+desktop_icon: 'flex items-center justify-between '
+desktop_btn_style: 'px-6 py-2 w-full text-left block'
+---
+ {{# <div x-data="{ s_open: false }" @click.outside="s_open = false">
+    <button @click="s_open = ! s_open">Button</button>
+    <div :class="{ 'hidden': ! s_open }" class="hidden ">
+        Working Demo
+    </div>
+</div>  #}}
+
+
+{{# <div x-data="{ s_open: false }" @click.outside="s_open = false">
+    <button @click="s_open = ! s_open">Button</button>
+    <div :class="{ 'hidden': ! s_open }" class="hidden ">
+        Working Demo
+    </div>
+</div>  #}}
+
+
+
+<nav aria-label="Sidebar" x-data="{level: {} }" >
+	<ul class="text-sm [&_a]:no-underline [&_a:hover]:underline">
+		{{ nav select="title|alt_title|url|id" handle="{{ nav_group ?? {nav_structure | ensure_left('collection::')} }}" }} 				  
+			<li class="block {{ depth }}"  @click.outside="level['{{ id }}'] = false">                             
+			<{{ children ? 'button' : 'a href="{{ url }}"' }} @click="level['{{ id }}'] = !level['{{ id }}']" class="{{ view:desktop_btn_style }} {{ if is_current }}bg-invert text-invert{{/if}} {{ depth == 1 ? 'text-base':'text-base' }}">
+                <span class="{{ view:desktop_icon }}">{{ alt_title ?? title }} {{ children ?= '{{ partial:partials/icon/icon icon_turn="90" }}' }}</span>
+                <{{ children ? '/button' : '/a' }}>
+			{{ if children }}
+				<ul x-cloak {{ if is_current || is_parent }}x-effect="level['{{ id }}'] = true"{{ /if }} :class="level['{{ id }}'] ? 'block  text-base {{ depth == 1 ? 'bg-white':'bg-invert relative' }}' : 'hidden'"  class="{{ view:desktop_nav[depth] }} ">
+					{{ *recursive children* }}
+				</ul>
+			{{ /if }}
+		</li>       
+		{{ /nav }}
+	</ul>
+</nav>	
+
+
+
+
+{{# ------ #}}
+
+
+
+
+
+
+

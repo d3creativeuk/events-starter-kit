@@ -1,0 +1,53 @@
+{{# https://splidejs.com/tutorials/thumbnail-slider/ #}}
+{{# https://splidejs.com/guides/options/#lazyload #}}
+{{# https://splidejs.com/guides/options/#updateonmove #}}
+
+
+
+
+{{ if (slider_images | count) > 1 }}
+      <div class="not-prose mb-4 lg:mb-8">
+        <div id="main-slider" class="{{ count }} splide mb-4 ">
+            <div class="splide__track">
+                  <ul class="splide__list">
+                    {{ slider_images }}
+                      <li class="splide__slide">
+                        {{ if image_format_picker === '16-9'}}
+                          {{ partial:partials/glide/ratio/16-9 glide_handle="url" css_img="w-full h-auto" }}
+                        {{ elseif image_format_picker === '4-3'}}
+                          {{ partial:partials/glide/ratio/4-3 glide_handle="url" css_img="w-full h-auto" }}
+                        {{ elseif image_format_picker === '1-1'}}
+                          {{ partial:partials/glide/ratio/1-1 glide_handle="url" css_img="w-full h-auto" }}
+                        {{ else }}
+                          {{ partial:partials/glide/ratio/original glide_handle="url" css_img="w-full h-auto"  }}
+                        {{ /if }}
+                      </li>
+                    {{ /slider_images }}   
+                  </ul>
+            </div>
+        </div>
+        <div id="thumbnail-slider" class="splide">
+          <div class="splide__track">
+                <ul class="splide__list">
+                  {{ slider_images }}
+                  <li class="splide__slide">{{ partial:partials/glide/ratio/4-3 glide_handle="url" css_img="w-full h-auto" }}
+                  {{ /slider_images }}                   
+                </ul>
+          </div>
+        </div>
+      </div>
+{{ elseif (slider_images | count) === 1 }}
+  <div class="not-prose mb-4 lg:mb-8">blacnk
+    {{ slider_images }}
+        {{ if image_format_picker === '16-9'}}
+          {{ partial:partials/glide/ratio/16-9 glide_handle="url" css_img="w-full h-auto" }}
+        {{ elseif image_format_picker === '4-3'}}
+          {{ partial:partials/glide/ratio/4-3 glide_handle="url" css_img="w-full h-auto" }}
+        {{ elseif image_format_picker === '1-1'}}
+          {{ partial:partials/glide/ratio/1-1 glide_handle="url" css_img="w-full h-auto" }}
+        {{ else }}
+          {{ partial:partials/glide/ratio/original glide_handle="url" css_img="w-full h-auto"  }}
+        {{ /if }}
+    {{ /slider_images }}
+  </div> 
+{{ /if }}

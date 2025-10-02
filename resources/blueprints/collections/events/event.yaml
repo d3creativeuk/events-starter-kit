@@ -1,0 +1,101 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      - {  }
+      -
+        display: Event
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+              instructions: 'Name of the event'
+          -
+            handle: event_description
+            field:
+              character_limit: 400
+              type: textarea
+              display: 'Event Description'
+              instructions: 'Used in event listing, keep short - perhaps two lines max.'
+          -
+            handle: event_location
+            field:
+              type: text
+              display: 'Event Location'
+              instructions: 'Name of the building or conference centre'
+          -
+            handle: event_date_field
+            field:
+              mode: range
+              type: date
+              display: 'Event Date'
+              instructions: 'Start and end dates of event'
+          -
+            handle: event_website
+            field:
+              input_type: url
+              type: text
+              display: 'Event Website'
+      -
+        display: Booth
+        fields:
+          -
+            handle: booth_number
+            field:
+              type: text
+              display: 'Booth Number'
+              instructions: "Number only, template will say 'Meet us at: [booth number]'"
+      -
+        display: Meeting
+        fields:
+          -
+            handle: book_meeting_url
+            field:
+              input_type: url
+              type: text
+              display: 'Book Meeting URL'
+              instructions: 'Full URL to book a meeting form page'
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+              display: Date
+              instructions: 'Date event was created'
+          -
+            handle: categories
+            field:
+              type: terms
+              taxonomies:
+                - categories
+              display: Categories
+              mode: select
+              max_items: 1
+          -
+            handle: event_type
+            field:
+              type: terms
+              taxonomies:
+                - event_type
+              display: 'Event Type'
+              mode: select
+              max_items: 1
+title: Event

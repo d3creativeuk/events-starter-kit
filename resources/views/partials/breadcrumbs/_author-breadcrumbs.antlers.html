@@ -1,0 +1,38 @@
+{{# https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html #}}
+<nav class="flex py-5 px-4 max-w-8xl mx-auto 3xl:px-0" aria-label="Breadcrumb">
+{{ if last_segment == 'authors' }}
+  <ol role="list" class="flex items-center ">
+    <li class="text-sm font-medium ">
+      <div class="flex items-center">            
+        <a href="/" class="text-sm font-medium " >Home</a>
+      </div>
+    </li>
+    <li>
+        <div class="flex items-center">
+          <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+          <span href="/{{ segment_1 }}" class="text-sm font-medium " > Authors </span>
+        </div>
+      </li>
+  </ol>
+{{ elseif last_segment == slug }}
+  <ol role="list" class="flex items-center ">
+    <li class="text-sm font-medium ">
+      <div class="flex items-center">
+        <a href="/" class="text-sm font-medium " >Home</a>
+      </div>
+    </li>
+    <li>
+        <div class="flex items-center">
+          <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+          <a href="/{{ segment_1 }}" class="text-sm font-medium " >Authors </a>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg class="shrink-0 h-5 w-5 " xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true"><path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" /></svg>                         
+          <span class="text-sm font-medium " >{{ user field="slug" :value="segment_2" }}{{ name}}{{ /user }}</span>
+        </div>
+      </li>
+  </ol>
+{{ /if }}
+</nav>

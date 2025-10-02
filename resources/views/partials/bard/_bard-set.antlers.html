@@ -1,0 +1,10 @@
+---
+bard_default: 'prose max-w-none'
+entry: 'prose-sm max-w-none prose-headings:text-3xl prose-headings:font-semibold sm:prose-headings:text-4xl/10 lg:prose-base  lg:prose-headings:mb-2 lg:prose-headings:mt-10'
+---
+
+<div class="{{ view:bard_default }} {{ switch((css == 'entry') => '{{ view:entry }}', () => '{{ view:bard }}') }}">
+		{{ bard_handle }} 
+			{{ partial src="bard/blocks/{type}" }}
+		{{ /bard_handle }}
+</div>

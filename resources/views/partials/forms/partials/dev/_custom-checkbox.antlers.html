@@ -1,0 +1,29 @@
+{{# 
+Tuesday, October 22, 2024
+This was used to inject two modal links into a checkbox. The issue with this is, it generates messy output in Statamic.
+It's best to seperate the checkbox from the legal policies.
+#}}
+
+{{ fields where="handle:terms_checkbox" }} 
+            <div {{ error ?= 'class="{view:error_box}"' }}>                
+            <div class="{{view:label_error_hint}}">
+                <span class="{{ view:label }}">Terms and Conditions</span>
+            
+                {{ if error }}
+                    {{ if custom_error }}
+                        <p class="{{ view:input_text_error }}">{{ custom_error }}</p>
+                    {{ else }}
+                        <p class="{{ view:input_text_error }}">The <span class="font-semibold">terms and conditions</span> field is required</p>
+                    {{ /if }}
+                {{ /if }}
+                {{# partial:forms/partials/hint #}}
+            </div>
+
+                <div class="space-y-1 [&_a]:underline [&_a:hover]:no-underline {{ inline ?= 'flex items-center space-y-0 space-x-2' }}">
+                    <label class="{{ view:checkbox_label }} {{ error ?= '{ view:checkbox_label_error_hover }' }}">
+                        <input class="mr-1 focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-neutral-600" id="terms_checkbox_0" type="checkbox" name="terms_checkbox[]" value="consent_terms">
+                        I agree to the <a href="#" @click.prevent="showTermsDialog = true; iframeSrc = '{{legal:terms_and_conditions}}'; loading = true" class="text-blue-600 underline">Terms and Conditions</a> and the <a href="#" @click.prevent="showPrivacyDialog = true; iframeSrc = '{{legal:privacy_policy}}'; loading = true" class="text-blue-600 underline">Privacy Policy</a>
+                    </label>
+                </div>
+            </div> 
+        {{ /fields}}

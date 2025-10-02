@@ -1,0 +1,15 @@
+{{ collection:blog limit="3" as="posts" url:not="{ url }"}}
+<div class="max-w-5xl py-14 space-y-14 mx-auto">
+    {{ posts }}
+    {{ partial:partials/card/_card-landscape
+    
+        :title="title"
+		:intro="bard_basic"
+		link_type="url"
+		button_text="Continue Reading"
+		custom_img="thumbnail"
+    
+    }}
+    {{ /posts }}
+</div>
+{{ /collection:blog }}

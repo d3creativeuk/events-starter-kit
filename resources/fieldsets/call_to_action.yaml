@@ -1,0 +1,10 @@
+title: 'Call to Action'
+fields:
+  -
+    handle: call_to_action_entries
+    field:
+      max_items: 1
+      collections:
+        - ctas
+      type: entries
+      display: 'Call to Action'

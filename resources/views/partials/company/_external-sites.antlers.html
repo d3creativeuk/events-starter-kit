@@ -1,0 +1,5 @@
+<ul class="">         
+	{{ company:json_external_sites }}
+	  <li class="flex items-center gap-x-1">{{ json_external_site_icon | replace('<svg', '<svg class="fill-black w-4 h-4"')}}{{partial:partials/icon/icon :icon_path="json_external_site_icon"}}<a class="block hover:underline" href="{{ json_external_site_url }}">{{ json_external_site_name }}</a></li>
+	{{ /company:json_external_sites }}
+	</ul>

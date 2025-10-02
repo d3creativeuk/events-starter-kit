@@ -1,0 +1,10 @@
+[data-theme="form_on_white"] {   
+
+
+--form-input-text: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+--form-label: light-dark(var(--color-primary-brand), var(--color-neutral-950));
+--form-surface-error: light-dark(var(--color-error), var(--color-error));
+--form-surface-error-text: light-dark(var(--color-white), var(--color-white));
+/* Submit button theme resources/css/app/tokens/mapped/mapped-button.css */
+
+}

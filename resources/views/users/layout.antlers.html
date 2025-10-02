@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    {{ partial:layouts/partials/head }}
+    {{ partial:layouts/partials/environment }} 
+
+
+
+
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}">    
+        {{# :snippets/gtm/gtm-head located: layouts/partials/head and partial:snippets/seo #}}
+        {{ partial:snippets/gtm/gtm-body }} 
+        {{# Mast navigation #}}
+         {{ partial:partials/mast/mast }}  
+        {{# yield:breadcrumbs #}} 
+		{{ yield:top }} 
+		{{ yield:breadcrumbs }}
+		{{ yield:author_breadcrumbs }}
+		<div class="bg-page max-w-8xl mx-auto lg:mt-6 lg:mb-24 ">
+			<div class="grid grid-cols-12"> 
+				<div class="order-2 col-span-12 lg:order-1 lg:col-span-2 xl:col-span-2">     
+					{{ yield:aside_one }}
+						content
+					{{ /yield:aside_one }}
+				</div> 
+				<main class="order-1 col-span-12 lg:order-2 lg:grow lg:col-span-7">
+					{{ template_content }}
+				</main>				
+				<div class="order-3 col-span-12  lg:col-span-3"> 
+					{{ yield:aside_two }}
+						Sidebar content 2
+					{{ /yield:aside_two }}
+				</div>
+			</div>
+		</div>      
+        {{ yield:base }} 
+        {{# Footer #}}
+        {{ partial:layouts/partials/footer }}         
+    </body>
+</html>

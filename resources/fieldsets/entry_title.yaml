@@ -1,0 +1,37 @@
+title: 'Entry Title'
+fields:
+  -
+    handle: entry_title
+    field: common.text
+    config:
+      display: 'Entry Title'
+      instructions: 'The main heading'
+  -
+    handle: title_bard_field
+    field:
+      collapse: false
+      always_show_set_button: false
+      previews: true
+      smart_typography: false
+      buttons:
+        - italic
+        - anchor
+      save_html: false
+      inline: true
+      toolbar_mode: fixed
+      link_noopener: false
+      link_noreferrer: false
+      target_blank: false
+      reading_time: false
+      fullscreen: true
+      allow_source: true
+      enable_input_rules: true
+      enable_paste_rules: true
+      antlers: false
+      remove_empty_nodes: false
+      display: Title
+      type: bard
+      icon: bard
+      listable: hidden
+      instructions_position: above
+      visibility: visible

@@ -1,0 +1,67 @@
+title: 'Bard - Sets'
+fields:
+  -
+    handle: bard_sets
+    field:
+      buttons:
+        - h2
+        - h3
+        - h4
+        - bold
+        - unorderedlist
+        - orderedlist
+        - anchor
+      container: assets
+      reading_time: true
+      allow_source: false
+      display: Body
+      type: bard
+      always_save: false
+      remove_empty_nodes: false
+      fullscreen: false
+      sets:
+        main:
+          display: Main
+          sets:
+            image:
+              display: Image
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: entry_image
+            blockquote:
+              display: Blockquote
+              icon: text-formatting-quotation
+              fields:
+                -
+                  import: blockquote
+            video:
+              display: Video
+              icon: media-webcam-video
+              fields:
+                -
+                  import: video
+            audio:
+              display: Audio
+              icon: media-music-notes
+              fields:
+                -
+                  import: audio_player
+            downloads:
+              display: 'Download Resources'
+              icon: file-content-list
+              fields:
+                -
+                  import: download_list
+            related_content:
+              display: 'Related Content'
+              icon: content-book-open
+              fields:
+                -
+                  import: related_content
+            table:
+              display: Table
+              icon: layout-three-columns
+              fields:
+                -
+                  import: table

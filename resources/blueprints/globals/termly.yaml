@@ -1,0 +1,12 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: toggle_termly
+            field:
+              type: toggle
+              display: 'Toggle Termly'
+              instructions: 'When enabled, YouTube and Vimeo embeds will be prevented from setting cookies until the user has explicitly opted in.'

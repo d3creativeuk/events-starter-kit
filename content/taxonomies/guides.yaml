@@ -1,0 +1,9 @@
+title: Guides
+preview_targets:
+  -
+    label: Term
+    url: '{permalink}'
+    refresh: true
+template: docs/index
+term_template: docs/guides/show
+layout: docs/layouts/triple-2-8-2

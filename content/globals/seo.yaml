@@ -1,0 +1,10 @@
+title: SEO
+data:
+  title_separator: '|'
+  json_ld_type: none
+  twitter_handle: d3creative
+  sitemap_collections:
+    - pages
+    - blog
+  use_google_site_verification: false
+  toggle_google_tag_manager: false

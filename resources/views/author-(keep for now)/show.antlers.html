@@ -1,0 +1,49 @@
+{{ section:seo_title }}
+    {{ user field="slug" :value="segment_2" }}
+        {{ name }}
+    {{ /user }}   
+{{ /section:seo_title }}
+
+{{ section:seo_description }}
+    {{ user field="slug" :value="segment_2" }}{{ intro }}{{ /user }}
+{{ /section:seo_description }}
+
+<div class="bg-white">
+ 
+                            
+
+        <main class="max-w-8xl mx-auto px-6">
+            {{ scope:stuff }} 
+           
+            {{ /scope:stuff }} 
+            
+        {{ user field="slug" :value="segment_2" }}
+           
+            <div class="prose max-w-full lg:prose-lg">
+                <h1 class="text-3xl">{{ name }}</h1> 
+            </div>
+
+            {{ intro | markdown }}            
+        {{ /user }}   
+       
+        <h2 class="text-xl">
+            Posts by {{ user field="slug" :value="segment_2" }}{{ name | explode: | first }}{{ /user }}
+        </h2>
+
+            {{ taxonomy:categories  collection="blog" }}  
+                <h3 class="text-xl font-medium">{{ title }}</h3>
+                    <ul class="my-4 space-y-2"> 
+                        {{ entries }}  
+                            {{ if  segment_2 == author.slug }}
+                            <li>    
+                                <a class="underline hover:no-underline" href="{{ url }}">{{ title }}</a> 
+                                {{# {{ author}}- {{ name }}{{ /author}}  #}}     
+                            </li>                        
+                            {{ /if }}   
+                        {{ /entries }}
+                    </ul>          
+            {{ /taxonomy:categories }} 
+
+        </main>
+
+</div>

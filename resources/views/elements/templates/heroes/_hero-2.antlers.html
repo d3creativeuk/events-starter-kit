@@ -1,0 +1,95 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+<main class="space-y-14">
+
+	{{ partial:partials/hero/_hero 
+
+		{{# LAYOUT ----------------- #}}
+		hero_wrap="h-screen bg-neutral-800"
+		hero_inner_wrap="h-full max-w-8xl mx-auto bg-neutral-800 lg:flex lg:items-center"
+		hero_text_wrap="px-4 bg-neutral-800 py-6 space-y-6 lg:py-14 lg:px-6 lg:basis-2/6 lg:space-y-6"
+		hero_media_wrap="bg-orange-200 h-full lg:basis-4/6"
+	
+		intro_title_wrap_css="py-14 space-y-2"
+
+		{{# DATA ----------------- #}}
+			:title="hero_title"
+		{{# OPTIONS -------------- #}}
+			handle_prefix=""
+			tag="h2"
+			is_link=""  {{# true #}}
+			link_type=""
+			title_notab="" {{# true #}}
+		{{# ICON ----------------- #}}
+			title_show_icon=""
+			title_flex="" {{# true=flex false=inline-flex #}}
+			title_icon_baseline="" {{# items-center #}}
+			title_icon_flip="" {{# left right #}}
+			title_icon_path="" {{# arrow_thin, caret etc #}}
+			title_icon_turn="" {{# 90 180 45 -90 -45 #}}
+			title_icon_css=""
+		{{# CSS ----------------- #}}
+			title_css="text-7xl font-semibold text-white"
+
+
+		{{# DATA ----------------- #}}
+			:intro="hero_textarea"
+		{{# OPTIONS -------------- #}}
+			handle_prefix=""
+			intro_truncate=""
+			intro_truncate_chars=""
+		{{# CSS ----------------- #}}
+			intro_css="text-base text-white"
+
+		{{# ••••••••••••••••••••••• #}}
+		{{# BUTTON  #}}
+		{{# ••••••••••••••••••••••• #}}
+
+		{{# DATA ----------------- #}}
+			:button_text="button_text"
+
+		{{# OPTIONS -------------- #}}
+			handle_prefix=""
+			:link_type="link_type"
+			button_type="" {{# submit #}}
+			button_notab=""
+
+		{{# ICON ----------------- #}}
+		button_show_icon="true"
+			button_icon_flip="" {{# default right #}}
+			button_icon_path="" {{# arrow_thin, caret etc #}}
+			button_icon_turn="" {{# 90 180 45 -90 -45 #}}
+			button_icon_css=""
+
+		{{# CSS ----------------- #}}
+			button_size="md"
+			button_theme="light"
+
+		{{# ••••••••••••••••••••••• #}}
+		{{# IMAGE #}}
+		{{# ••••••••••••••••••••••• #}}
+
+		{{# DATA ----------------- #}}
+			:assets_tag="hero_assets_field" 
+			placeholder_img="1"  
+		{{# ART DIRECTION -------------- #}}
+			art_direction="" {{# comment out img_ratio if this is set to true #}}
+			art_direction_type="" {{# use this to insert a new partial, the value must match the filename located at partials/glide/partials/picture/ #}}
+		{{# OPTIONS -------------- #}}
+			img_ratio="classic" {{# comment out if using art_direction, options: wide, classic, square,leave blank or orginal #}}
+			sizes="(min-width: 768px) 50vw, (min-width: 320px) 95vw, 95vw" {{# Use with img_ratio only, comment out if using art_direction #}}
+
+			link_img="true"  {{# true #}}
+			img_notab="true" {{# true #}}
+			lazy_load=""
+		{{# CSS ----------------- #}}
+			figure_css=""
+			picture_css=""
+			img_css="w-full sm:object-cover sm:h-full"
+	
+	}}
+
+
+
+</main>

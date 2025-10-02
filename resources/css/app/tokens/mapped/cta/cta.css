@@ -1,0 +1,21 @@
+[data-theme="cta_1"] { 
+--surface-section: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--surface-divider: light-dark(var(--color-neutral-100), var(--color-neutral-950));
+--surface-card: light-dark(var(--color-white), var(--color-neutral-950));
+--surface-divider-svg: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--heading: light-dark(var(--color-primary-brand), var(--color-white));
+--default: light-dark(var(--color-neutral-950), var(--color-neutral-200));
+}
+[data-theme="cta_blog"] { 
+--surface-section: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--surface-divider: light-dark(var(--color-white), var(--color-neutral-950));
+--surface-card: light-dark(var(--color-white), var(--color-neutral-950));
+--surface-divider-svg: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--heading: light-dark(var(--color-primary-brand), var(--color-white));
+--default: light-dark(var(--color-neutral-950), var(--color-neutral-200));
+}
+[data-theme="bard_cta"] { 
+--surface-section: light-dark(var(--color-white), var(--color-neutral-950));
+--surface-main: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+--border-color: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+}

@@ -1,0 +1,11 @@
+{{ if img_ratio === 'wide' }}
+{{ glide :src='url' preset='w754_wide'}} src='{{ url }}' width='{{ width }}' height='{{ height }}'{{ /glide }}
+{{ elseif img_ratio === 'ultrawide' }}
+{{ glide :src='url' preset='w754_ultrawide'}} src='{{ url }}' width='{{ width }}' height='{{ height }}'{{ /glide }}
+{{ elseif img_ratio === 'classic' }}
+{{ glide :src='url' preset='w754_classic'}} src='{{ url }}' width='{{ width }}' height='{{ height }}'{{ /glide }}
+{{ elseif img_ratio === 'square' }}
+{{ glide :src='url' preset='w754_square'}} src='{{ url }}' width='{{ width }}' height='{{ height }}'{{ /glide }}
+{{ else }}
+{{ glide :src='url' preset='w754_no_crop'}} src='{{ url }}' width='{{ width }}' height='{{ height }}'{{ /glide }}
+{{/if}}

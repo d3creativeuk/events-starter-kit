@@ -1,0 +1,12 @@
+{{ if img_ratio === 'wide' }}
+123
+{{ partial:partials/glide/partials/srcset/_wide }}
+{{ elseif img_ratio === 'classic' }}
+{{ partial:partials/glide/partials/srcset/_classic}}
+{{ elseif img_ratio === 'square' }}
+{{ partial:partials/glide/partials/srcset/_square }}
+{{ elseif img_ratio === 'ultrawide' }}
+{{ partial:partials/glide/partials/srcset/_ultrawide }}
+{{ else }}
+{{ partial:partials/glide/partials/srcset/_original }}
+{{/if}}

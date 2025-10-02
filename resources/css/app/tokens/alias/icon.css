@@ -1,0 +1,25 @@
+
+@theme inline  {
+    /* ALIAS */
+    /* https://www.tints.dev/ */
+
+    /* BRAND > ALIAS > MAPPED */
+
+    --color-icon-color: var(--icon-color); 
+    /* States */
+    --color-icon-hover: var(--icon-hover); 
+    --color-icon-active: var(--icon-active); /* Pressed/clicked state */
+    --color-icon-focus: var(--icon-focus); 
+    --color-icon-focus-visible: var(--icon-focus-visible); /* Keyboard focus only */
+    --color-icon-disabled: var(--icon-disabled); /* Disabled inputs/buttons */
+
+
+  /* BORDER */
+    /* --color-border-default: var(--border-default); 
+    --color-border-highlight: var(--border-highlight); 
+    --color-border-invert: var(--border-invert);
+    --color-border-muted: var(--border-muted);
+    --color-border-accent: var(--border-accent); 
+    --color-border-base: var(--border-base); 
+ */
+}

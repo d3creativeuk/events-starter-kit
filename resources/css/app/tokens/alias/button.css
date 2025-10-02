@@ -1,0 +1,33 @@
+@theme inline  {
+    /* BRAND > ALIAS > MAPPED */
+
+    /* Base */
+    --color-btn-text: var(--btn-text); 
+    --color-btn-border: var(--btn-border); 
+    --color-btn-surface: var(--btn-surface); 
+    
+    /* Hover */
+    --color-btn-text-hover: var(--btn-text-hover); 
+    --color-btn-border-hover: var(--btn-border-hover);
+    --color-btn-surface-hover: var(--btn-surface-hover); 
+
+    /* Active - Pressed/clicked state*/
+    --color-btn-text-active: var(--btn-text-active);
+    --color-btn-border-active: var(--btn-border-active);
+    --color-btn-surface-active: var(--btn-surface-active);
+
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --color-btn-text-focus: var(--btn-text-focus); 
+    --color-btn-border-focus: var(--btn-border-focus); 
+    --color-btn-surface-focus: var(--btn-surface-focus); 
+
+    /* Focus visible - triggers only on keyboard focus */
+    --color-btn-text-focus-visible: var(--btn-text-focus-visible);
+    --color-btn-border-focus-visible: var(--btn-border-focus-visible);
+    --color-btn-surface-focus-visible: var(--btn-surface-focus-visible);
+
+    /* Disabled */
+    --color-btn-text-disabled: var(--btn-text-disabled);
+    --color-btn-border-disabled: var(--btn-border-disabled);
+    --color-btn-surface-disabled: var(--btn-surface-disabled);
+}

@@ -1,0 +1,21 @@
+---
+blog_sidebar_wrap: 'space-y-4 lg:px-14'
+---
+
+<div class=" {{ switch((css_wrap == 'blog_sidebar_wrap') => '{{ view:blog_sidebar_wrap }}') }}">
+{{ if list_title }}
+<span class="{{ title_css }} font-semibold lg:text-xl">{{ list_title }}</span>
+{{ /if }}
+<ul class="{{ list_css }}">
+    {{ collection from="{{ collection_tag ?? 'blog' }}" limit="3" as="posts" :url:not="url" sort="date:desc" }}
+        {{ posts }}
+            <li class="last:mb-0 mb-2">
+                <a href="{{ url }}">{{ title }}</a>
+                    {{# <ul class="meta">
+                        <li>{{ date format="F, Y"}}</li>
+                    </ul> #}}
+            </li>
+        {{ /posts }}
+    {{ /collection from="{{ collection_tag ?? 'blog' }}" }}
+</ul>
+</div>

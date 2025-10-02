@@ -1,0 +1,35 @@
+---
+nav_classes:
+  1: 'text-neutral-900 font-bold'
+  2: 'text-neutral-800 ml-3'
+  3: 'text-neutral-500 ml-6 text-sm'
+---
+
+{{# x-data="{ openm: true } ADDED THIS TO MAKE IT STAY OPEN DURING DEV #}}
+<!-- START MOBILE  -->
+<div x-cloak class="absolute z-50 bg-pink-200 inset-0" x-data="{ openm: true }" x-show="openm">
+      <div class="">
+        <div class="px-4 py-6">
+          <div class="flex items-center justify-between">
+            <div class="">
+              {{ partial:partials/company/logo logo_a_class="w-44 block overflow-hidden" logo_css_img="" }}
+            </div>
+           <!-- MOBILE TOGGLE -->
+            <div class="mr-0 -my-2">
+              {{ partial:partials/nav/mobile/clse-btn }}
+            </div>
+          </div>
+          <div class="mt-6" >
+
+           
+            {{ partial:partials/nav/mobile/recursive }}
+          
+            
+
+          </div>
+        </div>
+           
+          </div>
+        </div> 
+      </div>
+    </div>

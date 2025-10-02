@@ -1,0 +1,97 @@
+---
+picture_css: 'overflow-hidden block bg-neutral-200'
+
+---
+<div class="block">	
+	{{ if (entry_images | count ) > 4 }}
+	    {{# FOUR IMAGES #}}
+	<div class="not-prose mb-4 grid grid-cols-3 gap-4 " >    
+	    {{ entry_images }}   
+			{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_2" 
+					sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+				}}
+			{{ /partial:partials/dialog/img-dialog }}
+	    {{ /entry_images }} 
+	</div>
+	{{ elseif (entry_images | count ) > 3 }}
+	    {{# FOUR IMAGES #}}
+	<div class="not-prose mb-4 grid grid-cols-2 grid-rows-2 gap-4 " >    
+	    {{ entry_images }}   
+			{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_2" 
+					sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+				}}
+			{{ /partial:partials/dialog/img-dialog }}
+	    {{ /entry_images }} 
+	</div>
+	{{ elseif (entry_images | count) > 2 }}
+	{{# THREE IMAGES #}}
+	<div class="not-prose grid gap-4" > 
+		{{ entry_images.0 }}   
+			{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_2" 
+					sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  ed
+				}}
+			{{ /partial:partials/dialog/img-dialog }}
+		{{ /entry_images.0 }} 
+		<div class="grid grid-cols-2 gap-4">
+			{{ entry_images.1 }}
+				{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+					{{ partial:glide/partials/img  
+						:url="url" 
+						:img_ratio="image_format_picker_2" 
+						sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+					}}
+				{{ /partial:partials/dialog/img-dialog }}
+			{{ /entry_images.1 }}   
+			{{ entry_images.2 }}
+				{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+					{{ partial:glide/partials/img  
+						:url="url" 
+						:img_ratio="image_format_picker_2" 
+						sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+					}}
+				{{ /partial:partials/dialog/img-dialog }}
+			{{ /entry_images.2 }}   
+		</div>
+ 	</div>
+	{{ elseif (entry_images | count) > 1 }}
+		{{# TWO IMAGES #}}
+		<div class="not-prose mb-4 grid grid-cols-2  gap-4 " >    
+			{{ entry_images }}   
+				{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+					{{ partial:glide/partials/img  
+						:url="url" 
+						:img_ratio="image_format_picker_2" 
+						sizes="(min-width: 1024px) 23vw, (min-width: 320px) 45vw"  
+					}}
+				{{ /partial:partials/dialog/img-dialog }}
+			{{ /entry_images }} 
+		</div>	
+	{{ else }}
+	    {{# SINGLE IMAGE #}}
+	    <div class="not-prose" >   
+	    {{ entry_images }}
+			{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_2"}}
+				{{ partial:glide/partials/img  
+					:url="url" 
+					:img_ratio="image_format_picker_1" 
+					sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+				}}
+			{{ /partial:partials/dialog/img-dialog }}       
+	    {{ /entry_images }} 
+		</div>
+	{{ /if }}
+</div>
+
+
+
+
+

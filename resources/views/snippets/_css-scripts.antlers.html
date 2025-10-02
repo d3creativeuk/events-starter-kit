@@ -1,0 +1,24 @@
+{{ vite src="resources/js/site.js|resources/css/site.css" }}
+{{# vite src="resources/css/site.css" #}}
+
+
+
+
+
+<script src="/vendor/statamic/frontend/js/helpers.js"></script>
+
+
+
+{{# <script
+  type="text/javascript"
+  src="https://app.termly.io/embed.min.js"
+  data-auto-block="on"
+  data-website-uuid="147570df-978d-4deb-9145-0c80f305b6d7"
+></script> #}}
+
+
+
+{{ if environment === 'production' }}
+<script defer data-domain="xxxxxxx" src="https://plausible.io/js/plausible.js"></script>
+{{ /if }}
+

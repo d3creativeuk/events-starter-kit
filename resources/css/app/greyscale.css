@@ -1,0 +1,4 @@
+/* Development only */
+img {
+    filter: grayscale(100%);
+}

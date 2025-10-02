@@ -1,0 +1,18 @@
+
+<picture class="{{ picture_css }}">
+	{{ if assets_tag }} 
+	{{ assets_tag }} 
+	<source media="(max-width:767px)" sizes="100px"  {{ partial:partials/glide/partials/groups/_srcset img_ratio="square" }}>
+	<source media="(min-width:768px)" sizes="200px" {{ partial:partials/glide/partials/groups/_srcset img_ratio="classic"}}>
+	<img class="{{ img_css ?? 'w-full h-auto' }}" {{ partial:partials/glide/partials/groups/_dimensions img_ratio="square"}} alt="{{ alt ensure_right='.' }}" type="image/webp">
+	{{ /assets_tag }}
+	{{ else }}
+		{{ placeholder_imgs:assets[placeholder_img] }}
+		<source media="(max-width:639px)" sizes="95vw"  {{ partial:partials/glide/partials/groups/_srcset img_ratio="classic" }}>
+		<source media="(min-width:640px)" sizes="250px" {{ partial:partials/glide/partials/groups/_srcset img_ratio="square"}}>
+		<img class="{{ img_css ?? 'w-full h-auto' }}" {{ partial:partials/glide/partials/groups/_dimensions img_ratio="classic"}} alt="{{ alt ensure_right='.' }}" type="image/webp">
+		{{ /placeholder_imgs:assets[placeholder_img] }} 
+		
+	{{/if}}
+  
+</picture>

@@ -1,0 +1,56 @@
+
+@theme inline  {
+    /* ALIAS */
+    /* https://www.tints.dev/ */
+
+    /* BRAND > ALIAS > MAPPED */
+
+
+    --color-surface: var(--surface); 
+    --color-surface-1: var(--surface-1); 
+    --color-surface-2: var(--surface-2); 
+    --color-surface-3: var(--surface-3); 
+    --color-surface-4: var(--surface-4); 
+
+    --color-surface-primary: var(--surface-primary); 
+    --color-surface-secondary: var(--surface-secondary); 
+    --color-surface-tertiary: var(--surface-tertiary); 
+
+
+    --color-surface-color: var(--surface-color); 
+    --color-surface-color-1: var(--surface-color-1); 
+    /* States */
+    --color-surface-hover: var(--surface-hover); 
+    --color-surface-active: var(--surface-active); /* Pressed/clicked state */
+    --color-surface-focus: var(--surface-focus); 
+    --color-surface-focus-visible: var(--surface-focus-visible); /* Keyboard focus only */
+    --color-surface-disabled: var(--surface-disabled); /* Disabled inputs/buttons */
+
+    /* DIVIDER */
+    --color-surface-divider: var(--surface-divider);
+    --color-surface-divider-svg: var(--surface-divider-svg);
+
+    --color-surface-page: var(--surface-page); 
+    --color-surface-grad-1: var(--surface-grad-1); 
+    --color-surface-grad-2: var(--surface-grad-2); 
+    --color-surface-section: var(--surface-section); 
+
+    --color-surface-card: var(--surface-card); 
+    --color-surface-pill: var(--surface-pill); 
+
+    --color-surface-main: var(--surface-main); 
+    --color-surface-aside: var(--surface-aside); 
+    --color-surface-cta: var(--surface-cta); 
+
+
+
+ 
+ 
+    
+
+
+
+
+
+
+}

@@ -1,0 +1,13 @@
+tree:
+  -
+    id: 829c75ec-931b-4b3b-aa35-ecd63fd63960
+    title: General
+    url: /docs/guides/general
+  -
+    id: f0c89315-bf4b-4548-8558-54950ac8195d
+    title: Pages
+    url: /docs/guides/pages
+  -
+    id: fbf195d4-eeb9-477f-852e-43fc45da9ff5
+    title: 'Set Templates'
+    url: /docs/guides/set-templates

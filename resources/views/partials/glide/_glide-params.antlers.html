@@ -1,0 +1,52 @@
+
+{{ partial:partials/glide/glide 
+    {{# ••••••••••••••••••••••• #}}
+    {{# IMAGE #}}
+    {{# ••••••••••••••••••••••• #}}
+
+	{{# DATA ----------------- #}}
+	:assets_tag="assets_field" 
+	{{# OPTIONS -------------- #}}
+	:img_ratio="img_ratio" {{# 16x9, 4x3, 1x1, original #}}
+	:placeholder_img="placeholder_img"  
+	:sizes="sizes"
+	:link_img="link_img"  {{# true #}}
+		:link_type="link_type"
+		:img_notab="img_notab" {{# true #}}
+	:lazy_load="lazy"
+	{{# CSS ----------------- #}}
+	:figure_css="figure_css"
+	:picture_css="picture_css"
+	:img_css="img_css"
+}}      
+
+{{ partial:partials/glide/glide
+    {{# ••••••••••••••••••••••• #}}
+    {{# IMAGE #}}
+    {{# ••••••••••••••••••••••• #}}
+
+	{{# DATA ----------------- #}}
+	:assets_tag="assets_field" 
+	{{# OPTIONS -------------- #}}
+	img_ratio="" {{# 16x9, 4x3, 1x1, original #}}
+	placeholder_img=""  
+	sizes="
+	(min-width: 1280px) 600px,
+	(min-width: 1024px) 1024px, 
+	(min-width: 768px) 768px,
+	(min-width: 425px) 425px, 
+	(min-width: 375px) 375px, 
+	(min-width: 320px) 320px, 320px"
+	link_img=""  {{# true #}}
+		link_type=""
+		img_notab="" {{# true #}}
+	lazy_load=""
+	{{# CSS ----------------- #}}
+	figure_css=""
+	picture_css=""
+	img_css=""
+
+	  {{# 
+  The value after min-width E.g. (min-width: 1024px) 1024px, is how wide the image needs to be at that breakpoint, it doesn't have to match the value of min-width: 1024px. It could be (min-width: 1024px) 512px. This tells the browser when the viewport is at least 1024px wide the image will need 512px. The browser then looks in the srcset, and picks the image that best fits the space. This is based on the width of the image and the screen density.
+	#}}
+}} 

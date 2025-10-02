@@ -1,0 +1,40 @@
+<div class="space-y-4 pb-2">
+    <div>
+        <span class="{{ view:label }}">Feedback Type</span>
+        <span class="{{ view:hint }}">Please pick one option from the list below</span>
+    </div>
+
+    <div class="space-y-3">
+        <label class="{{view:radio_wrap}}">
+            <input class="{{view:radio_input}}" type="radio" name="feedback_type" value="observation" />
+           <div>
+                <span class="{{view:radio_label}}">Observation</span>
+                <span class="{{ view:hint }}">Please share your recent site visit experiences</span>
+           </div>
+        </label>
+
+        <label class="{{view:radio_wrap}}">
+            <input class="{{view:radio_input}}" type="radio" name="feedback_type" value="compliment" />
+            <div>
+                <span class="{{view:radio_label}}">Compliment</span>
+                <span class="{{ view:hint }}">Tell us what you liked about our safety practices</span>
+            </div>
+        </label>
+
+        <label class="{{view:radio_wrap}}">
+            <input class="{{view:radio_input}}" type="radio" name="feedback_type" value="near_miss" />
+            <div>
+                <span class="{{view:radio_label}}">Near Miss</span>
+                <span class="{{ view:hint }}">An unplanned event with potential harm</span>
+            </div>
+        </label>
+
+        <label class="{{view:radio_wrap}}">
+            <input class="{{view:radio_input}}" type="radio" name="feedback_type" value="problem" />
+            <div>
+                <span class="{{view:radio_label}}">Problem</span>
+                <span class="{{ view:hint }}">Share issues faced to improve site safety</span>
+            </div>
+        </label>
+    </div>
+</div>

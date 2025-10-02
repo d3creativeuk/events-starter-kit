@@ -1,0 +1,64 @@
+
+<div class="mx-auto max-w-3xl mt-14">
+
+
+{{# FEATURED EVENT #}}
+<div class="mb-14">
+    {{partial:partials/type/htag-v2
+        s_content="Featured Event"
+        htag="h2"
+        css_tag="section_title"
+        css_tag_custom=""
+        css_tag_overide=""
+        is_link="true"
+        has_decoration=""
+        css_link=""
+    }}       
+    {{featured_event}}
+    {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="featured_event_card"}}
+    {{/featured_event}}
+</div>
+
+{{# UPCOMING EVENTS #}}
+{{partial:partials/type/htag-v2
+    s_content="Upcoming Events"
+    htag="h2"
+    css_tag="section_title"
+    css_tag_custom=""
+    css_tag_overide=""
+    is_link="true"
+    has_decoration=""
+    css_link=""
+}} 
+{{# ONLY SHOW EVENTS FROM THIS YEAR #}}
+
+{{collection:events sort="event_date_field:start:asc" as="events" status:is="published" status:isnt="scheduled" since="january 1st" }}
+    <div class="flex flex-col gap-y-6">
+        
+        {{events group_by="event_date_field:start|Y"}}
+        
+        {{ groups }}
+          {{partial:partials/type/htag-v2
+            :s_content="group"
+            htag="h3"
+            css_tag="event_listing_title"
+            css_tag_custom=""
+            css_tag_overide=""
+            is_link="true"
+            has_decoration=""
+            css_link=""
+        }}
+         {{ items }}
+            {{if event_date_field:start | is_future}}
+               {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="event_card"}}
+            {{/if}}
+          {{ /items }} 
+          {{ /groups }} 
+       
+          {{/events}}
+       
+    </div>
+{{/collection:events}}
+          
+
+</div>

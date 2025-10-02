@@ -1,0 +1,116 @@
+title: 'Form - Feedback Example'
+fields:
+  -
+    handle: select_field
+    field: form_elements.select_field
+    config:
+      display: 'Select a site'
+      instructions: 'Please select a location from the list below'
+      placeholder: Location...
+  -
+    handle: assets_field
+    field: form_elements.assets_field
+  -
+    handle: full_name
+    field: form_elements.full_name
+  -
+    handle: first_name
+    field: form_elements.first_name
+  -
+    handle: last_name
+    field: form_elements.last_name
+  -
+    handle: business_email
+    field: form_elements.business_email
+    config:
+      validate:
+        - required
+  -
+    handle: feedback_type
+    field:
+      options:
+        observation: Observation
+        compliment: Compliment
+        near_miss: 'Near Miss'
+        problem: Problem
+      display: 'Feedback Type'
+      type: radio
+      instructions: 'Please pick one option from the list below'
+      validate:
+        - required
+  -
+    handle: mailing_list_checkbox
+    field:
+      options:
+        mailing-list-signup: 'Add me to the Widgets ABC mailing list'
+      display: Newsletter
+      type: checkboxes
+      always_save: false
+  -
+    handle: terms_checkbox
+    field:
+      options:
+        terms: 'I agree to the [terms and conditions](/){:target="_blank"}'
+      display: 'Terms and Conditions'
+      type: checkboxes
+      localizable: true
+      validate:
+        - required
+        - array
+        - 'min:1'
+      always_save: false
+  -
+    handle: grid_field
+    field:
+      mode: stacked
+      display: 'Grid Field'
+      type: grid
+      fields:
+        -
+          handle: observation
+          field:
+            input_type: text
+            antlers: false
+            default: Observation
+            display: Observation
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+        -
+          handle: compliment
+          field:
+            input_type: text
+            antlers: false
+            display: Compliment
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+        -
+          handle: near_miss
+          field:
+            input_type: text
+            antlers: false
+            display: 'Near Miss'
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+        -
+          handle: problem
+          field:
+            input_type: text
+            antlers: false
+            display: Problem
+            type: text
+            icon: text
+            listable: hidden
+            instructions_position: above
+            visibility: visible
+  -
+    handle: phone_number
+    field: form_elements.phone_number

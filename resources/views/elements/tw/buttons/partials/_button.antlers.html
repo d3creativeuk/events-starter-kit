@@ -1,0 +1,17 @@
+<div class="flex p-4 items-center border border-disabled flex-col gap-y-2 {{ bg_theme }} {{ bg_dark ?= 'bg-neutral-900'}}">
+	<div>
+		{{ partial:partials/button/button
+			is_anchor="true"
+			:show_icon="show_icon"
+			button_label="Full Review"
+			link_type="entry"
+			:button_theme="button_theme"
+		}}
+	</div>
+	<span class="text-sm {{ bg_dark ?= 'text-white'}}">
+		{{ button_theme }}
+	</span>
+</div>
+
+
+

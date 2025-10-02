@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+/* 
+When defining theme variables that reference other variables, use the inline option:
+https://tailwindcss.com/docs/theme#referencing-other-variables 
+https://github.com/tailwindlabs/tailwindcss/discussions/16292
+*/
+
+/* @layer base {
+  @import "~plyr/dist/plyr.css";
+} */
+
+@import "./app/tailwind/typography.css";
+/* @import './app/colours.css' layer(utilities); */
+
+@import './app/tokens/brand.css' layer(utilities);
+@import './app/tokens/alias/swatches.css' layer(utilities);
+@import './app/tokens/alias/text.css' layer(utilities);
+@import './app/tokens/alias/hero.css' layer(utilities);
+@import './app/tokens/alias/cta-available.css' layer(utilities);
+@import './app/tokens/alias/border.css' layer(utilities);
+@import './app/tokens/alias/button.css' layer(utilities);
+@import './app/tokens/alias/icon.css' layer(utilities);
+@import './app/tokens/alias/surface.css' layer(utilities);
+@import './app/tokens/alias/mast.css' layer(utilities);
+@import './app/tokens/alias/form.css' layer(utilities);
+
+@import './app/tokens/mapped/mapped.css' layer(utilities);
+@import './app/tokens/mapped/card/card.css' layer(utilities);
+@import './app/tokens/mapped/mapped-hero.css' layer(utilities);
+@import './app/tokens/mapped/mapped-mast.css' layer(utilities);
+@import './app/tokens/mapped/mapped-button.css' layer(utilities);
+@import './app/tokens/mapped/mapped-footer.css' layer(utilities);
+@import './app/tokens/mapped/contact/body.css' layer(utilities);
+@import './app/tokens/mapped/bio/bio.css' layer(utilities);
+@import './app/tokens/mapped/pages/home.css' layer(utilities);
+@import './app/tokens/mapped/pages/notify.css' layer(utilities);
+@import './app/tokens/mapped/pages/show.css' layer(utilities);
+@import './app/tokens/mapped/cta/cta.css' layer(utilities);
+@import './app/tokens/mapped/form/form.css' layer(utilities);
+
+@import './app/base.css' layer(utilities);
+@import './app/typography.css' layer(utilities);
+@import './app/fonts.css' layer(utilities);
+/* @import "app/hyperlink.css"; */
+@import './app/splide.css' layer(utilities);
+@import './vendors/plyr.css' layer(utilities);
+@import './app/alpine.css' layer(utilities);
+/* @import "app/greyscale.css"; */
+@import './app/ally.css' layer(utilities);
+@import './app/forms.css' layer(utilities);
+@import './app/spacing.css' layer(utilities);
+@import './app/themes.css';
+
+/* @source inline('text-text-hover'); */
+
+/* https://tailwindcss.com/docs/detecting-classes-in-source-files#explicitly-excluding-classes */
+/* @import "app/fonts.css"; */
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+*/

@@ -1,0 +1,6 @@
+title: '404'
+data:
+  headline: 'Something went wrong!'
+  text: 'Please return to the homepage.'
+  button_label: 'Return to Homepage'
+  button_link: 'entry::home'

@@ -1,0 +1,8 @@
+title: 'Lead paragraph'
+fields:
+  -
+    handle: lead_paragraph
+    field: common.textarea
+    config:
+      display: 'Lead paragraph'
+      character_limit: '180'

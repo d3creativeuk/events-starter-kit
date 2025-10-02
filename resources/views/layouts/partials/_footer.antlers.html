@@ -1,0 +1,74 @@
+
+{{#  <footer class="{{ class }}">
+    <div>
+       <div class="footer-head">{{ partial:partials/company/logo class="brand-logo"}}</div>
+       <div class="footer-body">
+            <div>{{ partial:partials/nav/nav class="footer-nav" handle="main_menu"}}</div>
+           { <div>{{ partial:partials/company/business-hours value="Opening times" }}</div> 
+           <div>{{ partial:partials/company/business-hours }}</div>
+
+            <div>{{ partial:partials/company/contact-details}}</div>
+            
+
+       </div>
+       <div class="footer-base">{{ partial:partials/company/companies-house }}</div>
+       <div class="footer-copy">&copy; 2020 {{ unless (now | format:Y) == '2020' }} - {{ now | format:Y }}{{ /unless }} {{ company:json_company_name ? company:json_company_name : 'Company Name' }}. {{ partial:partials/nav/nav class="footer-nav" handle="legal_menu"}}</div>       
+        
+    </div>
+   
+</footer> #}}
+
+
+
+<footer class="bg-page py-16 xl:py-32" aria-labelledby="footer-heading">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+  <div class="max-w-8xl mx-auto px-4 ">
+    
+      
+        <div class="md:grid md:grid-cols-4 md:gap-14">
+
+          <div class="mb-12 max-w-xs flex flex-col ">{{ partial:partials/company/logo logo_a_class="w-44 block overflow-hidden" logo_css_img="w-fit -ml-4 mb-6" }}
+           {{ company:json_description | wrap:p.mt-4 }}  
+          </div>
+          
+          <div>
+            <span class="text-sm  uppercase">Contact Us</span>
+            {{ partial:partials/company/contact-details class="mt-4"}}   
+          </div>
+
+          {{ partial:partials/company/external-sites }}   
+          
+
+          <div class="mt-12 md:mt-0">
+            
+              <nav  class="space-y-2" aria-labelledby="footer-quick-links">
+                <span class="text-sm mb-4 block uppercase" id="footer-quick-links">Quick links</span>
+                {{ nav handle="main_menu" }}               
+                    <a class="text-base block hover:underline" href="{{ url }}">{{ title }}</a>
+                {{ /nav }}
+              </nav>
+          </div>
+
+         
+        </div>
+       {{# Legals #}}
+       {{ partial:partials/footer/legal-menu }}
+    </div>
+    
+
+    
+  
+    </div>
+    {{# Copyright #}}
+    <div class="mt-4 ">
+      <div class="max-w-8xl  mx-auto pt-2 px-6">
+        <p class="mt-8 text-sm  md:mt-0">
+          &copy; 2020 {{ unless (now | format:Y) == '2020' }} - {{ now | format:Y }}{{ /unless }} This website and its content is copyright of {{ company:json_company_name ? company:json_company_name : 'Company Name' }}, all rights reserved. 
+
+          {{ if backlink:backlink_toggle }}{{ backlink:backlink_text | markdown | strip_tags('p') | wrap('span.[&_a]:text-black.[&_a]:underline.[&_a]:underline-offset-2.[&_a]:decoration-neutral-500.[&_a]:hover:no-underline') }}{{ /if }} 
+        </p> 
+          
+      </div>
+    </div>
+  </div>
+</footer>

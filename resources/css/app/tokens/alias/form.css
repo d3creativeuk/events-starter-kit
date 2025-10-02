@@ -1,0 +1,12 @@
+
+@theme inline  {
+    --color-form-input-text: var(--form-input-text); 
+    --color-form-label: var(--form-label); 
+    --color-form-label-alt: var(--form-label-alt); 
+    --color-form-border: var(--form-border); 
+    --color-form-hint: var(--form-hint); 
+    --color-form-surface-error: var(--form-surface-error); 
+    --color-form-surface-error-text: var(--form-surface-error-text); 
+    --color-form-error-text: var(--form-error-text); 
+    --color-form-surface-success: var(--form-surface-success); 
+}

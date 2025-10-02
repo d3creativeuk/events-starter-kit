@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    {{ partial:layouts/partials/head }}
+    {{# Displays layout and template used, local env only #}}
+    {{ partial:layouts/partials/environment }} 
+    {{ if logged_in }} 
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}">         
+  
+        {{ partial:snippets/gtm/gtm-body }} 
+        
+        {{ partial:partials/breadcrumbs/breadcrumbs css_nav="max-w-8xl mx-auto flex py-4" }}
+       
+        {{ yield:top }}          
+        {{ yield:aside_one }} 
+        {{# Main #}}
+        <div class="max-w-8xl mx-auto">{{ template_content }} </div>
+        {{ yield:aside_two }}        
+        {{ yield:base }} 
+        
+    </body>
+    {{ else }}
+    {{ redirect to="/login" }}
+	{{ /if }}
+</html>

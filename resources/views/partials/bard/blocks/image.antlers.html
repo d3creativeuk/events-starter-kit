@@ -1,0 +1,12 @@
+{{ if type == "image" }}
+    
+        {{ if image_type === 'single' }}
+        {{ partial:partials/bard/blocks/partials/img/single }}
+        {{ elseif image_type === 'grid' }}
+        {{ partial:partials/bard/blocks/partials/img/grid }}
+        {{ elseif image_type === 'carousel' }}
+        {{ partial:partials/bard/blocks/partials/img/carousel }}
+        {{ /if }}
+   
+{{/if}}
+

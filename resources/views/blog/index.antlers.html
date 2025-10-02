@@ -1,0 +1,36 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+{{ section:aside_one }} 
+{{ partial:partials/entries/terms css_wrap="blog_sidebar_wrap" }} 
+{{ /section:aside_one }} 
+
+{{# TEMPLATE CONTENT #}}
+
+<div class="text-left lg:px-14">
+  
+    <div class="space-y-6 mb-10">
+        <h1 class="text-6xl font-semibold">{{ title }}</h1>
+        <p>{{ pages_intro_bard }}</p>       
+    </div>
+    {{ collection:blog as="posts" sort="date:desc" }}	
+    <div class="space-y-10">
+        {{ posts }}
+            <article>                   
+                    <div>
+                        {{ partial:partials/meta/meta show_taxonomy="true"}}
+                        <h3 class="text-4xl font-semibold mb-2"><a class="underline hover:no-underline" href="{{ url }}">{{ title }}</a></h3>
+                         {{ partial:partials/meta/meta show_user="true" }}
+                        <p>{{ blog_bard_intro ?? "Donec massa odio, mollis at posuere non, varius quis metus. Proin sed nisl sit amet nisi aliquet vehicula ut at augue. Morbi est arcu, sollicitudin ut faucibus vitae, pellentesque vitae nunc"}}</p>
+                    </div>   
+            </article>
+        {{ /posts }} 
+    </div> 
+{{ /collection:blog }}  
+</div>
+
+{{# /TEMPLATE CONTENT #}}
+{{ section:aside_two }} 
+{{ partial:partials/entries/latest list_title="Latest Insights" css_wrap="blog_sidebar_wrap"}}
+{{ /section:aside_two }} 

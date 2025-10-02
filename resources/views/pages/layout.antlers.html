@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+    {{ partial:layouts/partials/head }}
+    {{# Displays layout and template used, local only #}}
+    {{ partial:layouts/partials/environment }} 
+    <body class="bg-neutral-100 {{ view:body_class }}">       
+        {{# :snippets/gtm/gtm-head located: layouts/partials/head and partial:snippets/seo #}}
+        {{ partial:snippets/gtm/gtm-body }} 
+        {{# Mast navigation #}}
+         {{ partial:partials/mast/mast }}  
+        {{ yield:breadcrumbs }} 
+		{{ yield:top }} 
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 lg:mt-14 xl:px-0">
+			<div class="lg:grid lg:grid-cols-12"> 
+				<div class="lg:col-span-3">     
+					{{ yield:aside_one }}
+						Sidebar content
+					{{ /yield:aside_one }}
+				</div> 
+				<main class="lg:grow lg:col-span-6">
+					{{ template_content }}
+				</main>				
+				<div class="lg:col-span-3"> 
+					{{ yield:aside_two }}
+						Sidebar content 2
+					{{ /yield:aside_two }}
+				</div>
+			</div>
+		</div>      
+        {{ yield:base }} 
+        {{# Footer #}}
+        {{ partial:layouts/partials/footer }}         
+    </body>
+</html>

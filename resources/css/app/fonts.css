@@ -1,0 +1,44 @@
+@theme {
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"); */
+/* Using Custom Fonts In Tailwind CSS */
+/* https://www.youtube.com/watch?v=sOnBG2wUm1s */
+/* https://dev.to/thelamina/using-custom-fonts-in-tailwind-css-5doi */
+
+
+
+    /* --font-display: "Poppins", "sans-serif"; */
+    --font-sans: "Poppins", "sans-serif";
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+}
+
+
+/* @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap"); */
+/* Using Custom Fonts In Tailwind CSS */
+/* https://www.youtube.com/watch?v=sOnBG2wUm1s */
+/* https://dev.to/thelamina/using-custom-fonts-in-tailwind-css-5doi */
+
+@layer base {
+    @font-face {
+        font-family: "Poppins";
+        src: url("/public/fonts/Poppins-Regular.woff2") format("woff2"),
+        url("/public/fonts/Poppins-Regular.woff") format("woff"),
+        url("/public/fonts/Poppins-Regular.ttf") format("truetype");   
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: "Poppins";
+        src: url("/public/fonts/Poppins-SemiBold.woff2") format("woff2"),
+        url("/public/fonts/Poppins-SemiBold.woff") format("woff"),
+        url("/public/fonts/Poppins-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+
+}
+

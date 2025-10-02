@@ -1,0 +1,100 @@
+title: 'Demo Entry Image'
+fields:
+  -
+    handle: demo_image_type
+    field:
+      options:
+        -
+          key: single
+          value: Single
+        -
+          key: grid
+          value: Grid
+        -
+          key: carousel
+          value: Carousel
+      default: single
+      type: button_group
+      display: Type
+      width: 33
+  -
+    handle: image_format_picker_1
+    field:
+      options:
+        -
+          key: no_crop
+          value: Original
+        -
+          key: wide
+          value: Wide
+        -
+          key: classic
+          value: Classic
+        -
+          key: square
+          value: Square
+      type: button_group
+      display: Format
+      width: 66
+      default: classic
+      always_save: true
+      if:
+        image_type: 'equals single'
+  -
+    handle: image_format_picker_2
+    field:
+      options:
+        -
+          key: wide
+          value: Wide
+        -
+          key: classic
+          value: Classic
+        -
+          key: square
+          value: Square
+      type: button_group
+      display: Format
+      width: 66
+      default: classic
+      always_save: true
+      if:
+        image_type: 'contains_any grid, carousel'
+  -
+    handle: entry_images
+    field:
+      container: bones
+      type: assets
+      display: Images
+      always_save: true
+      instructions: "Add up to nine images and drag them to change their order. If 'Single' is selected as the image type, only the top image will be used. Click on the filename to change focus crop, add alt text, captions and more."
+      max_files: 9
+  -
+    handle: asset_credit_toggle
+    field:
+      type: toggle
+      display: Credit
+      width: 25
+      always_save: true
+  -
+    handle: asset_caption_toggle
+    field:
+      type: toggle
+      display: Caption
+      width: 25
+      always_save: true
+  -
+    handle: lightbox_toggle
+    field:
+      type: toggle
+      display: Lightbox
+      width: 25
+      always_save: true
+  -
+    handle: lazy_load
+    field:
+      default: true
+      type: toggle
+      display: 'Lazy Load'
+      instructions: 'Turn off if image is at the top of the page.'
+      width: 25

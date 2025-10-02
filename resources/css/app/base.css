@@ -1,0 +1,13 @@
+/* Smooth Scroll Offset Anchor Links with CSS */
+/* https://spigotdesign.com/smooth-scroll-offset-anchor-links-with-css/ */
+/* UPDATED: https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
+html {
+    scroll-behavior: smooth;
+}
+
+:target:before {
+    content: "";
+    display: block;
+    height: 180px;
+    margin: -180px 0 0;
+}

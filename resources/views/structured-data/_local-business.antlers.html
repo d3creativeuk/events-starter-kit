@@ -1,0 +1,53 @@
+<script type="application/ld+json">
+    {
+        "@context":"https://schema.org",
+        "@type":"LocalBusiness",
+        "name":"{{ company:json_company_name }}",
+        {{ if company:json_alt_company_name }}"alternateName": "{{ company:json_alt_company_name }}",{{ /if }}
+        "description":"{{ company:json_description }}",
+        "address":{
+            "@type":"PostalAddress",
+            "streetAddress":"{{ company:json_street_address }}",
+            "addressLocality":"{{ company:json_address_locality }}",
+            "addressRegion":"{{ company:json_address_region }}",
+            "postalCode":"{{ company:json_postal_code }}",
+            "addressCountry":"{{ company:json_address_country }}",
+            "contactType": "Mailing address"		
+        },
+        "areaServed": [{{ company:json_countries_served }}"{{ value }}"{{ unless last }}, {{ /unless }}{{ /company:json_countries_served }}],
+        {{ if company:json_phone_number }} "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "{{ company:json_country_code }}{{ company:json_area_code }}{{ company:json_phone_number | regex_replace(' ', '') }}",
+            "contactType": "Customer service",
+            "availableLanguage": [{{ company:json_lang_select }}"{{ label }}"{{ unless last }}, {{ /unless }}{{ /company:json_lang_select }}]{{ company:json_states_served ?= ',' }}            
+        },{{ /if }}
+        {{ if company:json_company_images }}"image": [
+                {{ company:json_company_images }}{
+                    {{ glide :src="url" absolute="true" preset="w1200_h630" }}"@type": "ImageObject",
+                    "url": "{{ url  }}",
+                    "width": {{ width }},
+                    "height": {{ height }},
+                    "caption": "{{ alt }}"{{ /glide }}
+                }{{ unless last }}, {{ /unless }}{{ /company:json_company_images }}
+            ], {{ /if }}
+            {{ if company:json_phone_number }}"telephone":"{{ company:json_country_code }}{{ company:json_area_code }}{{ company:json_phone_number | regex_replace(' ', '')}}",{{ /if }}
+        "url":"{{ config:app:url }}",
+        {{ if company:json_external_sites }}"sameAs":[{{ /if }}
+        {{ company:json_external_sites }}"{{ json_external_site_url }}"{{ unless last }}, {{ /unless }}{{ /company:json_external_sites }}
+        {{ if company:json_external_sites }}],{{ /if }}
+        {{ if company:json_opening_times }}"openingHoursSpecification":[{{ company:json_opening_times }}        
+        {{ if opening_times_open && opening_times_close }}{
+            "@type":"OpeningHoursSpecification",
+            "dayOfWeek":"{{ opening_times_day }}",
+            "opens":"{{ opening_times_open }}",
+            "closes":"{{ opening_times_close }}"		
+            }{{ /if }}{{ unless last }}, {{ /unless }}{{ /company:json_opening_times }}    
+            ],
+        {{ /if }}
+            {{ if company:json_latitude }}"geo":{
+            "@type":"GeoCoordinates",
+            "latitude":"{{ company:json_latitude }}",
+            "longitude":"{{ company:json_longitude }}"
+        }{{ /if }}
+        }
+    </script>

@@ -1,0 +1,8 @@
+{{ if seo:toggle_google_tag_manager && environment === 'production'}}
+    {{# Google Tag Manager (noscript) #}}
+    {{ if seo:google_tag_manager }}
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{ seo:google_tag_manager }}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    {{# End Google Tag Manager (noscript) #}}
+    {{ /if }}
+{{ /if }}

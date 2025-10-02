@@ -1,0 +1,38 @@
+{{ section:seo_title }}
+    Authors   
+{{ /section:seo_title }}
+
+{{ section:seo_description }}
+    This is what we think
+{{ /section:seo_description }}
+
+{{ section:seo_canonical }}
+	<link rel="canonical" href="{{ current_full_url }}">
+{{ /section:seo_canonical }}
+
+{{ section:author_breadcrumbs }}
+	{{ partial:partials/breadcrumbs/author-breadcrumbs }}
+{{ /section:author_breadcrumbs}}
+
+{{ section:aside_one }} 
+   
+{{ /section:aside_one }} 
+
+{{# TEMPLATE CONTENT #}}
+
+<div class="bg-white p-4 lg:p-10 xl:p-24">  
+    <div class="space-y-6 mb-10">
+		<ul class="space-y-16">
+			{{ users }}	
+				{{ partial:users/bio-profile }}
+			{{ /users }}
+		</ul>
+
+		
+    </div>
+</div>
+
+{{# /TEMPLATE CONTENT #}}
+{{ section:aside_two }} 
+   
+{{ /section:aside_two }} 

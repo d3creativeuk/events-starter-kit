@@ -1,0 +1,51 @@
+---
+base: 'group w-auto justify-self-center font-semibold inline-block no-underline border transition focus:transition-none ease-in-out'
+a11y: 'focus:outline-2 outline-offset-4 focus-visible:outline'
+radius:
+    sm: 'rounded-xs'
+    md: 'rounded-md'
+    lg: 'rounded-lg'
+    full: 'rounded-full'
+size:
+    sm: 'px-4 py-2'
+    md: 'px-4 py-2 md:px-6 py-3 md:text-lg'
+    lg: 'px-4 py-2 md:px-6 py-3 md:text-lg lg:px-8 py-4 lg:text-xl'
+---
+
+
+{{# Common link_type value: entry #}}
+{{ is_anchor ? "<a" : "<button" }}
+
+{{ partial:partials/button/attrs }}
+{{ notab ?= "tabindex='-1'" }} 
+{{ precognition ?= ':disabled="form.processing"'}}
+class="
+{{ view:base }}
+{{ view:a11y }}
+{{ view:size[{size ?? 'sm'}] }} 
+{{# view:radius[{radius ?? 'sm'}] #}} 
+{{ radius ?= {view:radius[{radius}]} }}  
+{{# view:font_size[{text_size ?? 'sm'}] #}} 
+{{# Looks for button_theme if not a fallback is used #}}
+{{ button_theme ? '{{ partial:partials/button/button-themes }}' : '{{ partial:partials/button/button-themes button_theme="default-on-white" }}' }}
+
+{{ show_icon ?= 'inline-flex items-center' }}
+{{ icon_flip ?= 'flex-row-reverse' }}
+">
+
+
+<span>{{ button_label ?? "Button Text" }}</span>
+
+
+{{ if show_icon }}
+    {{ partial:partials/icon/icon 
+        :icon_flip="icon_flip" {{# default right #}}
+        :icon_path="icon_path" {{# arrow_thin, caret #}}
+        :icon_turn="icon_turn" {{# 90 180 45 -90 -45 #}}
+        :icon_css="icon_css" {{# h-4 w-4 #}}
+    }}
+{{ /if }}
+
+
+
+{{ is_anchor ? "</a>" : "</button>" }}

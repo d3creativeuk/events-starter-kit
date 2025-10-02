@@ -1,0 +1,21 @@
+---
+icon:
+    arrow_thin: 'assets/icons/sml-arrow-right.svg'
+    caret: 'assets/icons/iconmonstr-caret-down-filled.svg'
+    chevron: 'assets/icons/chevron.svg'
+    cross: 'assets/icons/cross-24.svg'
+    magnify: 'assets/icons/magnify.svg'
+    file_thin: 'assets/icons/file-thin.svg'
+icon_rotate:
+    90: 'rotate-90'
+    -90: '-rotate-90'
+    45: 'rotate-45'
+    -45: '-rotate-45'
+    180: 'rotate-180'
+---
+
+{{# svg src="{ view:icon[{icon_path ?? ''}] }" class="{css_icon_custom} {css_icon_size ?? 'h-4 w-4'} { view:icon_rotate[{icon_turn}] }" #}}
+<span class="block {{ icon_span_css }} {{ icon_flip ? 'mr-1' : 'ml-1' }}" {{alpine_xshow ?= 'x-show=\"{alpine_xshow}\"'}}>
+   
+    {{ svg src="{ view:icon[{icon_path ?? 'chevron'}] }" class="{icon_css ?? 'h-4 w-4'} { view:icon_rotate[{icon_turn}] }"   }}
+    </span>

@@ -1,0 +1,78 @@
+title: 'Demo Bard - Sets'
+fields:
+  -
+    handle: demo_bard_sets
+    field:
+      buttons:
+        - h2
+        - h3
+        - h4
+        - bold
+        - unorderedlist
+        - orderedlist
+        - anchor
+      container: bones
+      reading_time: true
+      allow_source: false
+      display: Body
+      type: bard
+      always_save: false
+      remove_empty_nodes: false
+      fullscreen: false
+      sets:
+        main:
+          display: Main
+          sets:
+            image:
+              display: Image
+              icon: media-image-picture-orientation
+              fields:
+                -
+                  import: demo_entry_image
+            blockquote:
+              display: Blockquote
+              icon: text-formatting-quotation
+              fields:
+                -
+                  import: blockquote
+            video:
+              display: Video
+              icon: media-webcam-video
+              fields:
+                -
+                  import: demo_video
+            audio:
+              display: Audio
+              icon: media-music-notes
+              fields:
+                -
+                  import: demo_audio_player
+            downloads:
+              display: 'Download Resources'
+              icon: file-content-list
+              fields:
+                -
+                  import: demo_download_list
+            call_to_action:
+              display: 'Call To Action'
+              icon: alert-alarm-bell
+              fields:
+                -
+                  import: call_to_action
+            related_content:
+              display: 'Related Content'
+              icon: content-book-open
+              fields:
+                -
+                  import: related_content
+            table:
+              display: Table
+              icon: layout-three-columns
+              fields:
+                -
+                  import: table
+            faqs:
+              display: FAQs
+              fields:
+                -
+                  import: faqs

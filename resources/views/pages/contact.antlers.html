@@ -1,0 +1,18 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+
+
+{{# TEMPLATE CONTENT #}}
+{{ partial:partials/common/_title-intro }}    
+
+{{ partial:partials/forms/contact }}
+{{# /TEMPLATE CONTENT #}}
+
+
+{{ section:col_two }} 
+<div>{{ partial:partials/company/contact-details}}</div>
+{{# <div>{{ partial:partials/company/business-hours value="Opening times"}}</div> #}}
+<div>{{ partial:partials/company/business-hours }}</div>
+{{ /section:col_two }} 
+

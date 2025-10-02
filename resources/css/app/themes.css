@@ -1,0 +1,79 @@
+
+
+
+
+  
+
+
+  
+
+    /* Buttons */
+  [data-theme="button_1"] {   
+    --invert: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+    --base: light-dark(var(--color-secondary), var(--color-secondary));
+  }
+
+
+  [data-theme="button_2"] {   
+   --invert: light-dark(var(--color-secondary), var(--color-neutral-950));
+   --base: light-dark(var(--color-neutral-950), var(--color-secondary));
+  }
+  
+
+
+
+
+
+
+
+
+
+  /* Themes */
+  [data-theme="black-on-white"] {   
+    --invert: var(--color-black);
+    --base: var(--color-white);
+  }
+  
+  [data-theme="white-on-black"] {
+    --invert: var(--color-white);  
+    --base: var(--color-black); 
+  }
+
+  /* Mast */
+
+  [data-theme="mast_white"] {
+    --invert: var(--color-primary);  
+    --base: var(--color-white); 
+    --default: var(--color-neutral); 
+  }
+
+  [data-theme="mast_theme_default"] {
+    --base: light-dark(var(--color-primary), var(--color-black)); 
+    --invert: var(--color-white);  
+    --default: var(--color-neutral); 
+  }
+  
+  /* Now Booking */
+
+   [data-theme="now_booking_on_primary"] {
+    --invert: light-dark(var(--color-primary), var(--color-black)); 
+    --base: var(--color-white); 
+    --default: var(--color-neutral); 
+  }
+   [data-theme="now_booking_on_white"] {
+    --invert: light-dark(var(--color-neutral-50), var(--color-neutral-950)); 
+    --base: light-dark(var(--color-primary), var(--color-neutral-50)); 
+    --default: light-dark(var(--color-neutral), var(--color-neutral-950)); 
+  }
+
+  /* Titles */
+
+    [data-theme="text_white"] {  
+    --base: var(--color-white); 
+    }
+    [data-theme="text_primary"] {  
+    --base: var(--color-primary); 
+    }
+
+
+  

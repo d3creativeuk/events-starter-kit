@@ -1,0 +1,23 @@
+@theme {
+    /* 
+    --min-width-8xl: …;
+    --width-8xl: …; 
+    */
+    --spacing-8xl: 100rem; /* 1600px */
+    --spacing-9xl: 118.75rem; /* 1900px */
+
+
+
+    --breakpoint-xs: 30rem;
+
+    /* 
+    https://nekocalc.com/rem-to-px-converter
+
+    xs: 30rem = 480
+    sm: 40rem = 640
+    md: 48rem = 768
+    lg: 64rem = 1024
+    xl: 80rem = 1280
+    
+    */
+}

@@ -1,0 +1,10 @@
+[data-theme="featured_event_card"] {   
+--heading: light-dark(var(--color-white), var(--color-neutral-950));
+--body: light-dark(var(--color-white), var(--color-neutral-950));
+--border-color: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+--surface-card: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+}
+[data-theme="event_card"] {   
+--border-color: light-dark(var(--color-neutral-950), var(--color-neutral-950));
+--surface-card: light-dark(var(--color-neutral-50), var(--color-neutral-950));
+}

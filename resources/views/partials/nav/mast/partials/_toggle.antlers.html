@@ -1,0 +1,17 @@
+---
+toggle_classes:
+  0: 'rounded-xs p-2 inline-flex items-center justify-center  hover:text-neutral-500 hover:bg-neutral-100 focus:outline-hidden focus:ring-2 focus:ring-inset focus:ring-lbf-gray'
+  1: 'bg-white text-black'
+  2: 'bg-red-400 text-white '
+---
+
+<button type="button" @click="openm = !openm" :class="!openm ? '{{ view:toggle_classes[1] }}' : '{{ view:toggle_classes[2] }}'" class="{{ view:toggle_classes[0] }} {{ mq_mobile }}">
+	<span class="sr-only" x-text="!openm ? 'Open menu' : 'Close menu'"></span>
+	<template x-if="openm">
+		{{ partial:partials/nav/mast/partials/_icon-x }}
+	</template>
+	<template x-if="!openm"> 
+		{{ partial:partials/nav/mast/partials/_icon-burger }}
+	</template>
+</button>
+

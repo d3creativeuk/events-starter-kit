@@ -1,0 +1,43 @@
+
+@theme inline  {
+
+  /* MAST */
+  --color-surface-mast: var(--surface-mast);
+
+  /* NAV */
+  /* Base */
+    --color-btn-mast-text: var(--btn-mast-text); 
+    --color-btn-mast-border: var(--btn-mast-border); 
+    --color-btn-mast-surface: var(--btn-mast-surface); 
+    
+     /* Current */
+    --color-btn-mast-text-current: var(--btn-mast-text-current); 
+    --color-btn-mast-border-current: var(--btn-mast-border-current);
+    --color-btn-mast-surface-current: var(--btn-mast-surface-current); 
+
+    /* Hover */
+    --color-btn-mast-text-hover: var(--btn-mast-text-hover); 
+    --color-btn-mast-border-hover: var(--btn-mast-border-hover);
+    --color-btn-mast-surface-hover: var(--btn-mast-surface-hover); 
+
+    /* Active - Pressed/clicked state*/
+    --color-btn-mast-text-active: var(--btn-mast-text-active);
+    --color-btn-mast-border-active: var(--btn-mast-border-active);
+    --color-btn-mast-surface-active: var(--btn-mast-surface-active);
+
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    --color-btn-mast-text-focus: var(--btn-mast-text-focus); 
+    --color-btn-mast-border-focus: var(--btn-mast-border-focus); 
+    --color-btn-mast-surface-focus: var(--btn-mast-surface-focus); 
+
+    /* Focus visible - triggers only on keyboard focus */
+    --color-btn-mast-text-focus-visible: var(--btn-mast-text-focus-visible);
+    --color-btn-mast-border-focus-visible: var(--btn-mast-border-focus-visible);
+    --color-btn-mast-surface-focus-visible: var(--btn-mast-surface-focus-visible);
+
+    /* Disabled */
+    --color-btn-mast-text-disabled: var(--btn-mast-text-disabled);
+    --color-btn-mast-border-disabled: var(--btn-mast-border-disabled);
+    --color-btn-mast-surface-disabled: var(--btn-mast-surface-disabled);
+  
+}

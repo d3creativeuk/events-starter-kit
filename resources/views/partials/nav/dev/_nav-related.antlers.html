@@ -1,0 +1,86 @@
+
+ {{# <div x-data="{ s_open: false }" @click.outside="s_open = false">
+    <button @click="s_open = ! s_open">Button</button>
+    <div :class="{ 'hidden': ! s_open }" class="hidden ">
+        Working Demo
+    </div>
+</div>  #}}
+
+
+<div x-data="{ s_open: false }" @click.outside="s_open = false">
+    <button @click="s_open = ! s_open">Button</button>
+    <div :class="{ 'hidden': ! s_open }" class="hidden ">
+        Working Demo
+    </div>
+</div> 
+
+
+<div class="mb-14 text-sm">
+ 
+    {{ nav handle="{{ nav_group ?? {nav_structure | ensure_left('collection::')} }}"  select="title|url" as="items" }}  
+    
+    {{ items }}
+   
+        {{ unless no_results }}
+        <div x-cloak  x-data="{ sb_open: false, sb_open_1: false }" @click.outside="sb_open = false, sb_open_1 = false">
+            {{ if !children}}
+                <a class=" p-2 block {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : " hover:bg-neutral-100" }}" href="{{ url }}">{{ title | title }}</a>
+            {{ else }}            
+                <button @click="sb_open = ! sb_open" class=" p-2 w-full flex justify-between items-center {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : "bg-white hover:bg-neutral-100" }}">
+                    <span>{{ title | title }}</span><span>{{ partial:partials/icon/_icon icon_path="caret" }}</span>
+                </button>
+                
+            {{ /if }}
+                
+           
+                {{ if is_current || is_parent }}
+                    <div :class="sb_open ? 'block' : 'hidden'">
+                        {{ children }}
+                        {{ if !children}}
+                        <a class=" p-2 block {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : " hover:bg-neutral-100" }}" href="{{ url }}">{{ title | title }}</a>
+                    {{ else }}            
+                        <button @click="sb_open_1 = ! sb_open_1" class=" p-2 w-full flex justify-between items-center {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : "bg-white hover:bg-neutral-100" }}">
+                            <span>{{ title | title }}</span><span>{{ partial:partials/icon/_icon icon_path="caret" }}</span>
+                        </button>
+                        <div :class="sb_open ? 'block' : 'hidden'">
+                            {{ children }}
+                                <div>                          
+                                    <a class=" p-2 pl-4 text-sm block {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : "bg-white hover:bg-neutral-100" }}" href="{{ url }}" >{{ title | title }}</a>
+                                </div>                              
+                            {{ /children }}
+                            
+                        </div> 
+                    {{ /if }}                            
+                        {{ /children }}
+                              
+
+                  
+                    </div>
+                {{ else }}
+                    <div :class="{ 'hidden': ! sb_open_1 }">
+                        {{ children }}
+                            <div>                          
+                                <a class=" p-2 pl-4 text-sm block {{ is_current ? "bg-neutral-100 hover:bg-neutral-100" : "bg-white hover:bg-neutral-100" }}" href="{{ url }}" >{{ title | title }}</a>
+                            </div>                              
+                        {{ /children }}
+                        
+                    </div> 
+                {{ /if }}    
+                           
+                
+           
+        </div>
+        {{ /unless }}
+    {{ /items }}
+
+{{ /nav }}
+</div> 
+
+{{# ------ #}}
+
+
+
+
+
+
+

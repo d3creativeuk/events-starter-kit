@@ -1,0 +1,21 @@
+<div class="p-6 {{ wrap_theme ? '{wrap_theme}' : 'bg-white'}}">
+	{{ partial:partials/glide/glide
+		placeholder_img="{{ placeholder_img ? '{placeholder_img}' : '1'}}"  
+		:asset_caption_toggle="asset_caption_toggle"
+		:caption_theme="caption_theme"
+		{{# OPTIONS -------------- #}}
+		img_ratio="wide" {{# comment out if using art_direction, options: wide, classic, square,leave blank or orginal #}}
+		sizes="(min-width: 768px) 50vw, (min-width: 320px) 95vw, 95vw" {{# Use with img_ratio only, comment out if using art_direction #}}
+	}} 
+	<h2 class="{{ title_theme ? '{title_theme}' : 'text-black'}} text-2xl font-semibold my-4">Hands-on with the 2024 iPad mini: Spot the differences</h2>
+	<p class="{{ para_theme ? '{para_theme}' : 'text-black'}} mb-4">
+		The iPad mini is a niche product, that much is clear. But for those who want an extra-small tablet, the launch of the sixth-generation iPad mini in 2021 was a red-letter day.
+	</p>
+	{{ partial:partials/button/_button
+		is_anchor="true"
+		show_icon="true"
+		label="Full Review"
+		link_type="entry"
+		:button_theme="button_theme"
+	}}
+</div>

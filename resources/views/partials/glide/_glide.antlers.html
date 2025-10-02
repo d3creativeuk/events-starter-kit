@@ -1,0 +1,47 @@
+{{ if asset_credit_toggle || asset_caption_toggle}}
+    <figure class="not-prose {{ figure_css }}" >
+{{ /if }}
+
+{{ if lightbox_toggle }}
+    <button  @click="open = true; $nextTick(() => $refs.dialog.showModal())" class="relative block group bg-black cursor-pointer" >
+        {{ if dark_zoom_icon }}
+            {{ partial:partials/icon/_icon icon_css=" absolute z-10 top-4 right-4  fill-black " icon_path="magnify"}}  
+        {{ else }}
+            {{ partial:partials/icon/_icon icon_css=" absolute z-10 top-4 right-4  fill-white " icon_path="magnify"}}  
+        {{ /if }}
+ {{ /if }}
+{{ if link_img }}<a {{ partial:partials/button/attrs }} {{ img_notab ?= "tabindex='-1'" }}  >{{ /if }} 
+    
+    {{ if art_direction }}
+    {{ partial:partials/glide/partials/picture/{art_direction_type ?? 'art-example'} }}
+
+        {{ else }}
+
+            {{ if assets_tag }} 
+                {{ assets_tag }} 
+                    {{ partial:glide/partials/img }}
+                {{ /assets_tag }}
+            {{ else }}
+                {{ placeholder_imgs:assets[placeholder_img] }}   
+                    {{ partial:glide/partials/img }}
+                {{ /placeholder_imgs:assets[placeholder_img] }} 
+            {{/if}}     
+
+    {{ /if }}
+  
+{{ if link_img }}</a>{{ /if }} 
+{{ if lightbox_toggle }}</button>{{ /if }} 
+   
+
+{{ if asset_credit_toggle || asset_caption_toggle}}
+    {{ if assets_tag }} 
+        {{ assets_tag }} 
+            {{ partial:partials/bard/blocks/partials/credit-caption }}
+        {{ /assets_tag }}
+    {{ else }}
+        {{ placeholder_imgs:assets[placeholder_img] }}   
+            {{ partial:partials/bard/blocks/partials/credit-caption }}
+        {{ /placeholder_imgs:assets[placeholder_img] }} 
+    {{/if}} 
+    </figure>
+{{ /if }}

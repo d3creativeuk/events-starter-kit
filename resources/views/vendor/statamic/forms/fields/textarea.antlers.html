@@ -1,0 +1,13 @@
+<textarea
+    class="{{ view:textarea }} {{ error ?= 'border-red-500!'}}"
+    name="{{ handle }}"
+    id="{{ handle }}"
+    rows="5"
+    {{ if placeholder }}placeholder="{{ placeholder }}"{{ /if }}
+    {{ if character_limit }}maxlength="{{ character_limit }}"{{ /if }}
+     x-model="form.{{ handle }}"  
+    @change="form.validate('{{ handle }}')"
+    {{ if validate|contains:required }}aria-required="true"{{ /if }}
+>
+    {{ value }}
+</textarea>

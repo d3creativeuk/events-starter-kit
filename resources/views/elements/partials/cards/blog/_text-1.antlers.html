@@ -1,0 +1,121 @@
+<div class="bg-neutral-200">
+<div class="max-w-8xl mx-auto ">
+
+{{ partial:partials/common/_title
+	{{# DATA ----------------- #}}
+	title="Blog listings"
+    tag="h1"
+
+	{{# OPTIONS -------------- #}}
+	title_css="text-center text-2xl uppercase font-semibold py-6"
+	
+}}
+
+
+
+{{ collection:blog limit="3" as="posts" url:not="{ url }"}}
+<div class="px-4 max-w-3xl pb-14 space-y-6 mx-auto lg:px-14"> 
+{{# <div class="max-w-8xl py-14 space-x-6 flex">#}}
+{{ posts }}
+
+{{ partial:partials/card/_card
+    handle_prefix=""{{# Optional #}}
+
+    show_card_head="false"
+    show_card_body="true"
+    show_card_title="true"
+    show_card_desc="false"
+    show_card_footer="false"
+
+    css_card_outer="bg-white"
+    css_card_head=""
+    css_card_body="p-6 "
+    css_card_body_inner="space-y-2"
+    css_card_footer=""
+
+    {{# ••••••••••••••••••••••• #}}
+    {{# TITLE  #}}
+    {{# ••••••••••••••••••••••• #}}
+
+    {{# DATA ----------------- #}}
+    :title="title"
+    {{# OPTIONS -------------- #}}
+    tag="h2"
+    is_link="true"  {{# true #}}
+        link_type="url"
+        title_notab="" {{# true #}}
+    {{# ICON ----------------- #}}
+    title_show_icon="true"
+        {{# NOTE icon won't show unless 'is_link' is true #}}
+        title_flex="true" {{# true=flex false=inline-flex #}}
+        title_icon_baseline="" {{# items-center #}}
+        title_icon_flip="" {{# left right #}}
+        title_icon_path="" {{# arrow_thin, caret etc #}}
+        title_icon_turn="" {{# 90 180 45 -90 -45 #}}
+        title_icon_css=""
+    {{# CSS ----------------- #}}
+    title_css="font-semibold text-xl block"
+    {{# NOTE use justify-between in link_css with title_flex set to true, to push icon left or right #}}
+    link_css="justify-between hover:underline"
+
+    {{# ••••••••••••••••••••••• #}}
+    {{# INTRO  #}}
+    {{# ••••••••••••••••••••••• #}}
+
+    {{# DATA ----------------- #}}
+    :intro="blog_bard_intro"
+    {{# OPTIONS -------------- #}}
+    intro_truncate=""
+    intro_truncate_chars=""
+    {{# CSS ----------------- #}}
+    intro_css="text-sm"
+	
+    {{# ••••••••••••••••••••••• #}}
+    {{# BUTTON  #}}
+    {{# ••••••••••••••••••••••• #}}
+    
+    {{# DATA ----------------- #}}
+    button_text="Read More"
+
+    {{# OPTIONS -------------- #}}
+    button_type="" {{# submit #}}
+    button_notab="true"
+
+    {{# ICON ----------------- #}}
+    button_show_icon="true"
+         button_icon_flip="" {{# default right #}}
+         button_icon_path="" {{# arrow_thin, caret etc #}}
+         button_icon_turn="" {{# 90 180 45 -90 -45 #}}
+         button_icon_css=""
+
+    {{# CSS ----------------- #}}
+    button_size=""
+    button_theme=""
+
+	{{# ••••••••••••••••••••••• #}}
+    {{# IMAGE  #}}
+    {{# ••••••••••••••••••••••• #}}
+	
+	{{# DATA ----------------- #}}
+	:assets_tag="thumbnail" 
+	{{# OPTIONS -------------- #}}
+	img_ratio="4x3	" {{# 16x9, 4x3, 1x1, original #}}
+	placeholder_img=""  
+	sizes=""
+	link_img="true"  {{# true #}}
+		img_notab="true" {{# true #}}
+	lazy_load=""
+	{{# CSS ----------------- #}}
+	figure_css=""
+	picture_css=""
+	img_css=""
+
+}}
+
+
+
+{{ /posts }}
+{{ /collection:blog }}
+</div>
+</div>
+</div>

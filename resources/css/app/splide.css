@@ -1,0 +1,9 @@
+/* @layer base {
+    @import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+} */
+.splide__slide {
+  @apply opacity-50;
+}
+.splide__slide.is-active {
+  @apply opacity-100;
+}

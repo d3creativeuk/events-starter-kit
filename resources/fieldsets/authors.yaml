@@ -1,0 +1,7 @@
+title: Authors
+fields:
+  -
+    handle: authors
+    field:
+      type: users
+      display: Author

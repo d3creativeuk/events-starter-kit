@@ -1,0 +1,2 @@
+<img class="{{ img_css ?? 'w-full h-auto' }} {{ if lightbox_toggle }} group-hover:opacity-80 transition ease-in-out {{ /if }}" {{ lazy_load ?= 'loading="lazy"' }} {{ partial:partials/glide/partials/groups/_srcset }} {{ partial:partials/glide/partials/groups/_dimensions }} alt="{{ alt ensure_right='.' }}" sizes="{{sizes}}" type="image/
+webp">

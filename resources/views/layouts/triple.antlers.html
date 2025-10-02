@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">    
+    {{ partial:layouts/partials/head }}
+    {{# Displays layout and template used, local env only #}}
+    {{ partial:layouts/partials/environment }} 
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}">   
+      {{ partial:snippets/gtm/gtm-body }}     
+      {{ partial:partials/mast/mast }} 
+      {{ yield:top }}  
+      {{ yield:breadcrumbs }}       
+      <div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-0 ">
+        <div class="border border-neutral-300 lg:grid lg:grid-cols-12">         
+          <div class="w-full lg:col-span-2 lg:py-14">
+            {{ yield:aside_one }}
+          </div> 
+          <main class="border-l border-neutral-300 border-r mx-auto w-full lg:py-14 lg:col-span-7  ">
+            
+            {{ template_content }} 
+          </main>
+          <div class=" w-full lg:col-span-3  lg:py-14">
+            {{ yield:aside_two }}
+          </div>        
+        </div>
+      </div>
+      {{ yield:base }}            
+      {{ partial:layouts/partials/footer }} 
+
+
+      {{ if live_preview }}
+      <script>
+          window.addEventListener('message', async (event) => {
+              if (event.data.name === 'statamic.preview.updated') {
+                  const text = await fetch(event.data.url).then((res) => res.text());
+                  const updated = new DOMParser().parseFromString(text, 'text/html');
+                  Alpine.morph(document.body, updated.body);
+              }
+          });
+      </script>
+    {{ /if }}
+    </body>
+</html>

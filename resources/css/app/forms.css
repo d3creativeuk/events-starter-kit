@@ -1,0 +1,7 @@
+/* Forms */
+.checkbx-link a {
+    text-decoration: underline;
+}
+.checkbx-link a:hover {
+    text-decoration: none;
+}

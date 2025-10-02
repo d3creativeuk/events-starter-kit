@@ -1,0 +1,24 @@
+
+{{# Weird little bug? If this doesn't work, make sure the collection is orderable AND resave the `Configure Collection` page.  #}}
+<div>
+	  {{ _parent_title =  {nav handle="collection::{collection_name ? '{collection_name}' : 'pages'}" :url:contains="segment_1"} | pluck('title') | first /}}
+
+ {{# <h3 class="font-semibold text-xl mb-2">Related pages</h3> #}}
+	<ul>
+		<li class=""><a class="p-2 inline-block hover:no-underline {{ if segment_1 && !segment_2 }}bg-disabled{{/if}}" href="/{{ segment_1 }}"><span>X {{ _parent_title }}</span></a></li>
+			
+		{{# nav handle="collection::{collection_name ? '{collection_name}' : 'pages'}" :from="segment_1" select="title|url"#}}
+		{{ nav handle="collection::{collection_name ? '{collection_name}' : 'pages'}" select="title|url"}}
+		
+			<li class="">
+				<a class="p-2 inline-block hover:no-underline {{ if is_current }}bg-disabled{{/if}}" href="{{ url }}"><span class="font-semibold">{{ title }}</span> <span class="text-sm text-neutral-600">{{ url }}</span></a>
+				{{ if is_current || is_parent }}
+					{{ if children }}
+						<ul class="pl-4">{{ *recursive children* }}</ul>
+					{{ /if }}
+				 {{ /if }}
+			</li>	
+		{{ /nav }}  
+	</ul>
+</div>
+

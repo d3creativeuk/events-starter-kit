@@ -1,0 +1,32 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: headline
+            field: common.text
+          -
+            handle: text
+            field: common.textarea
+            config:
+              buttons:
+                - bold
+                - italic
+                - unorderedlist
+                - orderedlist
+                - removeformat
+                - anchor
+          -
+            handle: button_label
+            field:
+              type: text
+              display: Label
+          -
+            handle: button_link
+            field:
+              collections:
+                - pages
+              type: link
+              display: Link

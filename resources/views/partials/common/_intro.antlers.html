@@ -1,0 +1,7 @@
+<div class="{{ intro_css }} text-muted">
+	{{ if intro_truncate }}
+		{{ intro | markdown | safe_truncate({intro_truncate_chars ?? '140'}, '...')}}
+	{{ else }}
+		{{ intro | markdown ?? 'Get what you need to plan a successful website redesign and get buy-in from key decision makers and stakeholders.'  }}
+	{{ /if }}
+</div> 

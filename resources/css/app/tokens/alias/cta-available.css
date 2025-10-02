@@ -1,0 +1,8 @@
+@theme inline  {
+    --color-cta-ava-text: var(--cta-ava-text);
+    --color-cta-ava-text-pill: var(--cta-ava-text-pill);
+    --color-cta-ava-surface-pill: var(--cta-ava-surface-pill);
+    --color-cta-ava-border-pill: var(--cta-ava-border-pill);
+
+
+}

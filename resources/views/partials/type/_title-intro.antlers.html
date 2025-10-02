@@ -1,0 +1,23 @@
+<div data-theme="{{group_data_theme ?= '{group_data_theme}'}}" class="{{ container_css ? '{container_css}' : 'flex flex-col gap-y-2 pb-10 items-center text-center'}} ">
+    {{partial:partials/type/htag
+        :htag="title_htag"
+        :typo_css="title_css"
+        :typo_overide_css="title_overide_css"
+        :custom_css="title_custom_css"
+        {{# :data_theme="title_data_theme" #}}
+        :s_content="title_s_content"
+        
+    }}
+    {{if show_intro}}
+        {{partial:partials/type/htag
+            :is_bard="intro_is_bard"
+            :htag="intro_tag"
+            :typo_css="intro_css"
+            :typo_overide_css="intro_overide_css"
+            :custom_css="intro_custom_css"
+            {{# :data_theme="intro_data_theme" #}}
+          
+            :s_content="intro_s_content"
+        }}
+    {{/if}} 
+</div>

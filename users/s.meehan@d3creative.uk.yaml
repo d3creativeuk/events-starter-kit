@@ -1,0 +1,15 @@
+name: 'Stephen Meehan'
+super: true
+id: 9e444c70-8423-4285-a952-3f0c36187b9d
+password_hash: $2y$12$aL4kV2rkSdnjwOdK9gljLubdspxxK5zAXmuCoaMUmdurDRjsmR7vm
+preferences:
+  collections:
+    events:
+      after_save: continue_editing
+      columns:
+        - title
+        - date
+        - event_date_field
+        - status
+        - categories
+        - event_type

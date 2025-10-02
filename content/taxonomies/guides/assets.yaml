@@ -1,0 +1,11 @@
+title: Assets
+updated_by: c140131f-c375-40c2-b2b1-b1e0303f6b45
+updated_at: 1738437365
+blueprint: guides
+guide_category_desc:
+  -
+    type: paragraph
+    content:
+      -
+        type: text
+        text: 'Learn how to use assets to easily manage website content.'

@@ -1,0 +1,16 @@
+---
+main_list: space-y-4 py-8 md:py-14
+aside_list: space-y-4 py-10
+---
+
+
+
+<ul class="{{ switch(
+	(style_outer == 'aside') => '{{ view:aside_list }}',
+    (style_outer == 'main') => '{{ view:main_list }}',
+() => '{style_outer}'
+) }}">
+    {{ list_field }}
+    <li class="{{li_css ?? 'flex items-center text-sm lg:text-base'}}"><span class="mr-1">{{ heroicons:outline:{heroicon ?? 'check-circle'} class="w-6 h-6"}}</span><span>{{ value }}</span></li>
+    {{ /list_field }}
+</ul>

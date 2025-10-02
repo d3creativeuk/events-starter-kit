@@ -1,0 +1,46 @@
+---
+base_css: 'font-semibold'
+
+tag_decoration: 'underline-offset-3 underline hover:no-underline'
+tag_link: 'text-default'
+tag_hover: 'hover:text-text-hover'
+tag_outline: 'rounded-sm outline-inherit outline-offset-3'
+tag_focus: 'focus:outline-none' # hides outline when link is clicked
+tag_focus_visible: 'focus-visible:outline-dashed focus-visible:outline-2'
+tag_active: 'active:outline-none'
+
+
+event_listing_title: 'text-3xl text-heading'
+section_title: 'text-xl text-heading mb-4'
+
+
+
+hero_title: 'mb-2 text-5xl font-semibold md:text-6xl lg:text-9xl xl:text-10xl 2xl:text-12xl text-heading-hero'
+
+
+cta_title: 'text-3xl sm:text-4xl  text-heading'
+
+card_title: 'text-lg/7 lg:text-xl xl:text-2xl'
+aside_title: 'text-3xl sm:text-4xl lg:text-5xl  text-aside'
+
+bard_body_title: 'text-3xl sm:text-4xl font-semibold lg:text-5xl xl:text-5xl/14 text-section-heading'
+
+---
+
+
+<{{ htag ?? 'h2'}} {{custom_id ?= 'id="{{s_content | slugify}}"'}} class="{{view:base_css}} {{ view:tag_base }} {{css_tag_custom}}
+{{ switch(
+(css_tag == 'event_listing_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:event_listing_title}' }}',
+(css_tag == 'card_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:card_title}' }}',
+(css_tag == 'cta_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:cta_title}' }}',
+(css_tag == 'hero_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:hero_title}' }}',
+(css_tag == 'section_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:section_title}' }}',
+(css_tag == 'aside_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:aside_title}' }}',
+(css_tag == 'bard_body_title') => '{{ css_tag_overide ? '{css_tag_overide}' : '{view:bard_body_title}' }}',
+ ) }}
+">
+{{is_link ?= '<a class="{{ view:tag_link }} {{ view:tag_hover }} {{ view:tag_outline }} {{ view:tag_focus }} {{ view:tag_focus_visible }} {{ view:tag_active }} {{has_decoration ?= '{{view:tag_decoration}}'}} {{css_link}}"  href="{url}">'}}{{s_content ?? 'Title to Go Here'}}{{is_link ?= '</a>'}} </{{ htag ?? 'h2'}}>
+
+
+
+

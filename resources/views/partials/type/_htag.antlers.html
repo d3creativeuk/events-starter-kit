@@ -1,0 +1,103 @@
+---
+base_css: 'underline-offset-3 [&_a]:font-normal [&_a]:underline [&_a:hover]:no-underline'
+
+hero_title: 'text-3xl sm:text-4xl font-semibold lg:text-5xl xl:text-8xl text-heading'
+hero_intro: 'sm:text-lg lg:text-2xl lg:mt-2 max-w-3xl lg:max-w-5xl text-intro'
+
+section_title: 'text-3xl sm:text-4xl font-semibold lg:text-5xl xl:text-6xl/17  text-heading'
+section_intro: 'sm:text-lg lg:text-2xl lg:mt-2 max-w-3xl lg:max-w-5xl text-intro'
+section_intro_bard: 'prose sm:text-lg lg:text-2xl lg:mt-2 max-w-3xl lg:max-w-5xl'
+
+sidebar_title: 'text-3xl sm:text-4xl font-semibold  text-sidebar'
+
+md_cta_title: 'text-3xl sm:text-4xl font-semibold lg:text-5xl xl:text-5xl/14 text-cta-heading'
+md_cta_intro: 'sm:text-lg lg:text-2xl lg:mt-2 max-w-3xl lg:max-w-5xl text-cta-intro'
+
+
+section_title_sm: 'text-2xl sm:text-3xl md:text-4xl font-semibold lg:text-7xl'
+section_sub: 'font-semibold text-xl lg:text-2xl'
+
+section_intro_sm: 'text-lg lg:text-xl lg:mt-2 max-w-4xl mx-auto'
+body_small: 'text-sm'
+h2: 'text-2xl lg:text-3xl font-semibold text-heading'
+update_h2: 'text-xl lg:text-3xl font-semibold text-heading'
+
+update_intro: 'prose lg:text-lg text-text'
+maintain_card_title: 'text-2xl lg:text-4xl font-semibold text-heading'
+maintain_card_title_sub: 'text-sm md:text-base mb-6 text-text-color'
+
+adhoc_service_body: 'prose lg:text-xl text-text'
+
+bard_body_title: 'text-3xl sm:text-4xl font-semibold lg:text-5xl xl:text-5xl/14 text-section-heading'
+
+bard_body: 'prose lg:text-lg prose-headings:text-heading-bard max-w-none prose-headings:first:mt-0 prose-headings:mt-10 prose-headings:mb-2 prose-headings:text-xl lg:prose-headings:text-2xl [&_a]:font-semibold! text-base [&_a]:text-highlight'
+
+bard_grid: 'prose max-w-none prose-headings:first:mt-0 prose-headings:mt-10 prose-headings:mb-2 prose-headings:text-xl lg:prose-headings:text-3xl [&_a]:text-highlight [&_a]:font-semibold!'
+
+aside_bard_intro: 'font-semibold text-xl text-aside-heading'
+aside_bard_prose_intro: 'prose prose-headings:text-xl prose-headings:font-semibold prose-headings:text-aside-heading'
+aside_bard: 'prose max-w-none prose-headings:first:mt-0 prose-headings:mt-10 prose-headings:mb-2 prose-headings:text-xl [&_a]:font-semibold! [&_ul]:list-image-[url(/public/assets/icons/star-icon-blue.svg)] '
+aside_htag: 'font-semibold text-xl text-aside-heading-h2 '
+
+cta_title: 'font-semibold text-3xl '
+cta_body: 'text-xl'
+
+card_title: 'font-semibold text-3xl text-card-heading'
+card_testimonial_title: 'font-semibold text-3xl text-card-heading'
+card_testimonial_body: 'prose'
+
+skills_title: 'text-2xl font-semibold text-aside-heading'
+---
+
+
+
+{{# if type == 'paragraph' #}}
+{{ if is_bard }}
+<div {{ if bard_data_theme }}data-theme="{{bard_data_theme}}"{{/if}} class=" 
+{{ switch((typo_css == 'body_small') => '{{ view:body_small }}',
+(typo_css == 'aside_bard_intro') => '{{ typo_overide_css ? '{typo_overide_css}' : '{view:aside_bard_intro}' }}',
+(typo_css == 'aside_bard_prose_intro') => '{{ typo_overide_css ? '{typo_overide_css}' : '{view:aside_bard_prose_intro}' }}',
+(typo_css == 'bard_body') => '{{ view:bard_body }}',
+(typo_css == 'card_testimonial_body') => '{{ view:card_testimonial_body }}',
+(typo_css == 'bard_grid') => '{{ view:bard_grid }}',
+(typo_css == 'aside_bard') => '{{ view:aside_bard }}',
+(typo_css == 'adhoc_service_body') => '{{ view:adhoc_service_body }}',
+(typo_css == 'md_cta_intro') => '{{ view:md_cta_intro }}',
+(typo_css == 'update_intro') => '{{ view:update_intro }}',
+(typo_css == 'section_intro_sm') => '{{ view:section_intro_sm }}',
+(typo_css == 'sidebar_title') => '{{ view:sidebar_title }}',
+(typo_css == 'section_intro_bard') => '{{ typo_overide_css ? '{typo_overide_css}' : '{view:section_intro_bard}' }}' 
+) }} {{view:base_css}} {{layout_css}} {{custom_css}}">
+    {{s_content}}
+</div>
+{{else}}
+<{{ htag ?? 'h2'}} data-theme="{{data_theme}}" {{custom_id ?= 'id="{{s_content | slugify}}"'}} class="{{ typo_overide_css }} {{view:base_css}} {{layout_css}} {{custom_css}}
+{{ switch((typo_css == 'body_xs') => '{{ view:body_xs }}',
+(typo_css == 'sidebar_title') => '{{ view:sidebar_title }}',
+(typo_css == 'aside_bard_intro') => '{{ typo_overide_css ? '{typo_overide_css}' : '{view:aside_bard_intro}' }}', 
+(typo_css == 'card_title') => '{{ view:card_title }}',
+(typo_css == 'card_testimonial_title') => '{{ view:card_testimonial_title }}',
+(typo_css == 'maintain_card_title') => '{{ view:maintain_card_title }}',
+(typo_css == 'h2') => '{{ view:h2 }}',
+(typo_css == 'update_h2') => '{{ view:update_h2 }}',
+(typo_css == 'hero_intro') => '{{ view:hero_intro }}',
+(typo_css == 'hero_title') => '{{ view:hero_title }}',
+(typo_css == 'maintain_card_title_sub') => '{{ view:maintain_card_title_sub }}',
+(typo_css == 'md_cta_title') => '{{ view:md_cta_title }}',
+(typo_css == 'section_title') => '{{ view:section_title }}',
+(typo_css == 'section_title_sm') => '{{ view:section_title_sm }}',
+(typo_css == 'section_sub') => '{{ view:section_sub }}',
+(typo_css == 'section_intro') => '{{ view:section_intro }}',
+(typo_css == 'bard_body_title') => '{{ typo_overide_css ? '{typo_overide_css}' : '{view:bard_body_title}' }}',
+(typo_css == 'bard_body') => '{{ view:bard_body }}',
+(typo_css == 'cta_title') => '{{ view:cta_title }}',
+(typo_css == 'cta_body') => '{{ view:cta_body }}',
+(typo_css == 'aside_htag') => '{{ view:aside_htag }}',
+(typo_css == 'skills_title') => '{{ view:skills_title }}'
+ ) }}
+">
+{{is_link ?= '<a href="{url}">'}}{{s_content ?? 'Title to Go Here'}}{{is_link ?= '</a>'}} </{{ htag ?? 'h2'}}>
+{{/if}}
+
+
+

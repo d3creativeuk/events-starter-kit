@@ -1,0 +1,19 @@
+title: Events
+template: events/show
+layout: layout
+mount: 9de6a3a1-5857-4925-b92f-b955746b958e
+taxonomies:
+  - categories
+  - event_type
+revisions: false
+route: 'events/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true

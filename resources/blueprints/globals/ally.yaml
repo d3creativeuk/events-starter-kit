@@ -1,0 +1,15 @@
+sections:
+  main:
+    display: Main
+    fields:
+      -
+        handle: skip_link
+        field:
+          input_type: text
+          antlers: false
+          default: 'Skip to Content (Press Enter)'
+          display: 'Skip link'
+          type: text
+          icon: text
+          instructions: 'Including the skip link component gives users the option to bypass the top-level navigation links and jump to the main content on a page.  The skip link component is visually hidden until a keyboard press activates it.'
+          listable: hidden

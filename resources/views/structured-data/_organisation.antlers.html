@@ -1,0 +1,12 @@
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name":"{{company:json_company_name }}",
+    "url": "{{ config:app:url }}",
+    "logo": "{{ company:json_primary_logo | get:permalink }}",
+    {{ if company:json_external_sites }}"sameAs":[{{ /if }}
+{{ company:json_external_sites }}"{{ json_external_site_url }}"{{ unless last }}, {{ /unless }}{{ /company:json_external_sites }}
+{{ if company:json_external_sites }}],{{ /if }}
+  }
+</script>

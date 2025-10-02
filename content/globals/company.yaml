@@ -1,0 +1,80 @@
+title: Company
+data:
+  json_primary_logo: global/placeholder-logo.svg
+  json_company_name: 'ABC Widgets'
+  json_alt_company_name: '123 Widgets'
+  json_description: 'ABC Widgets is a leading manufacturer and supplier of innovative, high-quality widgets designed for diverse industries.'
+  json_building_name: 'The Towers'
+  json_street_address: '123 Avenue'
+  json_address_locality: Wigan
+  json_address_region: England
+  json_postal_code: 'SW1A 1AA'
+  json_address_country: 'United Kingdom'
+  company_registration_number: '07112433'
+  registered_location: 'Registered in England and Wales'
+  json_country_code: '+44'
+  json_area_code: '0161'
+  json_phone_number: '483 2038'
+  json_inter_phone: false
+  json_email: contact@abc-widgets.com
+  json_countries_served:
+    - GB
+  json_lang_select:
+    - english
+  json_maps_title: 'Find us on Google Maps'
+  json_google_map: 'https://maps.app.goo.gl/UHfYPNLUdteFzAAr6'
+  json_latitude: '51.5015442952068'
+  json_longitude: '-0.14198656171802826'
+  json_opening_times:
+    -
+      id: m5z8lr2s
+      opening_times_day: Monday
+      opening_times_open: '09:00'
+      opening_times_close: '17:00'
+    -
+      id: m5z8lttr
+      opening_times_day: Tuesday
+      opening_times_open: '09:00'
+      opening_times_close: '17:00'
+    -
+      id: m5z8lw2s
+      opening_times_day: Wednesday
+      opening_times_open: '09:00'
+      opening_times_close: '17:00'
+    -
+      id: m5z8m0kp
+      opening_times_day: Thursday
+      opening_times_open: '09:00'
+      opening_times_close: '17:00'
+    -
+      id: m5z8m3p7
+      opening_times_day: Friday
+      opening_times_open: '09:00'
+      opening_times_close: '17:00'
+  json_company_images:
+    - images/bones/lorenzo-herrera-p0j-me6mgo4-unsplash.jpg
+    - images/bones/max-andrey-6_9tzlwhpdm-unsplash.jpg
+    - images/bones/nathan-dumlao-egwsi57papg-unsplash.jpg
+    - images/bones/portrait-test-image.jpg
+    - images/bones/priscilla-du-preez-nf8xhlmmg0c-unsplash.jpg
+  json_external_sites:
+    -
+      id: m60ohisy
+      json_external_site_name: Facebook
+      json_external_site_url: 'https://facebook.com'
+      json_external_site_icon: facebook
+    -
+      id: m60ohwlq
+      json_external_site_name: X
+      json_external_site_url: 'https://x.com'
+      json_external_site_icon: x
+    -
+      id: m60oi2ch
+      json_external_site_name: Instagram
+      json_external_site_url: 'https://instagram.com'
+      json_external_site_icon: instagram
+    -
+      id: m60oiao2
+      json_external_site_name: LinkedIn
+      json_external_site_url: 'https://linkedin.com'
+      json_external_site_icon: linkedin

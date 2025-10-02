@@ -1,0 +1,41 @@
+
+{{ if logged_in }} 
+
+{{# TEMPLATE CONTENT #}}
+
+<div class="lg:px-14">  
+
+   
+    <div class="space-y-6 mb-10">
+        <div class="space-y-4">
+            <h1 class="text-6xl font-semibold">{{ title }}</h1>
+            {{ partial:docs/partials/meta show_user="true" show_taxonomy="true"}}
+            <p>{{ cms_bard_basic }}</p>   
+       </div>
+    
+     {{ partial:partials/bard/bard-single  css="docs_entry" :bard_handle="docs_intro_bard_basic"}}
+
+    </div>
+    {{ if docs_video_local_video }}
+    {{ partial:partials/bard/blocks/video handle_prefix="docs_video_"}}
+    {{ /if }}
+    {{ if docs_body_bard_sets }}
+    <div>
+        {{ partial:partials/bard/bard-set css="entry" :bard_handle="docs_body_bard_sets"}}
+    </div>
+    {{ /if }}
+ 
+</div>
+
+{{# /TEMPLATE CONTENT #}}
+{{ section:aside_two }} 
+
+
+{{# partial:partials/entries/latest list_title="Latest Guides" collection_tag="docs" css_wrap="blog_sidebar_wrap" #}}
+
+
+{{ /section:aside_two }} 
+
+{{ else }}
+{{ redirect to="/login" }}
+{{ /if }}

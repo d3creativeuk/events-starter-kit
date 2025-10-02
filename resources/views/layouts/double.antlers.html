@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">    
+    {{ partial:layouts/partials/head }}
+    {{# Displays layout and template used, local env only #}}
+    {{ partial:layouts/partials/environment }} 
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}"> 
+      {{ partial:snippets/gtm/gtm-body }}      
+       {{ partial:partials/mast/mast }} 
+     
+      {{# yield:breadcrumbs #}} 
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-12 mb-24">
+          <main class="bg-white mx-auto p-14 lg:pb-14 mb-24 lg:col-span-8  ">
+            
+            {{ template_content }} 
+          </main>
+          <aside class="px-8 bg-red-400 lg:col-span-4 lg:p-10">
+            {{ yield:aside_two }} 123
+          </aside>
+        </div>
+      </div>
+
+            
+      {{ partial:layouts/partials/footer }} 
+
+    </body>
+</html>

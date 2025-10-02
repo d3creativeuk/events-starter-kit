@@ -1,0 +1,30 @@
+<script type="text/javascript">
+    var ua = window.navigator.userAgent;
+    var isIE = false;
+
+    if (ua.indexOf('MSIE ') > -1) {
+        // IE 10 or older
+        isIE = true;
+    } else if (ua.indexOf('Trident/') > -1) {
+        // IE 11
+        isIE = true;
+    } else if (ua.indexOf('MSIE 6.0') > -1) {
+        // IE 6
+        isIE = true;
+    } else if (ua.indexOf('MSIE 7.0') > -1) {
+        // IE 7
+        isIE = true;
+    } else if (ua.indexOf('MSIE 8.0') > -1) {
+        // IE 8
+        isIE = true;
+    } else if (ua.indexOf('MSIE 9.0') > -1) {
+        // IE 9
+        isIE = true;
+    }
+
+    if (isIE) {
+        // Internet Explorer detected
+        // Redirecting to the unsupported browser page
+        window.location.href = "/unsupported-browser";
+    }
+</script>

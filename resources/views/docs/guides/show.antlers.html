@@ -1,0 +1,45 @@
+{{ taxonomy:guides :slug:is="segment_3" }}
+    {{ section:seo_title }}{{ title }}{{ /section:seo_title }}
+    {{ section:seo_description }}{{ guide_category_desc | strip_tags  }}{{ /section:seo_description }}
+{{ /taxonomy:guides }}
+
+{{ section:seo_canonical }}
+	<link rel="canonical" href="{{ current_full_url }}">
+{{ /section:seo_canonical }}
+
+{{ section:breadcrumbs }}
+	{{ partial:partials/breadcrumbs/docs-breadcrumbs }}
+{{ /section:breadcrumbs}}
+
+{{ section:aside_one }} 
+{{ partial:docs/partials/terms }}
+{{ /section:aside_one }} 
+
+<div class="lg:px-14">
+       
+    {{ taxonomy:guides :slug:is="segment_3" }}
+            <div class="space-y-4 mb-4">
+                <h1 class="text-6xl font-semibold">{{ title }}</h1>
+            
+                {{ partial:partials/bard/bard-single  css="docs_entry" :bard_handle="guide_category_desc"}}
+            </div>      
+        {{ /taxonomy:guides }}
+      
+  
+    <ul class="list-disc pl-4 space-y-2">
+        {{ collection:docs  as="posts" :taxonomy:guides="segment_3" sort="date:desc"}}
+            {{ posts }}
+                <li> 
+                  <a class="block underline hover:no-underline" href="{{ url }}">{{ title }}</a>               
+                </li>
+            {{ /posts }}   
+        {{ /collection:docs }}
+    </ul>
+</div >
+
+
+{{ section:aside_two }} 
+{{# partial:partials/entries/latest list_title="Latest Guides" collection_tag="docs" css_wrap="blog_sidebar_wrap" #}}
+{{ /section:aside_two }} 
+
+

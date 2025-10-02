@@ -1,0 +1,9 @@
+[data-theme="bio_on_primary"] {   
+--surface-color: light-dark(var(--color-primary-900), var(--color-neutral-950));
+--border-color: light-dark(var(--color-primary-900), var(--color-neutral-600));
+
+
+--heading: light-dark(var(--color-white), var(--color-neutral-900));
+--text-color: light-dark(var(--color-white), var(--color-neutral-300));
+--svg: light-dark(var(--color-white), var(--color-neutral-300));
+}

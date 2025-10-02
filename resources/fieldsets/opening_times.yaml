@@ -1,0 +1,29 @@
+title: 'Opening Times'
+fields:
+  -
+    handle: opening_times
+    field:
+      max_rows: 7
+      type: grid
+      display: 'Opening Times'
+      fullscreen: false
+      instructions: 'Use 24-hour time format for business hours. List only the days the business is open, excluding weekends if the business is closed.'
+      fields:
+        -
+          handle: opening_times_day
+          field:
+            type: text
+            display: Day
+            width: 33
+        -
+          handle: opening_times_open
+          field:
+            type: time
+            display: Open
+            width: 33
+        -
+          handle: opening_times_close
+          field:
+            type: time
+            display: Close
+            width: 33

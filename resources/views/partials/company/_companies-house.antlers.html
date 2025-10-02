@@ -1,0 +1,11 @@
+<ul class="contact-details contact-details-ch">
+    <li>{{ company:limited_company_name }} t/a {{ company:company_name }}. </li>
+    <li>{{ company:company_registration_number }}.</li>
+    <li>{{ company:registered_location }}.</li>
+    <li>Registered address: </li>
+    {{if company:address_line_1 }}<li>{{company:address_line_1}},</li>{{/if}}
+    {{if company:address_line_2 }}<li>{{company:address_line_2}},</li>{{/if}}
+    {{if company:address_line_3 }}<li>{{company:address_line_3}},</li>{{/if}}
+    {{if company:address_line_4 }}<li>{{company:address_line_4}}.</li>{{/if}}
+    {{if company:postcode }}<li>{{company:postcode}}</li>{{/if}}
+</ul>

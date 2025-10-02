@@ -1,0 +1,16 @@
+
+/* Hero Theme */
+[data-theme="hero_primary"] {   
+--heading-hero: light-dark(var(--color-white), var(--color-neutral-200));
+--intro-hero: light-dark(var(--color-neutral-50), var(--color-neutral-300));
+--surface-hero: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+}
+/* Hero Theme */
+[data-theme="hero_home"] {   
+--heading-hero: light-dark(var(--color-primary-brand), var(--color-secondary-brand));
+--intro-hero: light-dark(var(--color-neutral-950), var(--color-neutral-200));
+--surface-hero: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--surface-card: light-dark(var(--color-white), var(--color-neutral-950));
+}
+
+  

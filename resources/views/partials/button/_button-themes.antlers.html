@@ -1,0 +1,151 @@
+{{ switch(
+    (button_theme == 'black-white') => '
+	text-white
+	bg-black 
+	border-black
+	hover:text-black
+	hover:bg-white
+	hover:border-black
+	focus-visible:text-white
+	focus-visible:bg-black 
+	focus-visible:border-black
+    focus-visible:outline-black
+    ',
+    (button_theme == 'black-o-white') => '
+	text-black
+	bg-white 
+	border-black
+	hover:text-white
+	hover:bg-black
+	hover:border-black
+	focus-visible:text-white
+	focus-visible:bg-black 
+	focus-visible:border-black
+    focus-visible:outline-black
+    ',
+    (button_theme == 'white-black') => '
+	text-black
+	bg-white 
+	border-white
+	hover:text-white
+	hover:bg-black
+	hover:border-white
+	focus-visible:text-black
+	focus-visible:bg-white 
+	focus-visible:border-white
+    focus-visible:outline-white
+    ',
+    (button_theme == 'white-o-black') => '
+	text-white
+	bg-black 
+	border-white
+	hover:text-black
+	hover:bg-white
+	hover:border-black
+	focus-visible:text-black
+	focus-visible:bg-white 
+	focus-visible:border-white
+    focus-visible:outline-white
+    ',
+	(button_theme == 'primary-white') => '
+	text-white
+	bg-primary-500 
+	border-primary-500
+	hover:text-primary-500
+	hover:bg-white
+	hover:border-primary-500
+	focus-visible:text-white
+	focus-visible:bg-primary-500 
+	focus-visible:border-primary-500
+    focus-visible:outline-primary-500
+    ',
+    (button_theme == 'primary-o-white') => '
+	text-primary-500
+	bg-white 
+	border-primary-500
+	hover:text-white
+	hover:bg-primary-500
+	hover:border-primary-500
+	focus-visible:text-white
+	focus-visible:bg-primary-500 
+	focus-visible:border-primary-500
+    focus-visible:outline-primary-500
+    ',
+    (button_theme == 'primary-black') => '
+	text-black
+	bg-primary-500 
+	border-primary-500
+	hover:text-primary-500
+	hover:bg-black
+	hover:border-primary-500
+	focus-visible:text-black
+	focus-visible:bg-primary-500 
+	focus-visible:border-primary-500
+    focus-visible:outline-primary-500
+    ',
+    (button_theme == 'primary-o-black') => '
+	text-primary-500
+	bg-black 
+	border-primary-500
+	hover:text-black
+	hover:bg-primary-500
+	hover:border-black
+	focus-visible:text-black
+	focus-visible:bg-primary-500 
+	focus-visible:border-primary-500
+    focus-visible:outline-primary-500
+    ',
+	(button_theme == 'secondary-white') => '
+	text-black
+	bg-secondary-500 
+	border-secondary-500
+	hover:text-secondary-500
+	hover:bg-black
+	hover:border-black
+	focus-visible:text-secondary-500
+	focus-visible:bg-black 
+	focus-visible:border-black
+    focus-visible:outline-black
+    ',
+    (button_theme == 'secondary-o-white') => '
+	text-secondary-500
+	bg-white 
+	border-secondary-500
+	hover:text-secondary-500
+	hover:bg-black
+	hover:border-black
+	focus-visible:text-secondary-500
+	focus-visible:bg-black 
+	focus-visible:border-black
+    focus-visible:outline-black
+    ',
+    (button_theme == 'secondary-black') => '
+	text-black
+	bg-secondary-500 
+	border-secondary-500
+	hover:text-secondary-500
+	hover:bg-black
+	hover:border-secondary-500
+	focus-visible:text-black
+	focus-visible:bg-secondary-500 
+	focus-visible:border-secondary-500
+    focus-visible:outline-secondary-500
+    ',
+    (button_theme == 'secondary-o-black') => '
+	text-secondary-500
+	bg-black 
+	border-secondary-500
+	hover:text-black
+	hover:bg-secondary-500
+	hover:border-black
+	focus-visible:text-black
+	focus-visible:bg-secondary-500 
+	focus-visible:border-secondary-500
+    focus-visible:outline-secondary-500
+    ',
+    
+{{# () => 'fallback-class' #}}
+) }}
+
+
+

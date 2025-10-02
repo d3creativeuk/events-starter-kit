@@ -1,0 +1,48 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: gdpr_section_field
+            field:
+              type: section
+              display: Policies
+              instructions: 'Copy and paste policy URLs here.'
+          -
+            handle: cookie_policy
+            field:
+              type: text
+              display: 'Cookie Policy'
+          -
+            handle: privacy_policy
+            field:
+              type: text
+              display: 'Privacy Policy'
+          -
+            handle: terms_and_conditions
+            field:
+              type: text
+              display: 'Terms and Conditions'
+          -
+            handle: disclaimer
+            field:
+              type: text
+              display: Disclaimer
+          -
+            handle: data_subject_access_request
+            field:
+              type: text
+              display: 'Data Subject Access Request'
+          -
+            handle: do_not_sell_my_info
+            field:
+              type: text
+              display: 'Do Not Sell my Info'
+          -
+            handle: cookie_preference_button
+            field:
+              default: true
+              type: toggle
+              display: 'Cookie Preference Button'

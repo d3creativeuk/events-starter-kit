@@ -1,0 +1,31 @@
+<head>    
+    
+    
+    {{ partial:snippets/seo }} 
+    {{ partial:snippets/css-scripts }}
+
+    
+
+
+    {{# Edit 'fontFamily' in tailwind.config.site.js #}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    {{# JSON TESTING TOOLS #}}
+    {{# https://jsonld.com/social-network-profiles/ #}}
+    {{# https://validator.schema.org/ #}}
+    {{# https://jsonlint.com/ #}}
+
+    {{# JSON organisation #}}
+    {{ partial:structured-data/organisation }}    
+    {{# JSON local-business #}}
+    {{ partial:structured-data/local-business }}
+    {{# JSON Breadcrumb #}}
+    {{ partial:structured-data/breadcrumb }}
+    {{# JSON Blog #}}
+    {{ yield:json-blog }}   
+    
+    {{ partial:layouts/partials/_ie-redirect }}
+
+</head>

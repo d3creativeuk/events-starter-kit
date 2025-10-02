@@ -1,0 +1,10 @@
+{{ entry_images.0 }}
+	{{# styleoverlay background: app/dialog.css #}}
+	{{ partial:partials/dialog/img-dialog :img_ratio="image_format_picker_1"}}
+		{{ partial:glide/partials/img  
+			:url="url" 
+			:img_ratio="image_format_picker_1" 
+			sizes="(min-width: 768px) 100vw, (min-width: 320px) 95vw, 95vw"  
+		}}
+	{{ /partial:partials/dialog/img-dialog }}
+{{ /entry_images.0 }}

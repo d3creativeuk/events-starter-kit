@@ -1,0 +1,19 @@
+<div class="mt-10">
+       
+    {{ get_content id="3d04fbaa-c1c4-47c1-8c9e-dbeecfa134a8" }}
+        
+    <a class="no-underline hover:underline block text-black font-semibold mb-4 {{ if last_segment == 'docs'}}text-primary-600{{ /if }}" href="{{ url }}">{{ title }}</a>
+        {{ guides_taxonomy_terms }}  
+             
+        <a class="no-underline hover:underline text-black font-semibold {{ if slug == last_segment }}text-primary-600{{ /if }}" href="/docs{{ url }}">{{ title }}</a>
+            <ul class="mt-2 mb-4 block space-y-2">
+                {{ entries sort="date:desc"}}
+                    <li><a class="text-sm block no-underline hover:underline text-black {{ if slug == last_segment }}text-primary-600{{ /if }}" href="{{ url }}">{{ title }} </a></li>
+                {{ /entries }} 
+            </ul>          
+        {{ /guides_taxonomy_terms }} 
+
+   {{ /get_content  }}  
+
+
+</div>

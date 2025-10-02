@@ -1,0 +1,30 @@
+<{{tag ?? 'h1'}} class="{{ title_css ?? 'font-semibold text-5xl' }} {{ title_theme }} text-base">
+{{ if is_link }}
+    <a {{ partial:partials/button/attrs }} {{ title_notab ?= "tabindex='-1'" }} class="{{ link_css ?? 'hover:underline'}} block focus-visible:ring-2 focus-visible:ring-offset-2 focus:ring-highlight focus:text-highlight ring-offset-highlight focus:bg-highlight focus:border-highlight focus:outline-hidden 
+    {{ if title_show_icon}}
+        {{ title_icon_flip ? 'flex-row-reverse' : 'flex-row' }}
+        {{ title_icon_baseline ?? 'items-center' }}
+        {{ title_flex ? 'flex' : 'inline-flex' }}   
+        {{ justify-between ? "justify-between" : "" }}     
+    {{ /if }}">
+{{ /if }}
+{{ if title_show_icon}}<span class="block">{{ /if }}
+        {{ if truncate_title }}
+            {{ title | safe_truncate({truncate_title_chars ?? '140'}, '...')}}
+        {{ else }}
+            {{ title ?? 'A measurably better website'}}
+        {{ /if }}
+        {{ if title_show_icon }}</span>{{ /if }}
+{{ if is_link }}
+    {{ if title_show_icon }}
+        {{ partial:partials/icon/_icon 
+            :icon_flip="title_icon_flip" {{# default right #}}
+            :icon_path="title_icon_path" {{# arrow_thin, caret etc #}}
+            :icon_turn="title_icon_turn" {{# 90 180 45 -90 -45 #}}
+            :icon_css="title_icon_css" {{# h-4 w-4 #}}
+        }}
+    {{ /if }}
+    </a>
+{{ /if }}
+</{{tag ?? 'h1'}}>
+

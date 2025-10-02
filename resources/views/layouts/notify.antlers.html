@@ -1,0 +1,19 @@
+---
+html_class: bg-neutral-200
+---
+<!doctype html>
+<html lang="{{ site:short_locale }}" {{ if view:html_class }}class="{{ view:html_class }}"{{/if}}>
+    <head>          
+        {{ partial:snippets/seo }} 
+        {{ partial:snippets/css-scripts }} 
+    </head>
+    {{# current_template #}}
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}"> 
+        {{ partial:snippets/gtm/gtm-body }}
+        
+        {{ template_content }} 
+
+
+
+    </body>
+</html>

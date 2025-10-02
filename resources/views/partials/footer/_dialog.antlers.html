@@ -1,0 +1,17 @@
+<dialog x-cloak class="w-full h-screen lg:w-3/4 lg:h-4/5 xl:w-2/4 rounded-lg flex flex-col fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
+             p-0 m-0" 
+x-trap.noscroll="show{{dialog_type_upper}}Dialog"
+x-ref="{{dialog_type_lower}}Dialog" 
+x-show="show{{dialog_type_upper}}Dialog" 
+@close="show{{dialog_type_upper}}Dialog = false; iframeSrc = ''; loading = false" 
+x-init="$watch('show{{dialog_type_upper}}Dialog', value => value ? $refs.{{dialog_type_lower}}Dialog.showModal() : $refs.{{dialog_type_lower}}Dialog.close())"
+>
+<div x-show="loading" class="flex items-center justify-center w-full h-full">
+	<div class="loader border-t-4 border-blue-600 w-10 h-10 rounded-full animate-spin"></div>
+</div>
+<iframe :src="iframeSrc" x-show="!loading" @load="loading = false" class="w-full grow border-b border-b-neutral-400"></iframe>
+    <div class="flex justify-end p-4 shrink">
+        <button @click="show{{dialog_type_upper}}Dialog = false" class="bg-black text-white px-4 py-2 rounded-sm hover:bg-neutral-700">Close</button>
+    </div>
+</dialog>
+

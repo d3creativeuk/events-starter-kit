@@ -1,0 +1,25 @@
+{{# https://www.w3.org/TR/wai-aria-practices-1.1/examples/breadcrumb/index.html #}}
+{{ unless url == '/' }}
+<nav class="{{css_nav ? '{css_nav}' : 'flex py-5 px-4 max-w-8xl mx-auto 3xl:px-0'}}" aria-label="Breadcrumb">
+    <ol role="list" class="flex items-center ">
+         {{ nav:breadcrumbs }} 
+        <li class="{{ if is_current }}current{{ /if }}">
+            <div class="flex items-center">
+                {{ unless first }} <svg class="shrink-0 h-5 w-5 text-neutral-500" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M5.555 17.776l8-16 .894.448-8 16-.894-.448z" />
+              </svg>    {{ /unless }}                         
+              {{ if last }}
+              <span class="text-sm font-medium text-neutral-500" >{{ title | truncate:50:... }}</span> 
+              {{ else }}
+              <a href="{{ url }}" class="first:ml-0 text-sm font-medium  ">{{ title | truncate:50:... }}</a>
+              {{ /if }}
+            </div>
+          </li>
+   {{ /nav:breadcrumbs }}      
+    </ol>
+  </nav>
+{{ /unless }}
+
+
+
+

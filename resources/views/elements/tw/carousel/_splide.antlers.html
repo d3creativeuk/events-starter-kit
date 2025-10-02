@@ -1,0 +1,25 @@
+
+
+	{{ collection:blog limit="6" as="posts" :url:not="url"}}
+		<section class="splide blog-posts relative bg-neutral-200 pt-24 pb-14" aria-label="Splide Basic HTML Example">
+			<div class="splide__arrows absolute top-14 right-2 lg:right-10 w-[110px]">
+				<button class="splide__arrow splide__arrow--prev rounded-none! opacity-100! bg-black! hover:bg-neutral-500! hover:opacity-100!">
+					{{ svg src="assets/icons/chevron-24-white.svg"  }}
+				</button>
+				<button class="splide__arrow splide__arrow--next rounded-none! opacity-100! bg-black! hover:bg-neutral-500! hover:opacity-100!">
+					{{ svg src="assets/icons/chevron-24-white.svg"   }}
+				</button>
+		  </div>
+			<div class="splide__track ">
+				<ul class="splide__list">				
+					{{ posts }}
+						<li class="splide__slide">{{ partial:elements/tw/carousel/partials/item}}</li>
+					{{ /posts }}	
+				</ul>
+			</div>
+		</section>
+	{{ /collection:blog }}	
+		
+
+
+

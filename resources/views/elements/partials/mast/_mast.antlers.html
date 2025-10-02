@@ -1,0 +1,14 @@
+{{# $watch resets dropdown menu to it's initial state when openm is true #}}
+{{# x-init="$watch('openm', value => document.body.classList[value ? 'add' : 'remove']('overflow-y-hidden'))" #}}
+<header class="bg-white " x-data="{ openm: false, level: {} }" x-init="$watch('openm', value => { level = {}; })">
+	<div class="px-4 flex max-w-8xl mx-auto justify-between items-center py-4 3xl:px-0">
+		{{# Logo #}}
+		{{ partial:partials/company/logo logo_a_class="w-44 block overflow-hidden" logo_css_img="" }}
+		{{# Mobile nav toggle #}}
+		{{ partial:partials/nav/mast/partials/toggle mq_mobile="lg:hidden"}}
+		{{# Desktop menu #}}
+		{{ partial:partials/nav/mast/desktop mq_desktop="hidden lg:block"  nav_structure="elements"}}
+	</div>
+		{{# Mobile dropdown menu, positioned below the header #}}
+		{{ partial:partials/nav/mast/mobile  nav_structure="elements"}}
+</header>

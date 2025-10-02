@@ -1,0 +1,7 @@
+{{ if bio_social_links }}
+<ul class="mt-6">
+	{{ bio_social_links }}
+		<li><a class="flex items-center" href="{{ bio_social_url }}">{{ svg src="{{ bio_social_icons }}" class="fill-current w-4 h-4 mr-1.5" }}{{ bio_social_title }}</a></li>
+	{{ /bio_social_links }}
+</ul>
+{{ /if }}

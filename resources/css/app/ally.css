@@ -1,0 +1,22 @@
+/* Ally */
+.skip-nav a {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    padding: 1em;
+    display: block;
+    text-align: center;
+}
+.skip-nav a:focus,
+.skip-nav a:active {
+    position: static;
+    outline: none;
+    left: 0;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    text-decoration: none;
+    background-color: yellow;
+}

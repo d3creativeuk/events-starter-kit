@@ -1,0 +1,11 @@
+{{ if type == "related_content" }}
+	<div class="not-prose  border-l border-l-black p-6 mt-8">
+		<ul class="space-y-2">
+			{{ related_content}}
+				<li class="font-base"><a class="block" href="{{ url }}">{{ title }}</a></li>
+			{{ /related_content}}
+		</ul>
+	</div>	
+{{ /if }}
+
+

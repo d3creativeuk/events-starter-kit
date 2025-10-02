@@ -1,0 +1,15 @@
+{{ if type == "blockquote" }}
+	<blockquote class="not-prose px-6 py-6 my-6 border-l border-l-black text-lg lg:text-xl max-w-full lg:my-12 block xl:text-2xl">
+		{{ bq_quote | markdown }}
+		{{ if citation_type === 'structured_citation' }}
+			<cite class="text-base not-italic  block mt-2">
+				{{$ collect($structured_citation )->filter()->join(', ') $}}				
+			</cite>
+		{{/if}}
+		{{ if citation_type === 'freeform_citation' }}
+		<cite class="text-base not-italic  block mt-2 [&_a]:inline [&_a]:underline [&_a:hover]:no-underline ">{{ freeform_citation }}</cite>
+		{{/if}}
+	</blockquote>
+{{ /if }}
+
+

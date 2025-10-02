@@ -1,0 +1,57 @@
+
+@theme inline  {
+    /* ALIAS */
+    /* https://www.tints.dev/ */
+
+    /* BRAND > ALIAS > MAPPED */
+
+    --color-border-color: var(--border-color); 
+    /* States */
+    --color-border-hover: var(--border-hover); 
+    --color-border-active: var(--border-active); /* Pressed/clicked state */
+    --color-border-focus: var(--border-focus); 
+    --color-border-focus-visible: var(--border-focus-visible); /* Keyboard focus only */
+    --color-border-disabled: var(--border-disabled); /* Disabled inputs/buttons */
+
+     --color-outline-color: var(--outline-color); 
+    /* States */
+    --color-outline-hover: var(--outline-hover); 
+    --color-outline-active: var(--outline-active); /* Pressed/clicked state */
+    --color-outline-focus: var(--outline-focus); 
+    --color-outline-focus-visible: var(--outline-focus-visible); /* Keyboard focus only */
+    --color-outline-disabled: var(--outline-disabled); /* Disabled inputs/buttons */
+
+  /* BORDER */
+    /* Tailwind class: border-border-default */
+    --color-border-base: var(--border-base); 
+    --color-border-default: var(--border-default); 
+    --color-border-card: var(--border-card); 
+    --color-border-image: var(--border-image); 
+    --color-border-main: var(--border-main); 
+
+
+    --color-card-border: var(--card-border); 
+    --color-pill-border: var(--pill-border); 
+
+    /* --color-border-highlight: var(--border-highlight); 
+    --color-border-invert: var(--border-invert);
+    --color-border-muted: var(--border-muted);
+    --color-border-accent: var(--border-accent); 
+    --color-border-base: var(--border-base);  */
+    
+    /* States */
+    --color-border-hover: var(--border-hover); 
+    --color-border-focus: var(--border-focus); 
+    --color-border-focus-visible: var(--border-focus-visible); /* Keyboard focus only */
+    --color-border-active: var(--border-active);     /* Pressed/clicked state */
+    --color-border-disabled: var(--border-disabled); /* Disabled inputs/buttons */
+
+    /* Validation */
+    /* --color-border-error: var(--border-error);       Form validation errors */
+    /* --color-border-success: var(--border-success);   Success feedback */
+    /* --color-border-warning: var(--border-warning);   Warning states */
+
+
+
+    
+}

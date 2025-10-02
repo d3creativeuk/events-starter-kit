@@ -1,0 +1,23 @@
+---
+desktop_nav:
+  1: 'bg-neutral-100 text-neutral-100'
+  2: 'bg-white text-body'
+  3: 'bg-invert text-body'
+desktop_icon: 'flex items-center justify-between '
+desktop_btn_style: 'px-4 py-2 w-full text-left block  text-neutral-800'
+---
+{{# Check root theme in mast.antlers.html #}}
+<nav class="{{mq_desktop}}" aria-label="Mast desktop"  >
+	<ul class="flex justify-end">
+		{{ nav select="title|alt_title|url|id" handle="{{ nav_group ?? {nav_structure | ensure_left('collection::')} }}" }} 				  
+			<li class="block {{ depth }}"  @click.outside="level['{{ id }}'] = false">                             
+			<{{ children ? 'button' : 'a href="{{ url }}"' }} @click="level['{{ id }}'] = !level['{{ id }}']" class="{{ view:desktop_btn_style }} {{# depth == 1 ? 'text-base':'text-base' #}}"><span class="{{ view:desktop_icon }}">{{ alt_title ?? title }}{{ children ?= '{{ partial:partials/icon/icon icon_turn="90" }}' }}</span><{{ children ? '/button' : '/a' }}>
+			{{ if children }}
+				<ul x-cloak :class="level['{{ id }}'] ? 'block {{ depth == 1 ? 'absolute top-[72px] z-10':'relative' }}' : 'hidden'"  class="{{ view:desktop_nav[depth] }} min-w-[220px] max-w-[220px]">
+					{{ *recursive children* }}
+				</ul>
+			{{ /if }}
+		</li>       
+		{{ /nav }}
+	</ul>
+</nav>	

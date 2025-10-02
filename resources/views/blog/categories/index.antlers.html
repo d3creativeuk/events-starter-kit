@@ -1,0 +1,32 @@
+{{ section:breadcrumbs }}
+    {{ partial:partials/breadcrumbs/breadcrumbs }}
+{{ /section:breadcrumbs }}
+{{ section:aside_one }} 
+        {{ partial:partials/entries/terms css_wrap="blog_sidebar_wrap" }} 
+{{ /section:aside_one }} 
+
+    {{# Displays categories associated with collection blog #}}
+    {{# /blog/categories #}}
+    {{# segment_1 = blog #}}
+
+    {{ taxonomy:categories collection="{segment_1 | replace('-', '_')}" as="items"}}         
+        <div class="space-y-6 lg:px-14">
+            {{ items }}
+                <div>
+                    <h1 class="text-6xl font-semibold"><a href="{{ url }}">{{ title }}</a></h1>
+                    <p class="mt-2">{{ intro ?? ' Add category description here.'}}</p>  
+
+                    {{ entries limit="3" sort="date:desc"}}             
+                        <article>
+                            <h2 class="lg:text-xl"><a class="py-2 block hover:underline" href="{{ url }}">{{ title }}</a></h2>                                 
+                        </article>  
+                    {{ /entries }}
+                </div>                          
+            {{ /items }}
+        </div >   
+    {{ /taxonomy:categories }} 
+
+
+{{ section:aside_two }} 
+    {{ partial:partials/entries/latest list_title="Latest Insights" css_wrap="blog_sidebar_wrap"}}
+{{ /section:aside_two }} 

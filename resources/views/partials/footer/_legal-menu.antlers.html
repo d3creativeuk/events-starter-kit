@@ -1,0 +1,24 @@
+<div x-data="{ {{ nav handle="legal_menu" select="title|url" }}{{ if url | contains('termly') }}show{{ title | title | replace(' ', '') | regex_replace('&', '')}}Dialog: false, {{ /if }}{{ /nav }} iframeSrc: '', loading: false }">
+        <div class="text-sm  border-t border-t-neutral-400 mt-14  pt-8">
+			{{# Buttons to open dialogs #}}
+			<div class="py-4 lg:flex lg:gap-x-3">
+				{{ nav handle="legal_menu" select="title|url" not="Manage Cookie Preferences"}}
+					{{ if url | contains('termly')}} 
+						<button class=" no-underline hover:underline" @click="show{{ title | title | replace(' ', '') | regex_replace('&', '')}}Dialog = true; iframeSrc = '{{url}}'; loading = true" class="no-underline hover:underline text-black">{{ title }}</button>
+					{{ elseif url }}                    
+						<a class=" text-black no-underline hover:underline" href="{{ url }}">{{ title }}</a>
+					{{ /if }}
+					{{ if title | contains('Manage Cookie Preferences') }}
+					<button class="termly-cookie-preference-button no-underline hover:underline text-black " type="button" onclick="displayPreferenceModal()">{{ title }}</button>
+					{{ /if }}
+				{{ /nav }}
+			</div>
+        </div>
+
+		{{# Dialogs #}}
+        {{ nav handle="legal_menu" select="title|url" }}
+			{{ if url | contains('termly') }}        
+			{{ partial:footer/dialog :frame_url="url" dialog_type_lower="{{ title | lower | replace(' ', '') | regex_replace('&', '')}}" dialog_type_upper="{ title | title | replace(' ', '') | regex_replace('&', '')}" }}
+			{{ /if }}
+        {{ /nav }}
+</div>

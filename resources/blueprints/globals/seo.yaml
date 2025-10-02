@@ -1,0 +1,233 @@
+sections:
+  page_titles:
+    display: 'Page titles'
+    fields:
+      -
+        handle: section_title
+        field:
+          type: section
+          instructions: 'The website title'
+          display: Title
+      -
+        handle: title_separator
+        field:
+          options:
+            ' | ': '|'
+            ' - ': '-'
+            ' / ': /
+            ' :: ': '::'
+            ' > ': '>'
+            ' ~ ': '~'
+          clearable: false
+          multiple: false
+          searchable: true
+          localizable: true
+          taggable: false
+          push_tags: false
+          cast_booleans: false
+          type: select
+          instructions: 'Select the character to separate the page title and site title.'
+          width: 33
+          listable: hidden
+          display: Separator
+      -
+        handle: site_name
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: 'Website title'
+          instructions: 'The title for the website. <br>Defaults to Laravel''s App Name.'
+          width: 66
+  json-ld:
+    display: JSON-ld
+    fields:
+      -
+        handle: section_schema
+        field:
+          type: section
+          instructions: 'JSON-LD Schema'
+          display: 'Knowledge graph data'
+      -
+        handle: json_ld_type
+        field:
+          options:
+            none: None
+            organization: Organization
+            person: Person
+            custom: Custom
+          default: none
+          localizable: true
+          type: button_group
+          instructions: 'The type of data to be added on each page.'
+          listable: false
+          display: Type
+      -
+        handle: organization_name
+        field:
+          input_type: text
+          type: text
+          localizable: true
+          listable: hidden
+          display: 'Organization name'
+          width: 66
+          if:
+            json_ld_type: 'equals organization'
+          validate:
+            - 'required_if:json_ld_type,organization'
+      -
+        handle: organization_logo
+        field: common.image
+        config:
+          localizable: true
+          listable: hidden
+          display: 'Organization logo'
+          instructions: 'Minimum 112px x 112px, will be focal cropped to a square.'
+          width: 33
+          if:
+            json_ld_type: 'equals organization'
+      -
+        handle: person_name
+        field:
+          listable: hidden
+          display: 'Person name'
+          width: 66
+          input_type: text
+          type: text
+          localizable: true
+          if:
+            json_ld_type: 'equals person'
+          validate:
+            - 'required_if:json_ld_type,person'
+      -
+        handle: json_ld
+        field:
+          type: textarea
+          instructions: 'Add custom JSON-LD to be included on each page. This can include stuff like business hours and contact data.'
+          localizable: true
+          listable: false
+          display: JSON-LD
+          if:
+            json_ld_type: 'equals custom'
+          validate:
+            - 'required_if:json_ld_type,custom'
+  social:
+    display: 'Social Sharing'
+    fields:
+      -
+        handle: section_og
+        field:
+          type: section
+          instructions: 'Default settings for Social Sharing.'
+          display: Defaults
+      -
+        handle: og_image
+        field: common.image
+        config:
+          container: assets
+          localizable: true
+          listable: hidden
+          display: 'Social image'
+          folder: social-images
+          instructions: 'The default OG image. Can be overridden per entry. The recommended size is 1200px x 630px. This image will be focal cropped to this dimension.'
+          width: 50
+      -
+        handle: twitter_image
+        field: common.image
+        config:
+          container: assets
+          localizable: true
+          listable: hidden
+          display: 'Twitter image'
+          folder: social-images
+          instructions: 'The default Twitter image. Can be overridden per entry. Images should have an aspect ratio of 2:1 with minimum dimensions of 300x157. This image will be focal cropped to this dimension.'
+          width: 50
+      -
+        handle: twitter_handle
+        field:
+          listable: hidden
+          display: 'Twitter handle'
+          width: 50
+          input_type: text
+          type: text
+          localizable: true
+          instructions: 'The Twitter user name that should be included with Twitter Card tags.'
+          prepend: '@'
+          antlers: false
+  sitemap:
+    display: Sitemap
+    fields:
+      -
+        handle: section_sitemap
+        field:
+          type: section
+          instructions: 'Configure the sitemap.xml'
+          display: Sitemap
+      -
+        handle: sitemap_collections
+        field:
+          mode: select
+          type: collections
+          instructions: 'Select which collections to include in the sitemap.xml.'
+          listable: hidden
+          default: pages
+          display: Collections
+  trackers:
+    display: Trackers
+    fields:
+      -
+        handle: section_verification
+        field:
+          type: section
+          instructions: 'Configure site verifications.'
+          display: 'Site verifications'
+      -
+        handle: use_google_site_verification
+        field:
+          type: toggle
+          instructions: 'Add a google-site-verification meta tag to your head.'
+          listable: false
+          display: 'Google site verification'
+      -
+        handle: google_site_verification
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          width: 66
+          display: 'Verification key'
+          validate:
+            - 'required_if:use_google_site_verification,true'
+          if:
+            use_google_site_verification: 'equals true'
+      -
+        handle: section_google_trackers
+        field:
+          type: section
+          display: 'Google Tag Manager'
+          instructions_position: above
+          listable: hidden
+      -
+        handle: google_tag_manager
+        field:
+          input_type: text
+          type: text
+          listable: hidden
+          width: 50
+          display: 'Tracking ID'
+          instructions: 'The GTM tracking ID.'
+          validate:
+            - 'required_if:tracker_type,gtm'
+          instructions_position: above
+          antlers: false
+      -
+        handle: toggle_google_tag_manager
+        field:
+          default: false
+          display: 'Toggle Google Tag Manager'
+          type: toggle
+          icon: toggle
+          width: 50
+          listable: hidden
+          instructions_position: above

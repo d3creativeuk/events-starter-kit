@@ -1,0 +1,7 @@
+[data-theme="contact_body"] {   
+--surface-color: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+--heading: light-dark(var(--color-white), var(--color-secondary-brand));
+--heading-list: light-dark(var(--color-white), var(--color-white));
+--text-color: light-dark(var(--color-white), var(--color-neutral-300));
+--svg: light-dark(var(--color-white), var(--color-neutral-300));
+}

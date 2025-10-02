@@ -1,0 +1,38 @@
+title: 'Form - Contact'
+fields:
+  -
+    handle: first_name
+    field: form_elements.first_name
+    config:
+      display: 'First Name'
+  -
+    handle: last_name
+    field: form_elements.last_name
+  -
+    handle: business_email
+    field: form_elements.business_email
+    config:
+      display: Email
+      validate:
+        - required
+  -
+    handle: default_message
+    field: form_elements.default_message
+    config:
+      validate:
+        - required
+  -
+    handle: subscribe_newsletter
+    field:
+      options:
+        -
+          key: mailing-list-signup
+          value: 'Add me to the Widgets ABC mailing list'
+      display: Newsletter
+      type: checkboxes
+      always_save: false
+      validate:
+        - array
+  -
+    handle: form_consent
+    field: form_elements.form_consent

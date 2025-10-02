@@ -1,0 +1,38 @@
+/* Mast */
+[data-theme="mast_primary"] {   
+
+    --surface-mast: light-dark(var(--color-primary-brand), var(--color-neutral-900));
+
+    /* NAV ITEMS */
+    /* Base */
+    --btn-mast-text: light-dark(var(--color-neutral-50), var(--color-neutral-300));
+    --btn-mast-surface: light-dark(var(--color-transparent), var(--color-neutral-900));
+    --btn-mast-border: light-dark(var(--color-transparent), var(--color-transparent));
+    /* Current */
+    --btn-mast-text-current: light-dark(var(--color-white), var(--color-neutral-100));
+    --btn-mast-surface-current: light-dark(var(--color-primary-700), var(--color-black));
+    --btn-mast-border-current: light-dark(var(--color-primary-900), var(--color-neutral-200));
+    /* Hover */
+    --btn-mast-text-hover: light-dark(var(--color-white), var(--color-white));
+    --btn-mast-surface-hover: light-dark(var(--color-transparent), var(--color-transparent));
+    --btn-mast-border-hover: light-dark(var(--color-primary-700), var(--color-neutral-600));
+    /* Active */
+    /* --btn-mast-text-active: light-dark(var(--color-white), var(--color-white));
+    --btn-mast-surface-active: light-dark(var(--color-transparent), var(--color-transparent));
+    --btn-mast-border-active: light-dark(var(--color-white), var(--color-white)); */
+    /* Focus - triggers on any focus (mouse + keyboard) */
+    /* --btn-mast-text-focus: light-dark(var(--color-white), var(--color-white));
+    --btn-mast-surface-focus: light-dark(var(--color-transparent), var(--color-transparent));
+    --btn-mast-border-focus: light-dark(var(--color-white), var(--color-white)); */
+    /* Focus visible - triggers only on keyboard focus */
+    --btn-mast-text-focus-visible: light-dark(var(--color-white), var(--color-white));
+    --btn-mast-surface-focus-visible: light-dark(var(--color-transparent), var(--color-transparent));
+    --btn-mast-border-focus-visible: light-dark(var(--color-white), var(--color-white));
+    /* Disabled */
+    --btn-mast-text-disabled: light-dark(var(--color-black), var(--color-black));
+    --btn-mast-surface-disabled: light-dark(var(--color-transparent), var(--color-transparent));
+    --btn-mast-border-disabled: light-dark(var(--color-black), var(--color-black));
+
+}
+
+  

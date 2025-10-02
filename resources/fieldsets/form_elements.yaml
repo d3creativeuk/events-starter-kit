@@ -1,0 +1,89 @@
+title: 'Form - Elements'
+fields:
+  -
+    handle: select_field
+    field:
+      options:
+        oakwood_ridge: 'Oakwood Ridge'
+        riverstone_court: 'Riverstone Court'
+        willowbrook_gardens: 'Willowbrook Gardens'
+        sunflower_meadows: 'Sunflower Meadows'
+        cedarwood_square: 'Cedarwood Square'
+        cherrywood_place: 'Cherrywood Place'
+        maplewood_park: 'Maplewood Park'
+        foxglove_fields: 'Foxglove Fields'
+        lavender_gardens: 'Lavender Gardens'
+        heatherwood_heights: 'Heatherwood Heights'
+        birchwood_grove: 'Birchwood Grove'
+      display: 'Select Field'
+      type: select
+  -
+    handle: assets_field
+    field:
+      container: assets
+      folder: images
+      display: 'Assets Field'
+      type: assets
+      instructions: 'Upload an image'
+  -
+    handle: first_name
+    field: common.text
+    config:
+      display: 'First Name'
+  -
+    handle: last_name
+    field: common.text
+    config:
+      display: 'Last Name'
+  -
+    handle: full_name
+    field: common.text
+    config:
+      display: 'Full Name'
+  -
+    handle: business_email
+    field: common.text
+    config:
+      input_type: email
+      display: Email
+  -
+    handle: phone_number
+    field: common.text
+    config:
+      display: 'Phone Number'
+      validate:
+        - required
+  -
+    handle: job_title
+    field: common.text
+    config:
+      display: 'Job Title'
+  -
+    handle: default_message
+    field: common.textarea
+    config:
+      display: Message
+  -
+    handle: terms_checkbox
+    field:
+      options:
+        -
+          key: consent_terms
+          value: 'I agree to the <a href="#" @click.prevent="showDialog = ''terms''; iframeSrc = ''{{legal:terms_and_conditions}}''; loading = true" class="text-blue-600 underline">Terms and Conditions</a> and the <a href="#" @click.prevent="showDialog = ''privacy''; iframeSrc = ''{{legal:privacy_policy}}''; loading = true" class="text-blue-600 underline">Privacy Policy</a>'
+      inline: true
+      type: checkboxes
+      display: 'Terms and Conditions'
+      validate:
+        - required
+  -
+    handle: form_consent
+    field:
+      options:
+        -
+          key: enquiry_consent
+          value: 'I consent to being contacted by ABC Widgets in response to my enquiry'
+      type: checkboxes
+      display: 'Permission to Contact'
+      validate:
+        - required
+      instructions: 'Read our <a href="#" @click.prevent="showPrivacyDialog = true; iframeSrc = ''https://app.termly.io/document/privacy-notice/57771ac6-c9c0-4c65-a54a-b6505570cd78''; loading = true" class="!text-slate-800 underline hover:no-underline">privacy policy</a> to understand how we use your information.'

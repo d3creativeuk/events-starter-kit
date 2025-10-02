@@ -1,0 +1,27 @@
+title: 'Page Entries'
+fields:
+  -
+    handle: featured_pages_section
+    field:
+      display: 'Featured Pages'
+      type: section
+      icon: section
+      listable: hidden
+      instructions_position: above
+  -
+    handle: page_entires_title
+    field: common.text
+    config:
+      display: Title
+  -
+    handle: page_entires_intro
+    field: common.textarea
+    config:
+      display: Intro
+  -
+    handle: page_entires_entry
+    field: common.entry
+    config:
+      max_items: 4
+      collections:
+        - pages

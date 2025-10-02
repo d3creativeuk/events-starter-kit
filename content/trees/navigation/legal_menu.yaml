@@ -1,0 +1,27 @@
+tree:
+  -
+    id: 304038f5-d4d4-4e40-8a35-af6a1f2f0c80
+    title: 'Privacy Policy'
+    url: 'https://app.termly.io/document/privacy-notice/57771ac6-c9c0-4c65-a54a-b6505570cd78'
+  -
+    id: 6d9c8aa2-040c-4e62-823f-5af7900581f9
+    title: 'Cookie Policy'
+    url: 'https://app.termly.io/policy-viewer/policy.html?policyUUID=6d8783b7-d1c8-4f31-b247-17930a1548c1'
+  -
+    id: e043956c-380d-455c-beaa-e533a503d101
+    title: 'Terms & Conditions'
+    url: 'https://app.termly.io/document/terms-and-conditions/0f3e9e3f-cc27-4472-9043-e229650e516b'
+  -
+    id: 9eff4656-9fca-4338-97e2-b5d0ce34b794
+    title: Disclaimer
+    url: 'https://app.termly.io/document/disclaimer/4cddf3ea-a8a7-4622-b9f4-bd402d84592f'
+  -
+    id: aa2123d7-5784-4256-96c6-780da9dac257
+    title: 'Data Subject Access Request'
+    url: 'https://app.termly.io/notify/57771ac6-c9c0-4c65-a54a-b6505570cd78'
+  -
+    id: 5efd6b0d-4757-4197-8d63-5b55fdd5e188
+    title: 'Manage Cookie Preferences'
+  -
+    id: 6df2dbb8-2f7f-40a3-94bc-7552b80c8388
+    entry: 1bd63122-2232-4d25-a865-bd26701b6df3

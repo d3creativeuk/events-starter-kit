@@ -1,0 +1,87 @@
+
+@theme inline  {
+    /* For bard variables see: resources/css/app/tailwind/typography.css */
+   /* primary, secondary, tertiary, quaternary quinary, senary, septenary, octonary, nonary, denary */
+
+     --color-primary: var(--primary); 
+     --color-secondary: var(--secondary); 
+     --color-tertiary: var(--tertiary); 
+     --color-default: var(--default); 
+     --color-invert: var(--invert); 
+     --color-sidebar: var(--sidebar); 
+
+    --color-text-color: var(--text-color); 
+    /* States */
+    --color-text-hover: var(--text-hover); 
+    --color-text-active: var(--text-active); /* Pressed/clicked state */
+    --color-text-focus: var(--text-focus); 
+    --color-text-focus-visible: var(--text-focus-visible); /* Keyboard focus only */
+    --color-text-disabled: var(--text-disabled); /* Disabled inputs/buttons */
+
+
+
+    --color-heading: var(--heading); 
+    --color-heading-list: var(--heading-list); 
+    --color-subheading: var(--subheading); 
+    --color-intro: var(--intro); 
+    --color-body: var(--body);
+    --color-list: var(--list);
+    --color-bold: var(--bold);
+    --color-captions: var(--captions);
+    --color-meta: var(--meta);
+    --color-th-borders: var(--th-borders);
+    --color-td-borders: var(--td-borders);
+
+
+    --color-list-heading: var(--list-heading); 
+
+
+    /* Hover */
+    --color-heading-text: var(--heading-text); 
+    --color-heading-hover: var(--heading-hover); 
+    --color-subheading-hover: var(--subheading-hover); 
+    --color-intro-hover: var(--intro-hover); 
+    --color-body-hover: var(--body-hover);
+    --color-list-hover: var(--list-hover);
+    --color-bold-hover: var(--bold-hover);
+    --color-captions-hover: var(--captions-hover);
+    --color-th-borders-hover: var(--th-borders-hover);
+    --color-td-borders-hover: var(--td-borders-hover);
+    /*  */
+
+    --color-section-heading: var(--section-heading);
+    --color-section-intro: var(--section-intro);
+
+
+
+
+    --color-pill-text: var(--pill-text);
+     
+    --color-card-heading: var(--card-heading); 
+    --color-card-subheading: var(--card-subheading); 
+    --color-card-intro: var(--card-intro); 
+    --color-card-body: var(--card-body);
+    --color-card-list: var(--card-list);
+
+    --color-main-heading: var(--main-heading); 
+    --color-main-subheading: var(--main-subheading); 
+    --color-main-intro: var(--main-intro); 
+    --color-main-body: var(--main-body);
+    --color-main-list: var(--main-list);
+
+    --color-aside: var(--aside); 
+    --color-aside-heading: var(--aside-heading); 
+    --color-aside-subheading: var(--aside-subheading); 
+    --color-aside-intro: var(--aside-intro); 
+    --color-aside-body: var(--aside-body); 
+    --color-aside-list: var(--aside-list); 
+
+    --color-cta-heading: var(--cta-heading); 
+    --color-cta-subheading: var(--cta-subheading);
+    --color-cta-intro: var(--cta-intro);
+    
+  
+    --color-heading-aside: var(--heading-aside); 
+
+
+}

@@ -1,0 +1,18 @@
+<header class="{{ header_absolute ? "lg:absolute lg:w-full lg:z-10" : "relative"}}" x-data="{ openm: false }" @click.outside="openm = false;">
+  <div class="max-w-8xl mx-auto ">   
+    <div class=" flex items-center  lg:justify-start ">
+      <div class="px-4 py-6">
+          <span class="sr-only">{{ company:company_name ? company:company_name : config:app:name }}</span>
+          {{ partial:partials/company/logo logo_a_class="w-44 block overflow-hidden" logo_img_class="w-fit -ml-4 mb-6" }}
+      </div>
+      {{# MOBILE NAV TOGGLE #}}
+      {{ partial:partials/nav/partials/mobile-nav-toggle }}
+      {{# DESKTOP NAV #}}
+      {{ partial:partials/nav/partials/desktop-nav }}
+      {{# CONTACT BUTTON #}}
+      {{ partial:partials/nav/partials/contact-btns display_mode="space-x-4 hidden lg:flex-shirnk  lg:flex"}}
+    </div>
+  </div>
+    {{# MOBILE NAV #}}
+    {{ partial:partials/nav/partials/mobile-nav-slide }}
+</header>

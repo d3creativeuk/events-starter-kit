@@ -1,0 +1,5 @@
+title: 'Main Menu'
+collections:
+  - pages
+  - elements
+max_depth: 3

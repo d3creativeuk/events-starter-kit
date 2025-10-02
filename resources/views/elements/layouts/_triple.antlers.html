@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">    
+    {{ partial:layouts/partials/head }}
+    {{# Displays layout and template used, local env only #}}
+    {{ partial:layouts/partials/environment }} 
+    {{ if logged_in }} 
+    <body class="{{ view:body_class ? '{view:body_class}' : 'bg-page'  }}">   
+      {{ partial:snippets/gtm/gtm-body }}     
+      {{# partial:partials/mast/mast #}} 
+      {{ yield:top }}  
+      
+      
+
+      <div class="max-w-8xl mt-8 mb-44 mx-auto px-4 sm:px-6 lg:px-8 xl:px-0 ">
+        <div class="border border-neutral-300 lg:grid lg:grid-cols-12">         
+          <div class="w-full lg:col-span-2 lg:p-8">
+            <img {{ if logo_img }}class="{{ logo_img }}"{{ /if }} src="{{ company:json_primary_logo }}" width="172" height="32" alt="{{company:json_company_name}} Logo">
+    {{# partial:docs/partials/terms #}}
+    {{# partial:partials/nav/sidebar/related-pages collection_name="elements"#}}
+<ul class="mt-6">
+    {{ nav handle="collection::elements"}}
+
+
+    <li class="">
+      <a href="{{url}}" class="hover:underline">{{title}} </span></a>
+      {{ if is_current || is_parent }}
+        {{ if children }}
+          <ul class="{{ if depth == 2 }}pl-4{{/if}}">{{ *recursive children* }}</ul>
+        {{ /if }}
+       {{ /if }}
+    </li>	
+  {{ /nav }}  
+</ul>
+
+
+
+          </div> 
+          <main class="border-l border-neutral-300 border-r w-full  lg:col-span-8  ">
+            <div class="px-14 py-8 border-b border-neutral-300">{{ partial:partials/breadcrumbs/breadcrumbs css_nav="flex"}}</div>
+            <div class="lg:py-14">
+          {{ template_content }} 
+            </div>            
+          </main>
+          <div class=" w-full lg:col-span-2 lg:py-14">
+            {{ yield:aside_two }}
+          </div>        
+        </div>
+      </div>
+      {{ yield:base }}            
+      {{# partial:layouts/partials/footer #}} 
+
+
+      {{ if live_preview }}
+      <script>
+          window.addEventListener('message', async (event) => {
+              if (event.data.name === 'statamic.preview.updated') {
+                  const text = await fetch(event.data.url).then((res) => res.text());
+                  const updated = new DOMParser().parseFromString(text, 'text/html');
+                  Alpine.morph(document.body, updated.body);
+              }
+          });
+      </script>
+    {{ /if }}
+    </body>
+    {{ else }}
+    {{ redirect to="/login" }}
+	{{ /if }}
+</html>

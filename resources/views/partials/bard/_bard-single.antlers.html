@@ -1,0 +1,12 @@
+---
+bard_default: 'prose max-w-none'
+intro: 'prose-sm lg:prose-xl text-lg'
+docs_intro: 'prose-sm lg:prose-lg leading-7!'
+---
+
+<div class="
+{{ view:bard_default }}
+{{ switch((css == 'entry') => '{{ view:intro }}', (css == 'docs_entry') => '{{ view:docs_intro }}', () => '{{ view:bard }}') }}
+">
+<p>{{ bard_handle }} </p>
+</div>

@@ -1,0 +1,22 @@
+<div class="p-6">
+	{{ partial:partials/glide/glide
+		:assets_tag="thumbnail"
+		:asset_caption_toggle="asset_caption_toggle"
+		:caption_theme="caption_theme"
+		{{# OPTIONS -------------- #}}
+		img_ratio="wide" {{# comment out if using art_direction, options: wide, classic, square,leave blank or orginal #}}
+		sizes="(min-width: 768px) 50vw, (min-width: 320px) 95vw, 95vw" {{# Use with img_ratio only, comment out if using art_direction #}}
+	}} 
+	<h2 class="{{ title_theme ? '{title_theme}' : 'text-black'}} text-2xl font-semibold my-4">{{ title }}</h2>
+	<p class="{{ para_theme ? '{para_theme}' : 'text-black'}} mb-4">
+		{{ blog_intro_bard_basic | truncate(140, '...')}}
+	</p>
+	{{ partial:partials/button/button-text
+		is_anchor="true"
+		show_icon="true"
+		button_label="Read More"
+		link_type="url"
+		button_theme="black-white"
+	}}
+</div>
+

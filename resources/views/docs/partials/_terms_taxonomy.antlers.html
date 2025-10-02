@@ -1,0 +1,12 @@
+{{ taxonomy:guides sort="title:asc"}} 
+  {{ if entries_count > 0 }}
+    <h2 class="text-3xl font-semibold">{{ title }}</h2>
+    <p>{{ guide_category_desc }}</p>  
+    <ul class="mb-6 mt-2 space-y-2">
+      {{# entries sort="date:desc" #}}
+      {{ entries}}
+        <li><a class="block" href="{{ url }}">{{ title }}</a></li>
+      {{ /entries }}
+    </ul>
+  {{ /if }}
+{{ /taxonomy:guides }}

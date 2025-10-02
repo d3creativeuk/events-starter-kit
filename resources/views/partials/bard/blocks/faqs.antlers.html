@@ -1,0 +1,45 @@
+{{ if type == "faqs" }}
+<div class="mt-8 ">
+	{{ if faqs_title || faqs_intro}}<div class="mb-4">{{ /if }}
+		{{ if faqs_title }}<h2 class="font-semibold text-xl mb-3">{{ faqs_title }}</h2>{{ /if }}
+		{{  if faqs_intro}}<p>{{ faqs_intro}}</p>{{ /if }}
+		{{ if faqs_title || faqs_intro}}</div>{{ /if }}
+	
+	<div  x-data="{ active: 0 }" class="w-full space-y-4 not-prose">
+	    {{ company_faqs }}
+		
+		<div  x-data="{
+	        id: {{ index }},
+	        get expanded() {
+	            return this.active === this.id
+	        },
+	        set expanded(value) {
+	            this.active = value ? this.id : null
+	        },
+	    }" role="region" class="border">
+	
+		
+	        <h2>
+	            <button
+	                type="button"
+	                x-on:click="expanded = !expanded"
+	                :aria-expanded="expanded"
+	                class="flex text-left w-full items-center justify-between px-6 py-4 text-lg font-semibold"
+	            >
+	                <span>{{ title }}</span>
+	                <span x-show="expanded" aria-hidden="true" class="ml-4">&minus;</span>
+	                <span x-show="!expanded" aria-hidden="true" class="ml-4">&plus;</span>
+	            </button>
+	        </h2>
+	
+	        <div  x-show="expanded" x-collapse>
+	            <div class="px-6 pb-4 list-disc list-inside ">{{ answer_bard }}</div>
+	        </div>
+	
+	    </div>
+		{{ /company_faqs }}
+	   
+	</div>
+	
+</div>
+{{ /if }}

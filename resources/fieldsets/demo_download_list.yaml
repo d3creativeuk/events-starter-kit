@@ -1,0 +1,43 @@
+title: 'Demo Download List'
+fields:
+  -
+    handle: download_toggle_options
+    field:
+      type: toggle
+      display: 'Show Options'
+  -
+    handle: downloads_title
+    field:
+      type: text
+      display: Title
+      always_save: true
+      if:
+        download_toggle_options: 'equals true'
+  -
+    handle: downloads_intro
+    field:
+      buttons:
+        - bold
+        - anchor
+      inline: break
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      type: bard
+      display: Intro
+      always_save: true
+      if:
+        download_toggle_options: 'equals true'
+  -
+    handle: downloads_list
+    field:
+      display: Downloads
+      type: grid
+      fields:
+        -
+          handle: file_upload
+          field:
+            container: bones
+            display: File
+            type: assets
+            max_files: 1

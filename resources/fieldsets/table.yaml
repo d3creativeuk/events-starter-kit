@@ -1,0 +1,45 @@
+title: Table
+fields:
+  -
+    handle: table_title
+    field:
+      type: text
+      display: Title
+  -
+    handle: table_intro
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      inline: break
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      type: bard
+      display: Intro
+  -
+    handle: spec_table
+    field:
+      type: table
+      display: Table
+      max_columns: 3
+  -
+    handle: first_row_headers
+    field:
+      default: true
+      type: toggle
+      display: 'First Row Headers'
+  -
+    handle: table_footer
+    field:
+      buttons:
+        - bold
+        - italic
+        - anchor
+      fullscreen: false
+      allow_source: false
+      remove_empty_nodes: false
+      type: bard
+      display: Footer
+      inline: break

@@ -1,0 +1,58 @@
+editor:
+  title: Editor
+  permissions:
+    - 'access cp'
+    - 'view pages entries'
+    - 'edit pages entries'
+    - 'create pages entries'
+    - 'delete pages entries'
+    - 'publish pages entries'
+    - 'reorder pages entries'
+    - 'edit other authors pages entries'
+    - 'publish other authors pages entries'
+    - 'delete other authors pages entries'
+    - 'view case_studies entries'
+    - 'edit case_studies entries'
+    - 'create case_studies entries'
+    - 'delete case_studies entries'
+    - 'publish case_studies entries'
+    - 'reorder case_studies entries'
+    - 'edit other authors case_studies entries'
+    - 'publish other authors case_studies entries'
+    - 'delete other authors case_studies entries'
+    - 'view blog entries'
+    - 'edit blog entries'
+    - 'create blog entries'
+    - 'delete blog entries'
+    - 'publish blog entries'
+    - 'reorder blog entries'
+    - 'edit other authors blog entries'
+    - 'publish other authors blog entries'
+    - 'delete other authors blog entries'
+    - 'view main_menu nav'
+    - 'edit main_menu nav'
+    - 'view legal_menu nav'
+    - 'edit legal_menu nav'
+    - 'edit company globals'
+    - 'view categories terms'
+    - 'edit categories terms'
+    - 'create categories terms'
+    - 'delete categories terms'
+    - 'view assets assets'
+    - 'upload assets assets'
+    - 'edit assets assets'
+    - 'move assets assets'
+    - 'rename assets assets'
+    - 'delete assets assets'
+  preferences:
+    start_page: collections/pages
+    favorites: {  }
+    nav:
+      content:
+        'content::collections':
+          action: '@modify'
+          reorder:
+            - 'content::collections::pages'
+            - 'content::collections::elements'
+            - 'content::collections::docs'
+      settings: '@hide'

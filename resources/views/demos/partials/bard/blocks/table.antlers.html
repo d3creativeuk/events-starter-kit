@@ -1,0 +1,45 @@
+{{ if type == "table" }}
+
+{{ if table_title }}<h2 class="font-semibold text-xl mb-3">{{ table_title }}</h2>{{ /if }}
+<p>{{ table_intro }}</p>
+<table class="not-prose w-full mb-8 table-auto text-left">
+
+	{{ spec_table }}
+	{{ if first && first_row_headers }}
+      <thead class="">
+        <tr>
+          {{ cells }}
+            <th class="border bg-slate-100 border-slate-300 p-2 ">{{ value | markdown }}</th>
+          {{ /cells }}
+        </tr>
+      </thead>
+      <tbody>
+    {{ /if }}
+	{{ if !first && first_row_headers || !first_row_headers }}
+      {{ if first }}
+        <tbody>
+      {{ /if }}
+	 <tr>
+		{{ cells }}
+		  <td class="border border-slate-300 p-2">{{ value | markdown }}</td>
+		{{ /cells }}
+	  </tr>
+	  {{ if last }}
+	</tbody>
+  {{ /if }}
+{{ /if }}
+	{{ /spec_table }}
+	{{ if table_footer }}
+	<tfoot>
+		<tr>
+		  <td colspan="{{ spec_table | count | subtract:1 }}" class="border border-slate-300 p-2 text-sm">
+			{{ table_footer }}
+		  </td>
+		</tr>
+	  </tfoot>
+	  {{ /if }}
+  </table>
+  
+{{ /if }}
+
+

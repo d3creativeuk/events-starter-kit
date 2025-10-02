@@ -1,0 +1,7 @@
+{{ fields where="handle:{handle}" }}
+<div class="{{ error ?= '{view:error_box}' }}">
+        {{ partial:forms/partials/label_error_hint }}
+        {{ partial:vendor/statamic/forms/fields/textarea }}
+        <small class="text-red-400" x-show="form.invalid('{{ handle }}')" x-text="form.errors.{{ handle }}"></small>
+    </div>
+{{ /fields }}

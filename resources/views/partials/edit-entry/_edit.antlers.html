@@ -1,0 +1,15 @@
+{{# https://github.com/statamic/cms/issues/10896 #}}
+{{# https://discord.com/channels/489818810157891584/489818810157891586/1291335097819201589 #}}
+{{# https://discord.com/channels/489818810157891584/489818810157891586/1291335097819201589 #}}
+
+{{ if environment === 'local' }}
+	{{ partial:partials/edit-entry/edit-button }}
+{{ else }}
+	{{ nocache }} 
+		{{ partial:partials/edit-entry/edit-button }}
+	{{ /nocache }} 
+{{ /if }}
+
+
+
+

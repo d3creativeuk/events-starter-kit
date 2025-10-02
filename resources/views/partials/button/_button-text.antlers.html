@@ -1,0 +1,44 @@
+---
+base: 'group w-auto justify-self-center font-semibold inline-block underline underline-offset-4 transition ease-in-out focus:transition-none hover:no-underline'
+a11y: 'focus:outline-2 outline-offset-4 outline-current focus:no-underline focus-visible:outline'
+font_size:
+    xs: 'text-xs'
+    sm: 'text-sm'
+    md: 'text-sm md:text-base'
+    lg: 'text-sm md:text-base lg:text-lg'
+---
+
+{{# Common link_type value: entry #}}
+{{ is_anchor ? "<a" : "<button" }}
+
+
+{{ partial:partials/button/attrs }}
+{{ notab ?= "tabindex='-1'" }} 
+class="
+{{ view:base }}
+{{ view:a11y }}
+
+{{ view:font_size[{text_size ?? 'md'}] }} 
+{{# view:font_size[{text_size ?? 'sm'}] #}} 
+{{ partial:partials/button/button-text-themes }}
+{{ show_icon ?= 'inline-flex items-center' }}
+{{ icon_flip ? 'flex-row-reverse' : 'gap-x-1' }}
+{{ button_css }}
+">
+
+
+<span>{{ button_label ?? "Button Text" }}</span>
+
+
+{{ if show_icon }}
+    {{ partial:partials/icon/icon 
+        :icon_flip="icon_flip" {{# default right #}}
+        :icon_path="icon_path" {{# arrow_thin, caret #}}
+        :icon_turn="icon_turn" {{# 90 180 45 -90 -45 #}}
+        :icon_css="icon_css" {{# h-4 w-4 #}}
+    }}
+{{ /if }}
+
+
+
+{{ is_anchor ? "</a>" : "</button>" }}
