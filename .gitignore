@@ -24,3 +24,15 @@
 Homestead.json
 Homestead.yaml
 Thumbs.db
+
+# Uploaded assets
+/public/assets/
+/public/bones/
+#Glide
+/public/img/**
+
+#Failed Jobs
+/storage/failed-jobs/**
+
+public/assets/**/*.meta
+/CLAUDE.md
