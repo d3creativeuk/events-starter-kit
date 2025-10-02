@@ -41,3 +41,5 @@ public/assets/**/*.meta
 *.mp4
 *.mp3
 *.zip
+public/bones/
+public/assets/docs/
