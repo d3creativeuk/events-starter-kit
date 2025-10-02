@@ -1,0 +1,5 @@
+@click="isOpen = !isOpen"
+:aria-expanded="isOpen"
+aria-controls="faq-content-{{ id }}"
+:id="'faq-button-' + '{{ id }}'"
+:class="isOpen ? 'bg-surface-1!  text-white!' : ''" 

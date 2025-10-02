@@ -9,8 +9,8 @@
             {{partial:partials/type/htag-v2
                 s_content="Past Events"
                 htag="h2"
-                css_tag="section_title"
-                css_tag_custom=""
+                css_tag="event_listing_title"
+                css_tag_custom="mb-6"
                 css_tag_overide=""
                 is_link="true"
                 has_decoration=""
@@ -37,7 +37,7 @@
                      {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
                     {{ /items }} 
                     {{ if total_items > 3 }}
-                        <a href="/events/archive" class="underline hover:no-underline">View all {{ total_items }} events from {{ group }}</a>
+                        <a href="/events/archive/{{group}}" class="underline hover:no-underline">View all {{ total_items }} events from {{ group }}</a>
                     {{ /if }}
                     {{ /groups }} 
                 

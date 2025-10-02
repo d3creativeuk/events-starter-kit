@@ -1,0 +1,91 @@
+---
+# transition focus:transition-none ease-in-out
+# a11y: focus:outline-2
+base: 'group w-auto cursor-pointer font-semibold'
+
+type_button: 'text-text-color bg-surface-color hover:text-text-hover hover:bg-surface-hover'
+type_button_border: 'border border-border-color hover:border-border-hover focus:border-border-focus focus-visible:border-border-focus-visible'
+type_button_active: 'active:bg-surface-active active:text-text-active active:border-border-active'
+type_button_focus: 'focus:text-text-focus focus:bg-surface-focus'
+type_button_focus_outline: 'focus:outline-outline-focus outline-offset-4 focus:outline-outline-color focus:outline-dashed focus:outline-2 focus:outline-offset-4'
+type_button_focus_visible: 'focus-visible:text-text-focus-visible focus-visible:outline-outline-focus-visible focus-visible:bg-surface-focus-visible'
+type_button_focus_visible_outline: 'focus-visible:outline-outline-color focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-4'
+
+
+type_link: 'text-text-color hover:text-text-hover hover:underline'
+type_link_a11y: 'active:outline-none outline-inherit outline-offset-3 focus:outline-2 focus:outline-dashed focus-visible:outline-dashed focus-visible:outline-2'
+
+disabled_css: 'disabled:bg-surface-disabled disabled:border-border-disabled disabled:text-text-disabled disabled:opacity-50 '
+radius:
+    sm: 'rounded-xs'
+    md: 'rounded-md'
+    lg: 'rounded-lg'
+    full: 'rounded-full'
+button_pad:
+    sm: 'px-4 py-2'
+    md: 'px-4 py-2 md:px-6 py-3'
+    lg: 'px-4 py-2 md:px-6 py-3 lg:px-8 py-4'
+font_scale:
+    xs: 'text-sm'
+    sm: 'text-base'
+    md: 'text-base md:text-lg'
+    lg: 'text-base md:text-lg lg:text-xl'
+---
+
+
+{{# Common link_type value: entry #}}
+{{ is_ahref ? "<a" : "<button" }}
+{{ precognition ?= ':disabled="form.processing"'}}
+{{ x_expand ?= '{partial:partials/link-button/partials/expand-click}'}}
+{{ faq_toggle ?= '{ partial:partials/link-button/partials/faq-toggle }'}}
+{{ cal_modal ?= '{ partial:partials/link-button/partials/cal-modal }'}}
+data-theme="{{data_theme ? '{data_theme}' : 'button_dark'}}"
+{{ partial:partials/link-button/attrs }}
+{{ disabled ?= 'disabled' }} 
+{{ notab ?= "tabindex='-1'" }} 
+class="
+{{ view:base }}
+{{ text_align ?? 'text-left'}}
+
+{{ faq_toggle ?= 'inline-flex items-center'}}
+{{ if style == 'link' }}{{view:type_link}} {{ underline ?? 'no-underline'}} {{view:type_link_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }}{{ else }}{{ rounded ? {rounded} : 'rounded-sm'}} {{view:type_button}} {{view:type_button_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }} {{ view:button_pad[{button_padding ?? 'sm'}] }} {{ no_border ? '' : '{{view:type_button_border}}'}} {{ no_active ? '' : '{{view:type_button_active}}'}} {{ no_focus ? '' : '{{view:type_button_focus}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_visible ? '' : '{{view:type_button_focus_visible}}'}} {{ no_focus_visible_outline ? 'border-none outline-hidden' : '{{view:type_button_focus_visible_outline}}'}} {{/if}}
+
+
+{{# view:theme #}}
+{{# view:a11y #}}
+{{ disabled ?= '{view:disabled_css}' }}
+{{ lowercase ? '' : 'uppercase'}}
+{{ custom_css }}
+ 
+{{# view:radius[{radius ?? 'sm'}] #}} 
+{{ radius ?= {view:radius[{radius}]} }}  
+{{# view:font_size[{text_size ?? 'sm'}] #}} 
+{{# Looks for button_theme if not a fallback is used #}}
+
+
+{{ icon_path ?= 'inline-flex items-center gap-x-2' }}
+{{ icon_flip ?= 'flex-row-reverse gap-x-2' }}
+">
+
+
+{{ if x_text }}
+    {{ partial:partials/link-button/partials/expand-text}}
+{{else}}
+    <span>{{ button_label ?? "Button Text" }}</span>
+{{/if}}
+
+
+
+{{ faq_toggle ?= '{ partial:partials/link-button/partials/faq-icons }'}}
+{{ if icon_path }}
+    {{ partial:partials/icon/icon 
+        :icon_flip="icon_flip" {{# default right #}}
+        icon_path="{icon_path ? {icon_path} : 'arrow_thin'}"
+        :icon_turn="icon_turn" {{# 90 180 45 -90 -45 #}}
+        :icon_css="icon_css" {{# h-4 w-4 #}}
+    }}
+{{ /if }}
+
+
+
+{{ is_ahref ? "</a>" : "</button>" }}

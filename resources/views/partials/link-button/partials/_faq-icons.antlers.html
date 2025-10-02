@@ -1,0 +1,13 @@
+<span class=" shrink-0 transition-transform duration-200" :class="{ 'rotate-180': isOpen }">
+    <span x-show="!isOpen">
+        {{ partial:partials/icon/icon 
+        icon_path="plus"
+        icon_css="h-4 w-4" 
+    }}      
+    </span>
+    <span x-show="isOpen">
+         {{ partial:partials/icon/icon 
+        icon_path="minus"
+        icon_css="h-4 w-4" }}
+    </span>
+</span>

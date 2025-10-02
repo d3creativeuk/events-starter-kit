@@ -11,6 +11,30 @@
         css_link=""
     }}
     <p class="text-lg mt-1 mb-4 text-body">{{event_description}}</p>
+    {{# Shows button if event is after _today_start #}}
+    {{if show_book_meeting & event_date_field:end >= _today_start}}
+       
+                        {{ partial:link-button/link-button 
+                      is_ahref="" {{# true #}}
+                      style="" {{# link #}}
+                      data_theme=""
+                      custom_css="mb-6"
+                      font_size="" {{# xs, sm , md, lg #}}
+                      disabled=""
+                      button_label="Book Meeting"
+                      show_icon="" {{# true #}}
+                      icon_flip="" {{# true #}}
+                      icon_path="" {{# arrow_thin #}}
+                      link_type="url"
+                      url=""
+                      notab=""
+                      text_align=""
+                      lowercase="" {{# true #}}
+                      radius="" {{# sm , md, lg, full #}}
+                    }}
+
+    {{/if}}
+
     <ul class="list-disc mt-2 list-inside text-body">
         {{if booth_number}}<li><strong>Booth: {{booth_number}}</strong></li>{{/if}}
 

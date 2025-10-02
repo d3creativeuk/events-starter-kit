@@ -1,4 +1,6 @@
 {{ _today_start = today | modify_date('midnight') }}
+{{ _filter_by_year = segment_3 }}
+{{# segment_3 could be 2020, 2021, 2023 etc. #}}
 <div class="mx-auto max-w-3xl mt-14">
           
     <div class=" mb-96">
@@ -7,26 +9,28 @@
       
         {{# PAST EVENTS #}}
             {{partial:partials/type/htag-v2
-                s_content="Past Events"
+                s_content="{{segment_3}} Archive Events"
                 htag="h2"
-                css_tag="section_title"
-                css_tag_custom=""
+                css_tag="event_listing_title"
+                css_tag_custom=" mb-6"
                 css_tag_overide=""
                 is_link="true"
                 has_decoration=""
                 css_link=""
             }} 
-            {{ _year = segment_3 }}
-            {{collection:events sort="event_date_field:end:desc" as="events" :event_date_field.end:lt="_today_start" :event_date_field.end:starts_with="_year"}}
+
+
+
+            {{collection:events sort="event_date_field:end:desc" as="events" :event_date_field.end:contains="_filter_by_year" :event_date_field.end:lt="_today_start"}}
                 <div class="flex flex-col gap-y-6">
                     
-                    {{events }}
+                    {{events }}                   
+
                      {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
+                                   
                     {{/events}}
                 
                 </div>
             {{/collection:events}}
     </div>
 </div>
-
-

@@ -1,6 +1,9 @@
+{{ _today_start = today | modify_date('midnight') }}
 <div class="mx-auto max-w-3xl mt-14 mb-96">
- {{if event_date_field:end | is_past }}
-                             {{partial:partials/type/htag-v2
+  
+{{# Shows "Archived Event" when end date is before today (past events) #}}
+ {{if event_date_field:end < _today_start }}
+             {{partial:partials/type/htag-v2
                 s_content="Archived Event"
                 htag="h2"
                 css_tag="section_title"
@@ -10,7 +13,8 @@
                 has_decoration=""
                 css_link=""
             }} 
-                        {{/if}}
-  {{ partial:events/partials/event-card show_event_website="true" show_category_and_event_type="true"}}
+{{/if}}
+  {{ partial:events/partials/event-card  show_book_meeting="true" show_event_website="true" show_category_and_event_type="true"}}
 
 </div>
+
