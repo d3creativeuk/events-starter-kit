@@ -18,6 +18,14 @@ Route::statamic('/login', 'docs/login-message', [
 ]);
 
 
+Route::statamic('/events/archive', 'events/archive/index', [
+    'layout' => 'layouts/layout',
+]);
+Route::statamic('/events/archive/{year}', 'events/archive/show', [
+    'layout' => 'layouts/layout',
+]);
+
+
 // Custom routes needed for Docs Collection
 // These pages don't exist in the CMS
 // Route::statamic('/docs', 'docs/index', [

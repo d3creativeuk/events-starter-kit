@@ -1,43 +1,63 @@
 hide: true
 title: Home
-sections:
+tabs:
   main:
     display: Main
-    fields:
+    sections:
       -
-        handle: title
-        field:
-          type: text
-          required: true
-          validate:
-            - required
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
       -
-        import: hero
-        prefix: home_
-      -
-        import: cards
-        prefix: home_
+        display: 'Featured Event'
+        fields:
+          -
+            handle: featured_event
+            field:
+              max_items: 1
+              collections:
+                - events
+              type: entries
+              display: 'Featured Event'
+              create: false
   sidebar:
     display: Sidebar
-    fields:
+    sections:
       -
-        handle: slug
-        field:
-          type: slug
-          localizable: true
-          validate:
-            - required
-      -
-        handle: parent
-        field:
-          type: entries
-          collections:
-            - pages
-          max_items: 1
-          listable: false
-          localizable: true
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - required
+          -
+            handle: parent
+            field:
+              type: entries
+              collections:
+                - pages
+              max_items: 1
+              listable: false
+              localizable: true
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
   seo:
     display: SEO
-    fields:
+    sections:
       -
-        import: meta_data
+        fields:
+          -
+            import: meta_data

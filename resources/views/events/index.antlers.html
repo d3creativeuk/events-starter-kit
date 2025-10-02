@@ -3,21 +3,26 @@
 
 
 {{# FEATURED EVENT #}}
-<div class="mb-14">
-    {{partial:partials/type/htag-v2
-        s_content="Featured Event"
-        htag="h2"
-        css_tag="section_title"
-        css_tag_custom=""
-        css_tag_overide=""
-        is_link="true"
-        has_decoration=""
-        css_link=""
-    }}       
-    {{featured_event}}
-    {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="featured_event_card"}}
-    {{/featured_event}}
-</div>
+{{ get_content id="home"}}
+    {{if featured_event}}
+        <div class="mb-14">
+            {{partial:partials/type/htag-v2
+                s_content="Featured Event"
+                htag="h2"
+                css_tag="section_title"
+                css_tag_custom=""
+                css_tag_overide=""
+                is_link="true"
+                has_decoration=""
+                css_link=""
+            }}       
+        
+                {{featured_event}}
+                {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="featured_event_card"}}
+                {{/featured_event}}
+        </div>
+    {{/if}}
+ {{/get_content}}
 
 {{# UPCOMING EVENTS #}}
 {{partial:partials/type/htag-v2
@@ -31,11 +36,12 @@
     css_link=""
 }} 
 {{# ONLY SHOW EVENTS FROM THIS YEAR #}}
+{{ _today_start = today | modify_date('midnight') }}
 
-{{collection:events sort="event_date_field:start:asc" as="events" status:is="published" status:isnt="scheduled" since="january 1st" }}
+{{collection:events sort="event_date_field:start:asc" as="events" status:is="published" status:isnt="scheduled" :event_date_field.end:gte="_today_start" }}
     <div class="flex flex-col gap-y-6">
         
-        {{events group_by="event_date_field:start|Y"}}
+        {{events group_by="event_date_field:end|Y"}}
         
         {{ groups }}
           {{partial:partials/type/htag-v2
@@ -49,9 +55,9 @@
             css_link=""
         }}
          {{ items }}
-            {{if event_date_field:start | is_future}}
+            
                {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="event_card"}}
-            {{/if}}
+          
           {{ /items }} 
           {{ /groups }} 
        
@@ -59,6 +65,20 @@
        
     </div>
 {{/collection:events}}
-          
+         
+
+{{# PAST EVENTS #}}
+{{partial:partials/type/htag-v2
+    s_content="Past Events"
+    htag="h2"
+    css_tag="section_title"
+    css_tag_custom="mt-32 mb-96"
+    css_tag_overide=""
+    is_link="true"
+    url="/events/archive"
+    has_decoration="true"
+    css_link=""
+}} 
+  
 
 </div>

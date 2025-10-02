@@ -1,5 +1,16 @@
 <div class="mx-auto max-w-3xl mt-14 mb-96">
-
+ {{if event_date_field:end | is_past }}
+                             {{partial:partials/type/htag-v2
+                s_content="Archived Event"
+                htag="h2"
+                css_tag="section_title"
+                css_tag_custom=""
+                css_tag_overide="border inline-block px-2 py-1 mb-2"
+                is_link="true"
+                has_decoration=""
+                css_link=""
+            }} 
+                        {{/if}}
   {{ partial:events/partials/event-card show_event_website="true" show_category_and_event_type="true"}}
 
 </div>

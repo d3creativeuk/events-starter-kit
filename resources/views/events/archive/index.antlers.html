@@ -1,0 +1,51 @@
+{{ _today_start = today | modify_date('midnight') }}
+<div class="mx-auto max-w-3xl mt-14">
+          
+    <div class=" mb-96">
+        {{# _today = today | modify_date("-1 day") #}}
+
+      
+        {{# PAST EVENTS #}}
+            {{partial:partials/type/htag-v2
+                s_content="Past Events"
+                htag="h2"
+                css_tag="section_title"
+                css_tag_custom=""
+                css_tag_overide=""
+                is_link="true"
+                has_decoration=""
+                css_link=""
+            }} 
+            {{collection:events sort="event_date_field:end:desc" as="events" :event_date_field.end:lt="_today_start"}}
+                <div class="flex flex-col gap-y-6">
+                    
+                    {{events group_by="event_date_field:end|Y" }}
+                    
+                    {{ groups}}
+                    {{partial:partials/type/htag-v2
+                        :s_content="group"
+                        htag="h3"
+                        css_tag="event_listing_title"
+                        css_tag_custom=""
+                        css_tag_overide=""
+                        is_link=""
+                        has_decoration=""
+                        css_link=""
+                    }}
+                     {{ total_items = items | count }}
+                    {{ items limit="3"}}
+                     {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
+                    {{ /items }} 
+                    {{ if total_items > 3 }}
+                        <a href="/events/archive" class="underline hover:no-underline">View all {{ total_items }} events from {{ group }}</a>
+                    {{ /if }}
+                    {{ /groups }} 
+                
+                    {{/events}}
+                
+                </div>
+            {{/collection:events}}
+    </div>
+</div>
+
+

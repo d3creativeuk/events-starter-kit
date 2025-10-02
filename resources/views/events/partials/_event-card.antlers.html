@@ -12,9 +12,16 @@
     }}
     <p class="text-lg mt-1 mb-4 text-body">{{event_description}}</p>
     <ul class="list-disc mt-2 list-inside text-body">
-        <li><strong>Booth: {{booth_number}}</strong></li>
+        {{if booth_number}}<li><strong>Booth: {{booth_number}}</strong></li>{{/if}}
+
+        {{if event_type:title == 'Webinar'}}
+        <li><strong>{{event_date_field:start}}</strong></li>
+        {{elseif event_type:title == 'Event'}}
         <li><strong>{{event_date_field:start}} - {{event_date_field:end}}</strong></li>
-        <li>{{event_location}}</li> 
+        {{/if}}
+
+        
+        <li>Location: {{event_location}}</li> 
         {{if show_event_website}} 
         <li >Event website: <a href="{{event_website}}" class="underline hover:no-underline">{{event_website | parse_url('host') }}</a></li> 
         {{/if}}                   

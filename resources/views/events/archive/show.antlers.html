@@ -1,0 +1,32 @@
+{{ _today_start = today | modify_date('midnight') }}
+<div class="mx-auto max-w-3xl mt-14">
+          
+    <div class=" mb-96">
+        {{# _today = today | modify_date("-1 day") #}}
+
+      
+        {{# PAST EVENTS #}}
+            {{partial:partials/type/htag-v2
+                s_content="Past Events"
+                htag="h2"
+                css_tag="section_title"
+                css_tag_custom=""
+                css_tag_overide=""
+                is_link="true"
+                has_decoration=""
+                css_link=""
+            }} 
+            {{ _year = segment_3 }}
+            {{collection:events sort="event_date_field:end:desc" as="events" :event_date_field.end:lt="_today_start" :event_date_field.end:starts_with="_year"}}
+                <div class="flex flex-col gap-y-6">
+                    
+                    {{events }}
+                     {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
+                    {{/events}}
+                
+                </div>
+            {{/collection:events}}
+    </div>
+</div>
+
+

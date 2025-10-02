@@ -14,15 +14,6 @@ tabs:
                 - required
       -
         display: 'Featured Event'
-        fields:
-          -
-            handle: featured_event
-            field:
-              max_items: 1
-              collections:
-                - events
-              type: entries
-              display: 'Featured Event'
   sidebar:
     display: Sidebar
     sections:

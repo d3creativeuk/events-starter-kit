@@ -1,0 +1,31 @@
+ <aside data-theme="{{data_theme}}" class="{{aside_css}} bg-surface-card border-border-color">
+    
+    {{partial:partials/type/htag-v2
+        :s_content="title"
+        htag="h2"
+        css_tag=""
+        css_tag_custom=""
+        css_tag_overide=""
+        :is_link="is_link"
+        :has_decoration="has_decoration"
+        css_link=""
+    }}
+    
+    <ul class=" text-xs list-disc mt-2 list-inside text-body">
+       
+
+        {{if event_type:title == 'Webinar'}}
+        <li><strong>{{event_date_field:start}}</strong></li>
+        {{elseif event_type:title == 'Event'}}
+        <li><strong>{{event_date_field:start}} - {{event_date_field:end}}</strong></li>
+        {{/if}}
+
+        
+        <li>Location: {{event_location}}</li> 
+                         
+    </ul>
+
+    
+    
+
+</aside>
