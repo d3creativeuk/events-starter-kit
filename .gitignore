@@ -28,18 +28,15 @@ Thumbs.db
 # Uploaded assets
 /public/assets/
 /public/bones/
-#Glide
+
+# Glide
 /public/img/
 
-#Failed Jobs
+# Failed Jobs
 /storage/failed-jobs/
 
+# Meta files
 public/assets/**/*.meta
+
+# Documentation
 /CLAUDE.md
-
-
-*.mp4
-*.mp3
-*.zip
-public/bones/
-public/assets/docs/
