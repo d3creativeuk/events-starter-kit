@@ -11,5 +11,5 @@ preferences:
         - date
         - event_date_field
         - status
-        - categories
-        - event_type
+        - industries
+        - formats

@@ -3,8 +3,8 @@ template: events/show
 layout: layout
 mount: 9de6a3a1-5857-4925-b92f-b955746b958e
 taxonomies:
-  - categories
-  - event_type
+  - industries
+  - formats
 revisions: false
 route: 'events/{slug}'
 date: true

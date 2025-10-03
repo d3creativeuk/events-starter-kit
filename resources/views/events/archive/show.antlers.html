@@ -1,35 +1,41 @@
 {{ _today_start = today | modify_date('midnight') }}
 {{ _filter_by_year = segment_3 }}
+
+{{section:seo_title}}
+    {{ _filter_by_year}} Event Archive
+{{/section:seo_title}}
+{{ section:seo_description }}
+    Archived events.
+{{ /section:seo_description }}
+
 {{# segment_3 could be 2020, 2021, 2023 etc. #}}
 <div class="mx-auto max-w-3xl mt-14">
           
     <div class=" mb-96">
         {{# _today = today | modify_date("-1 day") #}}
 
-      
         {{# PAST EVENTS #}}
-            {{partial:partials/type/htag-v2
-                s_content="{{segment_3}} Archive Events"
-                htag="h2"
-                css_tag="event_listing_title"
-                css_tag_custom=" mb-6"
-                css_tag_overide=""
-                is_link="true"
-                has_decoration=""
-                css_link=""
-            }} 
-
-
+           
 
             {{collection:events sort="event_date_field:end:desc" as="events" :event_date_field.end:contains="_filter_by_year" :event_date_field.end:lt="_today_start"}}
                 <div class="flex flex-col gap-y-6">
-                    
-                    {{events }}                   
-
-                     {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
-                                   
-                    {{/events}}
-                
+                    {{ if no_results }}
+                        {{ redirect to="/404" }}
+                    {{ else }}
+                        {{partial:partials/type/htag-v2
+                            s_content="{{segment_3}} Archive Events"
+                            htag="h2"
+                            css_tag="event_listing_title"
+                            css_tag_custom=" mb-6"
+                            css_tag_overide=""
+                            is_link="true"
+                            has_decoration=""
+                            css_link=""
+                        }} 
+                        {{events }}                     
+                            {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}           
+                        {{/events}}
+                    {{ /if }}
                 </div>
             {{/collection:events}}
     </div>

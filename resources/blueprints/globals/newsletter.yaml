@@ -1,8 +1,30 @@
-sections:
+tabs:
   main:
     display: Main
-    fields:
-      - handle: newsletter_text
-        field: common.textarea
-        config:
-          default: "Don't worry, no spam here! Your information will only be used for Widgets ABC related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime."
+    sections:
+      -
+        fields:
+          -
+            handle: newsletter_text
+            field: common.textarea
+            config:
+              default: "Don't worry, no spam here! Your information will only be used for Widgets ABC related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime."
+      -
+        display: 'New Section'
+        fields:
+          -
+            handle: newsletter_intro
+            field:
+              buttons:
+                - bold
+                - italic
+              inline: true
+              fullscreen: false
+              allow_source: false
+              remove_empty_nodes: false
+              link_collections:
+                - events
+                - insights
+                - pages
+              type: bard
+              display: Intro

@@ -1,4 +1,6 @@
 title: Insights
+taxonomies:
+  - industries
 revisions: false
 date_behavior:
   past: public

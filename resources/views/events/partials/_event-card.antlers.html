@@ -38,9 +38,9 @@
     <ul class="list-disc mt-2 list-inside text-body">
         {{if booth_number}}<li><strong>Booth: {{booth_number}}</strong></li>{{/if}}
 
-        {{if event_type:title == 'Webinar'}}
+        {{if formats:title == 'Online'}}
         <li><strong>{{event_date_field:start}}</strong></li>
-        {{elseif event_type:title == 'Event'}}
+        {{elseif formats:title == 'In Person'}}
         <li><strong>{{event_date_field:start}} - {{event_date_field:end}}</strong></li>
         {{/if}}
 
@@ -50,10 +50,11 @@
         <li >Event website: <a href="{{event_website}}" class="underline hover:no-underline">{{event_website | parse_url('host') }}</a></li> 
         {{/if}}                   
     </ul>
+  
     {{if show_category_and_event_type}}
     <ul class="list-disc mt-4 list-inside text-sm">
-        <li><a href="{{categories:url}}">Industry: <span class="underline hover:no-underline">{{categories:title}}</span></a></li>
-        <li><a href="{{event_type:url}}">Event type: <span class="underline hover:no-underline">{{event_type:title}}</span></a></li>
+        <li><a href="{{industries:url}}">Industry: <span class="underline hover:no-underline">{{industries:title}}</span></a></li>
+        <li><a href="{{formats:url}}">Format: <span class="underline hover:no-underline">{{formats:title}}</span></a></li>
     </ul>
     {{/if}}
     

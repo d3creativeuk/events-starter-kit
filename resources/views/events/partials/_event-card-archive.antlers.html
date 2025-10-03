@@ -14,9 +14,9 @@
     <ul class=" text-xs list-disc mt-2 list-inside text-body">
        
 
-        {{if event_type:title == 'Webinar'}}
+        {{if formats:title == 'Online'}}
         <li><strong>{{event_date_field:start}}</strong></li>
-        {{elseif event_type:title == 'Event'}}
+        {{elseif formats:title == 'In Person'}}
         <li><strong>{{event_date_field:start}} - {{event_date_field:end}}</strong></li>
         {{/if}}
 

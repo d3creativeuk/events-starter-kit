@@ -1,0 +1,41 @@
+---
+bard_base: 'prose max-w-none'
+
+bard_link: '[&_a]:font-semibold'
+bard_hover: '[&_a]:hover:text-text-hover [&_a]:hover:no-underline'
+bard_outline: '[&_a]:rounded-sm [&_a]:outline-inherit [&_a]:outline-offset-3'
+bard_focus: '[&_a]:focus:outline-none' # hides outline when link is clicked
+bard_focus_visible: '[&_a]:focus-visible:outline-dashed [&_a]:focus-visible:outline-2'
+bard_active: '[&_a]:active:outline-none'
+
+pages_bard: 'prose-sm prose-a:text-primary [&_a:hover]:text-darkblue  prose-headings:text-3xl prose-headings:font-semibold sm:prose-headings:text-4xl/10 lg:prose-base  lg:prose-headings:mb-2 lg:prose-headings:mt-4 lg:prose-h3:text-xl lg:prose-h4:text-lg'
+
+body: ' prose-headings:text-heading-bard prose-headings:first:mt-0 prose-headings:mt-10 prose-headings:mb-2 prose-headings:text-xl lg:prose-headings:text-2xl text-default'
+
+
+
+
+
+---
+
+<div class="{{ view:bard_base }} {{ view:bard_link }} {{ view:bard_hover }} {{ view:bard_outline }} {{ view:bard_focus }} {{ view:bard_focus_visible }} {{ view:bard_active }}  
+{{ switch(
+	(css == 'body') => '{{ view:body }}', 
+	() => '') 
+}} {{css_layout}} {{css_custom}} ">
+
+{{# Add 'has_sets' and `bard_handle` on partial #}}
+	{{ if has_sets }}
+		{{ bard_handle }}
+			{{ if alt_layout }}
+				<div class="mx-auto first:pt-0 py-6  {{ type == "image" || type == "table" ||  type == "video" ? "max-w-4xl w-full" : "max-w-3xl" }} {{ type == "text" ?= "px-6 xl:px-0" }} ">
+					{{ partial src="bard/blocks/{type}" }}
+				</div>
+			{{else}}
+				<div class="first:pt-0 py-6">{{ partial src="bard/blocks/{type}" }}</div>
+			{{/if}}
+		{{ /bard_handle }}		
+	{{else}} 
+		{{ bard_handle }} 
+	{{/if}}
+</div>

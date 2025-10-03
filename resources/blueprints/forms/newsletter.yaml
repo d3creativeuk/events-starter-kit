@@ -5,136 +5,32 @@ tabs:
       -
         fields:
           -
-            handle: firstname
+            handle: full_name
             field:
-              input_type: text
-              antlers: false
-              display: 'First Name'
+              display: 'Full Name'
               type: text
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
-            handle: lastname
-            field:
-              input_type: text
-              antlers: false
-              display: 'Last Name'
-              type: text
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
           -
             handle: email
             field:
               input_type: email
-              antlers: false
               display: Email
               type: text
-              icon: text
-              listable: hidden
-              instructions_position: above
               validate:
                 - required
           -
-            handle: company
-            field:
-              input_type: text
-              antlers: false
-              type: text
-              display: Company
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
             handle: job_title
             field:
-              input_type: text
-              antlers: false
               type: text
-              display: 'Job title'
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
-            handle: phone
-            field:
-              input_type: tel
-              antlers: false
-              type: text
-              display: Phone
-              icon: text
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
-            handle: service
-            field:
-              options:
-                wireframe: Wireframe
-                design: Design
-                development: Development
-              taggable: false
-              push_tags: false
-              multiple: false
-              max_items: 1
-              clearable: false
-              searchable: true
-              cast_booleans: false
-              type: select
-              display: Service
-              icon: select
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
-            handle: message_textarea
-            field:
-              antlers: false
-              type: textarea
-              display: Message
-              icon: textarea
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
-          -
-            handle: subscribe
-            field:
-              inline: false
-              options:
-                subscribe: 'Subscribe to our newsletter and get updates straight to your Inbox'
-              display: Newsletter
-              type: checkboxes
-              icon: checkboxes
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
+              display: 'Job Title'
           -
             handle: consent
             field:
               options:
-                consent: 'I''ve read and accept the <a target="_blank" href="#">Terms & Conditions</a>'
-              inline: false
+                -
+                  key: consent
+                  value: "Yes, I'd like priority access to meetings and event updates."
               type: checkboxes
-              display: 'Terms & Conditions'
-              icon: checkboxes
-              listable: hidden
-              instructions_position: above
-              visibility: visible
-              hide_display: false
+              display: Consent
               validate:
                 - required
-      -
-        display: 'New Section'
+              instructions: 'By registering your interest you agree to receive information regarding our products and services (you can one-click unsubscribe from these at any time).'

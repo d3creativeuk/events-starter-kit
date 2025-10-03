@@ -48,7 +48,7 @@ class="
 {{ text_align ?? 'text-left'}}
 
 {{ faq_toggle ?= 'inline-flex items-center'}}
-{{ if style == 'link' }}{{view:type_link}} {{ underline ?? 'no-underline'}} {{view:type_link_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }}{{ else }}{{ rounded ? {rounded} : 'rounded-sm'}} {{view:type_button}} {{view:type_button_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }} {{ view:button_pad[{button_padding ?? 'sm'}] }} {{ no_border ? '' : '{{view:type_button_border}}'}} {{ no_active ? '' : '{{view:type_button_active}}'}} {{ no_focus ? '' : '{{view:type_button_focus}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_visible ? '' : '{{view:type_button_focus_visible}}'}} {{ no_focus_visible_outline ? 'border-none outline-hidden' : '{{view:type_button_focus_visible_outline}}'}} {{/if}}
+{{ if style == 'link' }}{{view:type_link}} {{ underline ?? 'no-underline'}} {{view:type_link_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }}{{ else }}{{ rounded ? {rounded} : ''}} {{view:type_button}} {{view:type_button_a11y}} {{ view:font_scale[{font_size ?? 'sm'}] }} {{ view:button_pad[{button_padding ?? 'sm'}] }} {{ no_border ? '' : '{{view:type_button_border}}'}} {{ no_active ? '' : '{{view:type_button_active}}'}} {{ no_focus ? '' : '{{view:type_button_focus}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_outline ? '' : '{{view:type_button_focus_outline}}'}} {{ no_focus_visible ? '' : '{{view:type_button_focus_visible}}'}} {{ no_focus_visible_outline ? 'border-none outline-hidden' : '{{view:type_button_focus_visible_outline}}'}} {{/if}}
 
 
 {{# view:theme #}}

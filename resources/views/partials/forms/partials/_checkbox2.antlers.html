@@ -1,5 +1,5 @@
 {{ fields where="handle:{handle}" }} 
-<div {{ error ?= 'class="{view:error_box}"' }}>
+<div {{ css_custom ?= 'class="{css_custom}"' }}>
         {{ partial:forms/partials/label_error_hint }}
         <div class=" [&_a]:underline [&_a:hover]:no-underline {{ inline ? 'flex items-center space-y-0 space-x-2' : 'space-y-1' }}">
             {{ partial:vendor/statamic/forms/fields/checkboxes }}

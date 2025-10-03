@@ -81,21 +81,21 @@ tabs:
               display: Date
               instructions: 'Date event was created'
           -
-            handle: categories
+            handle: industries
             field:
               type: terms
               taxonomies:
-                - categories
-              display: Categories
+                - industries
+              display: Industries
               mode: select
               max_items: 1
           -
-            handle: event_type
+            handle: formats
             field:
               type: terms
               taxonomies:
-                - event_type
-              display: 'Event Type'
+                - formats
+              display: Formats
               mode: select
               max_items: 1
 title: Event

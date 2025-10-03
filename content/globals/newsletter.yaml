@@ -1,1 +1,16 @@
 title: newsletter
+data:
+  newsletter_text: "Don't worry, no spam here! Your information will only be used for Widgets ABC related updates and our emails are typically no more than 1-2 times a month. You can unsubscribe anytime."
+  newsletter_intro:
+    -
+      type: text
+      text: 'Secure priority access to '
+    -
+      type: text
+      marks:
+        -
+          type: bold
+      text: 'book 1-to-1 meetings with our experts'
+    -
+      type: text
+      text: '. Plus, get exclusive booth updates, product previews, and event-day reminders. Register your interest below.'
