@@ -1,0 +1,33 @@
+
+<div class="mx-auto max-w-3xl mt-14">
+
+
+{{# UPCOMING EVENTS #}}
+{{partial:partials/type/htag-v2
+    :s_content="title"
+    htag="h2"
+    css_tag="section_title"
+    css_tag_custom=""
+    css_tag_overide=""
+    is_link="true"
+    has_decoration=""
+    css_link=""
+}} 
+
+{{ partial:insights/partials/meta }}
+
+
+        {{related_event}}
+         {{ partial:events/partials/event-card is_link="true" aside_css="border p-6" has_decoration="true" data_theme="featured_event_card"}}
+        {{/related_event}}
+
+
+{{partial:partials/bard/bard 
+    :bard_handle="insights_bard_sets"
+    has_sets="true"
+    css="body"
+    css_custom=""
+    css_layout="mb-4"
+}}
+
+</div>

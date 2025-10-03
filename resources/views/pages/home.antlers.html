@@ -1,9 +1,132 @@
 {{# partial:partials/hero/_hero #}}
-<div class="grid mx-auto max-w-8xl gap-6">
-{{ partial:partials/wireframe/section title="Hero"}}
-{{ partial:partials/wireframe/section title="Introduction"}}
-{{ partial:partials/wireframe/section title="Stats"}}
-{{ partial:partials/wireframe/section title="Client Logos"}}
-{{ partial:partials/wireframe/section title="Featured Projects"}}
-{{ partial:partials/wireframe/section title="Latest News"}}
+
+
+<div class="mx-auto max-w-3xl mt-14 flex flex-col gap-y-6">
+<div>
+     {{partial:partials/type/htag-v2
+                    s_content="Featured Event"
+                    htag="h2"
+                    css_tag="section_title"
+                    css_tag_custom=""
+                    css_tag_overide=""
+                    is_link="true"
+                    has_decoration=""
+                    css_link=""
+                }} 
+    
+    {{featured_event}}
+    {{ partial:events/partials/event-card 
+        is_link="true"
+        show_description="true"
+        show_booth_number=""
+        aside_css="border p-6"
+        has_decoration="true"
+        data_theme="featured_event_card"
+    }}
+    {{/featured_event}}
+</div>
+
+
+{{# UPCOMING EVENTS #}}
+{{partial:partials/type/htag-v2
+    s_content="Upcoming Events"
+    htag="h2"
+    css_tag="section_title"
+    css_tag_custom=""
+    css_tag_overide=""
+    is_link="true"
+    has_decoration=""
+    css_link=""
+}} 
+
+{{ collection:events
+    sort="event_date_field:start:asc"
+    as="events"
+    status:is="published"
+    status:isnt="scheduled"
+    limit="3"
+    :event_date_field.start:gte="today"
+}}
+  <div class="flex flex-col gap-y-6">
+    {{ events }}
+      {{ partial:events/partials/event-card
+          is_link="true"
+          show_description=""
+          show_booth_number=""
+          aside_css="border p-6"
+          has_decoration="true"
+          data_theme="event_card"
+      }}
+    {{ /events }}
+  </div>
+{{ /collection:events }}
+
+{{# All Upcoming Events #}}
+{{ partial:link-button/link-button
+    is_ahref="true" {{# true #}}
+    style="" {{# link #}}
+    data_theme=""
+    custom_css="self-start"
+    font_size="" {{# xs, sm , md, lg #}}
+    disabled=""
+    button_label="All Upcoming Events"
+    show_icon="" {{# true #}}
+    icon_flip="" {{# true #}}
+    icon_path="" {{# arrow_thin #}}
+    link_type="url"
+    url="/events"
+    notab=""
+    text_align=""
+    lowercase="" {{# true #}}
+    radius="" {{# sm , md, lg, full #}}
+}}
+
+{{# INSIGHTS #}}
+{{partial:partials/type/htag-v2
+    s_content="Insights"
+    htag="h2"
+    css_tag="section_title"
+    css_tag_custom=""
+    css_tag_overide=""
+    is_link="true"
+    has_decoration=""
+    css_link=""
+}} 
+{{collection:insights as="entries" status:is="published" status:isnt="scheduled" limit="3" }}
+    
+
+
+<div class="flex flex-col gap-y-6">
+        
+        {{ entries }}
+               {{ partial:insights/partials/insights-card
+                is_link="true" 
+                aside_css="border p-6" 
+                has_decoration="true" 
+                data_theme="event_card"}}
+          {{ /entries }}
+       
+    </div>
+{{/collection:insights}}
+
+
+{{# All Insights #}}
+{{ partial:link-button/link-button
+    is_ahref="true" {{# true #}}
+    style="" {{# link #}}
+    data_theme=""
+    custom_css="self-start"
+    font_size="" {{# xs, sm , md, lg #}}
+    disabled=""
+    button_label="All Insights"
+    show_icon="" {{# true #}}
+    icon_flip="" {{# true #}}
+    icon_path="" {{# arrow_thin #}}
+    link_type="url"
+    url="/insights"
+    notab=""
+    text_align=""
+    lowercase="" {{# true #}}
+    radius="" {{# sm , md, lg, full #}}
+}}
 </div>

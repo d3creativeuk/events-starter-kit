@@ -10,7 +10,15 @@
         :has_decoration="has_decoration"
         css_link=""
     }}
-    
+     {{if show_description}}
+        {{partial:partials/bard/bard 
+            :bard_handle="event_description"
+            has_sets=""
+            css="body-sm"
+            css_custom="text-lg mt-1 mb-4 text-body"
+            css_layout="mb-4"
+        }}
+    {{/if}}
     <ul class=" text-xs list-disc mt-2 list-inside text-body">
        
 

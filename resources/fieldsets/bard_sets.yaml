@@ -11,6 +11,7 @@ fields:
         - unorderedlist
         - orderedlist
         - anchor
+        - alignleft
       container: assets
       reading_time: true
       allow_source: false

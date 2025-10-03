@@ -1,0 +1,11 @@
+title: 'Related Event'
+fields:
+  -
+    handle: related_event
+    field:
+      max_items: 1
+      collections:
+        - events
+      type: entries
+      display: 'Related Event'
+      create: false

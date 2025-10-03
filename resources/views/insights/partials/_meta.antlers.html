@@ -1,0 +1,30 @@
+<ul class="w-full block mb-4">
+     
+  
+  <li class="inline-block">
+        Posted: {{ date format="jS F, Y"}} {{# {{ if last_modified }}Updated: {{ last_modified format="jS F, Y"}}{{ /if }} #}}
+    </li>
+ 
+
+
+
+        <li class="inline-block">
+                {{# First name only #}}
+                {{# name | explode(' ') | first #}}
+                by {{ author }} <a class="" href="/authors/{{ slug }}">{{ name }}</a>{{ if !last }}, {{ /if }} {{ /author }}
+            </li>
+            
+    
+    
+    
+    
+        {{ if industries}}
+        <li class="inline-block">
+                in {{ industries }}<a class="underline hover:no-underline" href="{{ url }}">{{ title  }}</a>{{ if !last }}, {{ /if }}{{ /industries }}
+            </li>
+        {{ /if }}
+     
+
+
+   
+</ul>

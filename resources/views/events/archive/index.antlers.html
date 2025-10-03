@@ -34,7 +34,13 @@
                     }}
                      {{ total_items = items | count }}
                     {{ items limit="3"}}
-                     {{ partial:events/partials/event-card-archive is_link="true" aside_css="" has_decoration="true" data_theme="event_card_archive"}}
+                     {{ partial:events/partials/event-card-archive
+                        is_link="true" 
+                        css="body-sm"
+                        has_decoration="true" 
+                        data_theme="event_card_archive"
+                        show_description="true"
+                    }}
                     {{ /items }} 
                     {{ if total_items > 3 }}
                         <a href="/events/archive/{{group}}" class="underline hover:no-underline">View all {{ total_items }} events from {{ group }}</a>

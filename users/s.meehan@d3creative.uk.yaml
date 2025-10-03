@@ -13,3 +13,5 @@ preferences:
         - status
         - industries
         - formats
+    insights:
+      after_save: continue_editing

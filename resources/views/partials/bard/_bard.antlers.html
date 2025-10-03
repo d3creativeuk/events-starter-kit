@@ -11,6 +11,7 @@ bard_active: '[&_a]:active:outline-none'
 pages_bard: 'prose-sm prose-a:text-primary [&_a:hover]:text-darkblue  prose-headings:text-3xl prose-headings:font-semibold sm:prose-headings:text-4xl/10 lg:prose-base  lg:prose-headings:mb-2 lg:prose-headings:mt-4 lg:prose-h3:text-xl lg:prose-h4:text-lg'
 
 body: ' prose-headings:text-heading-bard prose-headings:first:mt-0 prose-headings:mt-10 prose-headings:mb-2 prose-headings:text-xl lg:prose-headings:text-2xl text-default'
+body-sm: 'text-sm text-default'
 
 
 
@@ -21,6 +22,7 @@ body: ' prose-headings:text-heading-bard prose-headings:first:mt-0 prose-heading
 <div class="{{ view:bard_base }} {{ view:bard_link }} {{ view:bard_hover }} {{ view:bard_outline }} {{ view:bard_focus }} {{ view:bard_focus_visible }} {{ view:bard_active }}  
 {{ switch(
 	(css == 'body') => '{{ view:body }}', 
+	(css == 'body-sm') => '{{ view:body-sm }}', 
 	() => '') 
 }} {{css_layout}} {{css_custom}} ">
 

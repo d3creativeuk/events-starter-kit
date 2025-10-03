@@ -23,9 +23,9 @@ body_class: ''
 
 <h1 class="font-semibold text-5xl mb-4">{{ title }}</h1>
 
-{{ partial:partials/bard/bard-single  :bard_handle="pages_intro_bard_basic" css="entry"}}
+{{ partial:partials/bard/bard :bard_handle="pages_intro_bard_basic" css="entry"}}
 
- {{ partial:partials/bard/bard-set 
+ {{ partial:partials/bard/bard
    
      :bard_handle="pages_body_bard_sets"
      css_bard="pages"  

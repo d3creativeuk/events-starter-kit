@@ -1,5 +1,6 @@
  <aside data-theme="{{data_theme}}" class="{{aside_css}} bg-surface-card border-border-color">
     
+    {{# <span class="text-heading">Join L.B. Foster at: </span> #}}
     {{partial:partials/type/htag-v2
         :s_content="title"
         htag="h2"
@@ -10,7 +11,16 @@
         :has_decoration="has_decoration"
         css_link=""
     }}
-    <p class="text-lg mt-1 mb-4 text-body">{{event_description}}</p>
+    {{if show_description}}
+        {{partial:partials/bard/bard 
+            :bard_handle="event_description"
+            has_sets=""
+            css=""
+            css_custom="mt-1 mb-4 text-body"
+            css_layout="mb-4"
+        }}
+    {{/if}}
+   
     {{# Shows button if event is after _today_start #}}
     {{if show_book_meeting & event_date_field:end >= _today_start}}
        
@@ -36,7 +46,7 @@
     {{/if}}
 
     <ul class="list-disc mt-2 list-inside text-body">
-        {{if booth_number}}<li><strong>Booth: {{booth_number}}</strong></li>{{/if}}
+        {{if show_booth_number && booth_number}}<li><strong>Booth: {{booth_number}}</strong></li>{{/if}}
 
         {{if formats:title == 'Online'}}
         <li><strong>{{event_date_field:start}}</strong></li>
@@ -44,8 +54,8 @@
         <li><strong>{{event_date_field:start}} - {{event_date_field:end}}</strong></li>
         {{/if}}
 
-        
-        <li>Location: {{event_location}}</li> 
+        {{if show_location}} 
+        <li>Location: {{event_location}}</li> {{/if}}
         {{if show_event_website}} 
         <li >Event website: <a href="{{event_website}}" class="underline hover:no-underline">{{event_website | parse_url('host') }}</a></li> 
         {{/if}}                   

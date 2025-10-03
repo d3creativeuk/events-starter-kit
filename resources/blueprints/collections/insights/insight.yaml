@@ -1,0 +1,74 @@
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              validate:
+                - required
+          -
+            handle: insights_intro
+            field:
+              buttons:
+                - bold
+                - italic
+                - anchor
+                - alignleft
+              fullscreen: false
+              allow_source: false
+              remove_empty_nodes: false
+              link_collections:
+                - events
+                - insights
+                - pages
+              type: bard
+              display: Intro
+          -
+            import: bard_sets
+            prefix: insights_
+  sidebar:
+    display: Sidebar
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate: 'max:200'
+          -
+            handle: industries
+            field:
+              type: terms
+              taxonomies:
+                - industries
+              display: Industries
+              mode: select
+          -
+            handle: author
+            field:
+              max_items: 1
+              default:
+                - 9e444c70-8423-4285-a952-3f0c36187b9d
+              type: users
+              display: Author
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now
+              validate:
+                - required
+      -
+        display: 'Related Event'
+        fields:
+          -
+            import: related_event
+title: Insight

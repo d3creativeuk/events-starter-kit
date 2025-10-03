@@ -5,7 +5,8 @@ fields:
     field:
       collections:
         - pages
-        - blog
+        - insights
+        - events
       type: entries
       display: 'Related Content'
       create: false

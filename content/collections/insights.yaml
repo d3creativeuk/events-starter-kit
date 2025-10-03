@@ -1,7 +1,18 @@
 title: Insights
+template: insights/show
+layout: layout
+mount: 8b8f6569-bda9-4dbb-aa84-6388da4feff1
 taxonomies:
   - industries
 revisions: false
+route: 'insights/{slug}'
+date: true
+sort_dir: asc
 date_behavior:
   past: public
   future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'
+    refresh: true
